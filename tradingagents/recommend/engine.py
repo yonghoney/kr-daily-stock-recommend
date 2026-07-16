@@ -31,6 +31,7 @@ class Recommendation:
     ret_1d_pct: float
     ret_5d_pct: float
     rsi14: float
+    market: str = "코스피"  # 코스피 | 코스닥
     reasons: list[str] = field(default_factory=list)
     drivers: list[dict[str, Any]] = field(default_factory=list)
     headlines: list[str] = field(default_factory=list)
@@ -38,6 +39,14 @@ class Recommendation:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+def market_label(ticker: str) -> str:
+    """Return Korean board name from Yahoo suffix."""
+    t = (ticker or "").upper()
+    if t.endswith(".KQ"):
+        return "코스닥"
+    return "코스피"
 
 
 def _project_root() -> Path:
@@ -101,6 +110,7 @@ def analyze_ticker(
     news_limit: int = 3,
 ) -> Recommendation:
     symbol = normalize_kr_symbol(ticker or code)
+    board = market_label(symbol)
     try:
         hist, symbol = _fetch_history(symbol)
         snap = compute_tech(hist)
@@ -115,6 +125,7 @@ def analyze_ticker(
                 ret_1d_pct=0.0,
                 ret_5d_pct=0.0,
                 rsi14=50.0,
+                market=board,
                 reasons=[],
                 error="시세 데이터 부족 (25거래일 미만)",
             )
@@ -145,6 +156,7 @@ def analyze_ticker(
             ret_1d_pct=round(snap.ret_1d * 100, 2),
             ret_5d_pct=round(snap.ret_5d * 100, 2),
             rsi14=round(snap.rsi14, 1),
+            market=board,
             reasons=reasons,
             drivers=drivers,
             headlines=headlines[:news_limit],
@@ -161,6 +173,7 @@ def analyze_ticker(
             ret_1d_pct=0.0,
             ret_5d_pct=0.0,
             rsi14=50.0,
+            market=board,
             reasons=[],
             error=str(exc),
         )
@@ -193,13 +206,13 @@ def render_markdown(
             "",
             f"- 매수관심: **{len(buy)}** · 관망: **{len(watch)}** · 주의: **{len(caution)}**",
             "",
-            "| 순위 | 종목 | 코드 | 액션 | 점수 | 종가 | 1일% | 5일% | RSI |",
-            "|---:|---|---|---|---:|---:|---:|---:|---:|",
+            "| 순위 | 종목 | 시장 | 코드 | 액션 | 점수 | 종가 | 1일% | 5일% | RSI |",
+            "|---:|---|---|---|---|---:|---:|---:|---:|---:|",
         ]
     )
     for i, r in enumerate(ranked, 1):
         lines.append(
-            f"| {i} | {r.name} | {r.code} | {r.action} | {r.score} | "
+            f"| {i} | {r.name} | {r.market} | {r.code} | {r.action} | {r.score} | "
             f"{r.price:,.0f} | {r.ret_1d_pct:+.2f} | {r.ret_5d_pct:+.2f} | {r.rsi14} |"
         )
 
@@ -209,7 +222,10 @@ def render_markdown(
             lines.append("_해당 없음_")
             return
         for r in items:
-            lines.append(f"### {r.name} (`{r.code}` / {r.ticker}) — {r.action} · {r.score}")
+            lines.append(
+                f"### {r.name} ({r.market} · `{r.code}` / {r.ticker}) "
+                f"— {r.action} · {r.score}"
+            )
             if r.error:
                 lines.append(f"- 오류: {r.error}")
             for reason in r.reasons:
@@ -253,7 +269,7 @@ def render_plain_text(
     ]
     for i, r in enumerate(ranked, 1):
         lines.append(
-            f"{i}. {r.name} ({r.code}) | {r.action} | 점수 {r.score} | "
+            f"{i}. {r.name} ({r.market} · {r.code}) | {r.action} | 점수 {r.score} | "
             f"종가 {r.price:,.0f} | 1일 {r.ret_1d_pct:+.2f}% | "
             f"5일 {r.ret_5d_pct:+.2f}% | RSI {r.rsi14}"
         )
@@ -265,7 +281,9 @@ def render_plain_text(
             lines.append("(해당 없음)")
             continue
         for r in items:
-            lines.append(f"{r.name} ({r.code} / {r.ticker}) — {r.action} · {r.score}")
+            lines.append(
+                f"{r.name} ({r.market} · {r.code} / {r.ticker}) — {r.action} · {r.score}"
+            )
             if r.error:
                 lines.append(f"  - 오류: {r.error}")
             for reason in r.reasons:

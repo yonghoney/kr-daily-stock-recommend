@@ -69,6 +69,7 @@ def render_html(
               <div class="sum-main">
                 <div class="sum-title">
                   <strong>{_esc(r.name)}</strong>
+                  <span class="market">{_esc(r.market)}</span>
                   <span class="code">{_esc(r.code)}</span>
                   <span class="badge {_action_class(r.action)}">{_esc(r.action)}</span>
                 </div>
@@ -115,9 +116,11 @@ def render_html(
             <section class="stock" id="{anchor}">
               <header class="stock-head">
                 <div>
-                  <p class="eyebrow">종목 리포트 · {_esc(i)}위</p>
+                  <p class="eyebrow">종목 리포트 · {_esc(i)}위 · {_esc(r.market)}</p>
                   <h2>{_esc(r.name)} <span class="code">{_esc(r.code)}</span></h2>
-                  <p class="meta">{_esc(r.ticker)} ·
+                  <p class="meta">
+                    <span class="market">{_esc(r.market)}</span>
+                    · {_esc(r.ticker)} ·
                     <span class="badge {_action_class(r.action)}">{_esc(r.action)}</span>
                     · 점수 <strong>{_esc(r.score)}</strong>
                   </p>
@@ -272,6 +275,17 @@ def render_html(
       color: var(--muted);
       font-size: 0.86rem;
       font-variant-numeric: tabular-nums;
+    }}
+    .market {{
+      display: inline-flex;
+      align-items: center;
+      border-radius: 6px;
+      padding: 0.1rem 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(14, 116, 144, 0.1);
+      border: 1px solid rgba(14, 116, 144, 0.22);
     }}
     .badge {{
       display: inline-flex;
