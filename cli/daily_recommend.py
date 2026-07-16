@@ -18,6 +18,14 @@ def run_daily(
     no_news: bool = False,
     output_dir: Path | None = None,
 ) -> int:
+    from tradingagents.recommend.universe import refresh_and_save_watchlist
+
+    console.print(
+        "[bold]워치리스트 갱신 중…[/bold] (거래대금 상위 20 + 시가총액 상위 20)"
+    )
+    watchlist = refresh_and_save_watchlist(top_n=20)
+    console.print(f"워치리스트 [cyan]{len(watchlist)}[/cyan]종목으로 갱신 완료")
+
     console.print("[bold]일일 추천 생성 중…[/bold] (LLM API 불필요)")
     recs, latest = run_daily_recommendations(
         include_news=not no_news,
@@ -39,7 +47,7 @@ def run_daily(
         )
     console.print(table)
     console.print(f"\n리포트: [green]{latest}[/green]")
-    console.print("같은 내용: reports/daily/YYYY-MM-DD.md")
+    console.print("같은 폴더: latest.md / latest.json / latest.txt / YYYY-MM-DD.*")
     return 0
 
 

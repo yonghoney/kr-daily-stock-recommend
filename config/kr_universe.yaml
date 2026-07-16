@@ -1,42 +1,148 @@
-# Korean MVP universe for TradingAgents-KR
-# codes without suffix; exchange inferred via kosdaq list or defaults to KOSPI
-
 watchlist:
-  - code: "005930"
-    name: 삼성전자
-    ticker: "005930.KS"
-  - code: "000660"
-    name: SK하이닉스
-    ticker: "000660.KS"
-  - code: "035420"
-    name: NAVER
-    ticker: "035420.KS"
-  - code: "005380"
-    name: 현대차
-    ticker: "005380.KS"
-  - code: "051910"
-    name: LG화학
-    ticker: "051910.KS"
-  - code: "006400"
-    name: 삼성SDI
-    ticker: "006400.KS"
-  - code: "035720"
-    name: 카카오
-    ticker: "035720.KS"  # KOSPI listed
-  - code: "247540"
-    name: 에코프로비엠
-    ticker: "247540.KQ"
-
-# Explicit KOSDAQ codes (merged with built-in defaults in kr_symbols.py)
+- code: 005930
+  name: 삼성전자
+  ticker: 005930.KS
+- code: '000660'
+  name: SK하이닉스
+  ticker: 000660.KS
+- code: '402340'
+  name: SK스퀘어
+  ticker: 402340.KS
+- code: 005935
+  name: 삼성전자우
+  ticker: 005935.KS
+- code: 009150
+  name: 삼성전기
+  ticker: 009150.KS
+- code: 005380
+  name: 현대차
+  ticker: 005380.KS
+- code: '373220'
+  name: LG에너지솔루션
+  ticker: 373220.KS
+- code: 032830
+  name: 삼성생명
+  ticker: 032830.KS
+- code: '105560'
+  name: KB금융
+  ticker: 105560.KS
+- code: '207940'
+  name: 삼성바이오로직스
+  ticker: 207940.KS
+- code: 028260
+  name: 삼성물산
+  ticker: 028260.KS
+- code: '000270'
+  name: 기아
+  ticker: 000270.KS
+- code: '055550'
+  name: 신한지주
+  ticker: 055550.KS
+- code: '329180'
+  name: HD현대중공업
+  ticker: 329180.KS
+- code: '012450'
+  name: 한화에어로스페이스
+  ticker: 012450.KS
+- code: '034020'
+  name: 두산에너빌리티
+  ticker: 034020.KS
+- code: '012330'
+  name: 현대모비스
+  ticker: 012330.KS
+- code: '034730'
+  name: SK
+  ticker: 034730.KS
+- code: 068270
+  name: 셀트리온
+  ticker: 068270.KS
+- code: 086790
+  name: 하나금융지주
+  ticker: 086790.KS
+- code: '006400'
+  name: 삼성SDI
+  ticker: 006400.KS
+- code: '066570'
+  name: LG전자
+  ticker: 066570.KS
+- code: '042700'
+  name: 한미반도체
+  ticker: 042700.KS
+- code: '196170'
+  name: 알테오젠
+  ticker: 196170.KQ
+- code: 036930
+  name: 주성엔지니어링
+  ticker: 036930.KQ
+- code: '353200'
+  name: 대덕전자
+  ticker: 353200.KS
+- code: '240810'
+  name: 원익IPS
+  ticker: 240810.KQ
+- code: 080220
+  name: 제주반도체
+  ticker: 080220.KQ
+- code: '475150'
+  name: SK이터닉스
+  ticker: 475150.KS
+- code: '006340'
+  name: 대원전선
+  ticker: 006340.KS
 kosdaq:
-  - "247540"
-  - "086520"
-  - "196170"
-  - "293490"
-
-# Default risk limits used by Execution Gateway (can be overridden in .env)
+- 036930
+- 080220
+- '196170'
+- '240810'
 risk:
   max_order_notional_krw: 1000000
   max_daily_notional_krw: 5000000
   max_positions: 5
   order_cooldown_seconds: 60
+universe_meta:
+  as_of: '2026-07-16'
+  source: FinanceDataReader.StockListing
+  top_n: 20
+  count: 30
+  by_trading_value:
+  - '000660'
+  - 005930
+  - '402340'
+  - 009150
+  - 036930
+  - '042700'
+  - 005935
+  - 005380
+  - 080220
+  - '240810'
+  - '105560'
+  - '475150'
+  - '006400'
+  - '066570'
+  - 028260
+  - '353200'
+  - '006340'
+  - '012450'
+  - '329180'
+  - '196170'
+  by_market_cap:
+  - 005930
+  - '000660'
+  - '402340'
+  - 005935
+  - 009150
+  - 005380
+  - '373220'
+  - 032830
+  - '105560'
+  - '207940'
+  - 028260
+  - '000270'
+  - '055550'
+  - '329180'
+  - '012450'
+  - '034020'
+  - '012330'
+  - '034730'
+  - 068270
+  - 086790

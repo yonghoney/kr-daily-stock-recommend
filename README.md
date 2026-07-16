@@ -69,16 +69,15 @@ python run_daily.py --no-news
 
 ---
 
-## 관심 종목 바꾸기
+## 워치리스트 자동 갱신
 
-[`config/kr_universe.yaml`](config/kr_universe.yaml) 의 `watchlist`를 수정한 뒤 다시 실행하세요.
+`run_daily.py`를 실행할 때마다 KRX 기준으로 워치리스트를 **전체 교체**합니다.
 
-```yaml
-watchlist:
-  - code: "005930"
-    name: 삼성전자
-    ticker: "005930.KS"
-```
+- 거래대금 상위 20종목
+- 시가총액 상위 20종목
+- 합집합(중복 제거, 보통 약 25~40종목)을 `config/kr_universe.yaml`에 저장한 뒤 분석
+
+수동으로 고정 목록을 쓰고 싶다면 yaml을 직접 수정해도 되지만, 다음 실행 때 다시 자동 갱신됩니다.
 
 ---
 
