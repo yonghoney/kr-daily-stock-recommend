@@ -13,7 +13,11 @@ class TechSnapshot:
     last_close: float
     ret_1d: float
     ret_5d: float
+    ret_10d: float
     ret_20d: float
+    ret_60d: float
+    ret_120d: float
+    sma10: float
     sma20: float
     sma60: float
     sma120: float
@@ -24,6 +28,13 @@ class TechSnapshot:
     above_sma120: bool
     golden_cross_proxy: bool  # sma20 > sma60
     bars: int
+
+
+def _period_return(close: pd.Series, days: int) -> float:
+    """Close-to-close return over `days` sessions (needs days+1 bars)."""
+    if len(close) >= days + 1:
+        return float(close.iloc[-1] / close.iloc[-(days + 1)] - 1)
+    return float("nan")
 
 
 @dataclass
@@ -57,14 +68,24 @@ def compute_tech(hist: pd.DataFrame) -> TechSnapshot | None:
         else pd.Series(0.0, index=df.index)
     )
 
+    sma10 = float(close.tail(min(10, len(close))).mean())
     sma20 = float(close.tail(20).mean())
     sma60 = float(close.tail(min(60, len(close))).mean())
     sma120_n = min(120, len(close))
     sma120 = float(close.tail(sma120_n).mean())
     last = float(close.iloc[-1])
-    ret_1d = float(close.iloc[-1] / close.iloc[-2] - 1) if len(close) >= 2 else 0.0
-    ret_5d = float(close.iloc[-1] / close.iloc[-6] - 1) if len(close) >= 6 else 0.0
-    ret_20d = float(close.iloc[-1] / close.iloc[-21] - 1) if len(close) >= 21 else 0.0
+    ret_1d = _period_return(close, 1)
+    ret_5d = _period_return(close, 5)
+    ret_10d = _period_return(close, 10)
+    ret_20d = _period_return(close, 20)
+    ret_60d = _period_return(close, 60)
+    ret_120d = _period_return(close, 120)
+    if not np.isfinite(ret_1d):
+        ret_1d = 0.0
+    if not np.isfinite(ret_5d):
+        ret_5d = 0.0
+    if not np.isfinite(ret_20d):
+        ret_20d = 0.0
     vol_ma = float(volume.tail(20).mean()) or 1.0
     vol_ratio = float(volume.iloc[-1] / vol_ma) if vol_ma else 1.0
 
@@ -72,7 +93,11 @@ def compute_tech(hist: pd.DataFrame) -> TechSnapshot | None:
         last_close=last,
         ret_1d=ret_1d,
         ret_5d=ret_5d,
+        ret_10d=ret_10d,
         ret_20d=ret_20d,
+        ret_60d=ret_60d,
+        ret_120d=ret_120d,
+        sma10=sma10,
         sma20=sma20,
         sma60=sma60,
         sma120=sma120,

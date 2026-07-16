@@ -19,6 +19,7 @@ def _synth(n: int = 150, trend: float = 1.0) -> pd.DataFrame:
 def test_compute_tech_uptrend_scores_positive():
     snap = compute_tech(_synth(trend=1.0))
     assert snap is not None
+    assert snap.sma10 > 0
     assert snap.sma120 > 0
     score, reasons, factors = score_tech(snap)
     assert reasons
@@ -26,6 +27,25 @@ def test_compute_tech_uptrend_scores_positive():
     assert score > 0
     assert abs(factors[0].impact) >= abs(factors[-1].impact)
     assert any("120" in r for r in reasons)
+
+
+def test_period_returns_present():
+    snap = compute_tech(_synth(n=150, trend=1.0))
+    assert snap is not None
+    assert snap.ret_10d == snap.ret_10d  # not NaN
+    assert snap.ret_60d == snap.ret_60d
+    assert snap.ret_120d == snap.ret_120d
+    assert snap.ret_10d > 0
+    assert snap.ret_120d > snap.ret_10d
+
+
+def test_period_returns_short_history_nan_for_long_windows():
+    snap = compute_tech(_synth(n=40, trend=1.0))
+    assert snap is not None
+    assert snap.ret_10d == snap.ret_10d
+    assert snap.ret_20d == snap.ret_20d
+    assert snap.ret_60d != snap.ret_60d  # NaN
+    assert snap.ret_120d != snap.ret_120d
 
 
 def test_compute_tech_needs_history():

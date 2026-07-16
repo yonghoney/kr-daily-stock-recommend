@@ -13,6 +13,7 @@ import yaml
 import yfinance as yf
 
 from tradingagents.dataflows.kr_symbols import normalize_kr_symbol
+from tradingagents.dataflows.korean_fundamentals import fetch_fundamentals
 from tradingagents.dataflows.korean_investor_flow import fetch_investor_flow
 from tradingagents.dataflows.korean_news import fetch_korean_headline_items
 from tradingagents.recommend.chart_svg import build_chart_payload, render_candle_svg
@@ -24,6 +25,12 @@ from tradingagents.recommend.signals import (
 
 logger = logging.getLogger(__name__)
 KST = pytz.timezone("Asia/Seoul")
+
+
+def _ret_pct_or_none(value: float) -> float | None:
+    if value != value:  # NaN
+        return None
+    return round(value * 100, 2)
 
 
 @dataclass
@@ -38,6 +45,15 @@ class Recommendation:
     ret_5d_pct: float
     rsi14: float
     market: str = "코스피"  # 코스피 | 코스닥
+    ret_10d_pct: float | None = None
+    ret_20d_pct: float | None = None
+    ret_60d_pct: float | None = None
+    ret_120d_pct: float | None = None
+    per: float | None = None
+    pbr: float | None = None
+    market_cap: float | None = None
+    market_cap_label: str | None = None
+    shares_outstanding: float | None = None
     reasons: list[str] = field(default_factory=list)
     drivers: list[dict[str, Any]] = field(default_factory=list)
     headlines: list[dict[str, str]] = field(default_factory=list)
@@ -200,6 +216,28 @@ def analyze_ticker(
         if headlines:
             reasons.append(f"최근 헤드라인 {len(headlines)}건 참고 (감성 점수화 없음)")
 
+        per = pbr = market_cap = shares = None
+        market_cap_label = None
+        try:
+            fund = fetch_fundamentals(code)
+            if fund is not None:
+                per = fund.per
+                pbr = fund.pbr
+                market_cap = fund.market_cap_krw
+                market_cap_label = fund.market_cap_label
+        except Exception as exc:
+            logger.warning("fundamentals failed for %s: %s", code, exc)
+
+        try:
+            info = yf.Ticker(symbol).info or {}
+            so = info.get("sharesOutstanding") or info.get("impliedSharesOutstanding")
+            if so:
+                shares = float(so)
+            if market_cap is None and info.get("marketCap"):
+                market_cap = float(info["marketCap"])
+        except Exception as exc:
+            logger.debug("yfinance shares/cap failed for %s: %s", symbol, exc)
+
         chart_svg = None
         try:
             payload = build_chart_payload(hist, bars=63)
@@ -218,6 +256,15 @@ def analyze_ticker(
             ret_5d_pct=round(snap.ret_5d * 100, 2),
             rsi14=round(snap.rsi14, 1),
             market=board,
+            ret_10d_pct=_ret_pct_or_none(snap.ret_10d),
+            ret_20d_pct=_ret_pct_or_none(snap.ret_20d),
+            ret_60d_pct=_ret_pct_or_none(snap.ret_60d),
+            ret_120d_pct=_ret_pct_or_none(snap.ret_120d),
+            per=round(per, 2) if per is not None else None,
+            pbr=round(pbr, 2) if pbr is not None else None,
+            market_cap=market_cap,
+            market_cap_label=market_cap_label,
+            shares_outstanding=shares,
             reasons=reasons,
             drivers=drivers,
             headlines=headlines[:news_limit],

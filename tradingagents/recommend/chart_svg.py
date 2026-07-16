@@ -122,8 +122,9 @@ def render_candle_svg(
 
     for i in range(n):
         xi = x_at(i)
+        # KR convention: 양봉(상승)=red, 음봉(하락)=blue
         up = c[i] >= o[i]
-        color = "#0b7a63" if up else "#c2410c"
+        color = "#dc2626" if up else "#2563eb"
         y_h, y_l = y_at(h[i]), y_at(l[i])
         y_o, y_c = y_at(o[i]), y_at(c[i])
         body_top = min(y_o, y_c)

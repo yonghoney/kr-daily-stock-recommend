@@ -428,6 +428,7 @@
     <a href="#big-picture" title="한눈에 보기"></a>
     <a href="#steps" title="단계별 흐름"></a>
     <a href="#score" title="점수 규칙"></a>
+    <a href="#report" title="리포트 구성"></a>
     <a href="#you" title="사람이 하는 일"></a>
     <a href="#myth" title="오해 풀기"></a>
   </nav>
@@ -438,7 +439,7 @@
       <h1>추천 결과는<br /><em>마법이 아니라</em><br />순서 있는 계산입니다</h1>
       <p class="lede">
         VS Code에서 <strong>run_daily.py</strong>를 실행하면, 프로그램이
-        관심 종목의 시세와 뉴스를 모아 점수표처럼 정리한 뒤
+        워치리스트를 자동 갱신하고 시세·수급·뉴스를 모아 점수표처럼 정리한 뒤
         「매수관심 / 관망 / 주의」를 붙입니다.
         ChatGPT 같은 AI에게 물어보는 방식이 <em>아닙니다</em>.
       </p>
@@ -453,8 +454,8 @@
     <section id="big-picture" class="reveal">
       <h2>한눈에 보는 전체 그림</h2>
       <p class="section-intro">
-        식당에서 메뉴를 고를 때와 비슷합니다. 재료(데이터)를 보고,
-        맛·상태(지표)를 체크한 뒤, 점수표로 순위를 매깁니다.
+        식당에서 메뉴를 고를 때와 비슷합니다. 오늘 볼 메뉴판을 먼저 고르고,
+        재료(시세·수급)를 본 뒤 맛·상태(지표)를 체크하고, 점수표로 순위를 매깁니다.
       </p>
 
       <div class="diagram" aria-label="전체 순서도">
@@ -468,14 +469,13 @@
               <path d="M0,0 L6,3 L0,6 Z" fill="#2a3d36"/>
             </marker>
           </defs>
-          <!-- boxes -->
           <rect x="20" y="70" width="110" height="64" rx="14" fill="#14201c"/>
-          <text x="75" y="98" text-anchor="middle" fill="#f7f4ec" font-family="Outfit,sans-serif" font-size="13" font-weight="600">1. 관심종목</text>
-          <text x="75" y="118" text-anchor="middle" fill="#b8c7c0" font-family="Outfit,sans-serif" font-size="11">목록 읽기</text>
+          <text x="75" y="98" text-anchor="middle" fill="#f7f4ec" font-family="Outfit,sans-serif" font-size="13" font-weight="600">1. 워치리스트</text>
+          <text x="75" y="118" text-anchor="middle" fill="#b8c7c0" font-family="Outfit,sans-serif" font-size="11">자동 갱신</text>
 
           <rect x="160" y="70" width="110" height="64" rx="14" fill="url(#g1)"/>
-          <text x="215" y="98" text-anchor="middle" fill="#fff" font-family="Outfit,sans-serif" font-size="13" font-weight="600">2. 시세 수집</text>
-          <text x="215" y="118" text-anchor="middle" fill="#d7f3ea" font-family="Outfit,sans-serif" font-size="11">가격·거래량</text>
+          <text x="215" y="98" text-anchor="middle" fill="#fff" font-family="Outfit,sans-serif" font-size="13" font-weight="600">2. 데이터</text>
+          <text x="215" y="118" text-anchor="middle" fill="#d7f3ea" font-family="Outfit,sans-serif" font-size="11">시세·수급</text>
 
           <rect x="300" y="70" width="110" height="64" rx="14" fill="#14201c"/>
           <text x="355" y="98" text-anchor="middle" fill="#f7f4ec" font-family="Outfit,sans-serif" font-size="13" font-weight="600">3. 지표 계산</text>
@@ -487,9 +487,8 @@
 
           <rect x="580" y="70" width="120" height="64" rx="14" fill="#e85d04"/>
           <text x="640" y="98" text-anchor="middle" fill="#fff" font-family="Outfit,sans-serif" font-size="13" font-weight="600">5. 리포트</text>
-          <text x="640" y="118" text-anchor="middle" fill="#ffe8d6" font-family="Outfit,sans-serif" font-size="11">latest.md</text>
+          <text x="640" y="118" text-anchor="middle" fill="#ffe8d6" font-family="Outfit,sans-serif" font-size="11">latest.html</text>
 
-          <!-- arrows -->
           <line x1="130" y1="102" x2="155" y2="102" stroke="#2a3d36" stroke-width="2" marker-end="url(#arrow)"/>
           <line x1="270" y1="102" x2="295" y2="102" stroke="#2a3d36" stroke-width="2" marker-end="url(#arrow)"/>
           <line x1="410" y1="102" x2="435" y2="102" stroke="#2a3d36" stroke-width="2" marker-end="url(#arrow)"/>
@@ -499,7 +498,7 @@
             run_daily.py 실행 → 자동으로 아래 순서를 한 바퀴 돕니다
           </text>
           <text x="360" y="195" text-anchor="middle" fill="#5c6f67" font-family="Outfit,sans-serif" font-size="12">
-            그다음: 사람이 리포트를 읽고 HTS/앱에서 직접 투자 결정
+            그다음: 사람이 HTML 리포트를 읽고 HTS/앱에서 직접 투자 결정
           </text>
         </svg>
       </div>
@@ -507,13 +506,13 @@
       <div class="grid-2">
         <div class="metric">
           <div class="label">입력</div>
-          <div class="value">관심 종목 목록</div>
-          <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem;">config/kr_universe.yaml</p>
+          <div class="value">워치리스트 (자동)</div>
+          <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem;">config/kr_universe.yaml · 실행마다 갱신</p>
         </div>
         <div class="metric">
           <div class="label">출력</div>
-          <div class="value">추천 리포트</div>
-          <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem;">reports/daily/latest.md</p>
+          <div class="value">HTML 리포트</div>
+          <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem;">reports/daily/latest.html (+ txt·md·json)</p>
         </div>
       </div>
     </section>
@@ -536,7 +535,8 @@
             <p>
               VS Code에서 재생 버튼을 누르면 Python이 이 스크립트를 엽니다.
               Cursor나 채팅 AI와 연결되지 않아도 됩니다. 인터넷만 되면
-              시세·뉴스를 받아올 수 있습니다.
+              시세·수급·뉴스를 받아올 수 있습니다.
+              뉴스를 빼고 빠르게 돌리려면 <code>python run_daily.py --no-news</code> 를 씁니다.
             </p>
             <span class="flow-tag">당신이 하는 일: 실행 버튼</span>
           </div>
@@ -548,13 +548,19 @@
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
-            <h3>관심 종목 목록 읽기</h3>
+            <h3>워치리스트 자동 갱신</h3>
             <p>
-              <strong>config/kr_universe.yaml</strong> 파일에 적힌 종목
-              (예: 삼성전자, SK하이닉스…)을 하나씩 불러옵니다.
-              종목 코드를 Yahoo Finance 형식(005930.KS)으로 맞춥니다.
+              실행할 때마다 KRX 기준으로 관심 종목을 <strong>전체 교체</strong>해
+              <strong>config/kr_universe.yaml</strong>에 저장합니다.
+              코스피·코스닥 <strong>각각</strong>에 대해 (우선주 제외):
             </p>
-            <span class="flow-tag">비유: 오늘 볼 메뉴판을 펼침</span>
+            <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
+              <li>시가총액 상위 <strong>50</strong>종목</li>
+              <li>최근 <strong>7일</strong> 중 하루라도 거래대금 상위 <strong>20</strong>에 들어간 종목 중,
+                  위 시총 50에 <strong>없는</strong> 종목</li>
+            </ul>
+            <p style="margin:0.7rem 0 0;">합집합(중복 제거)이 오늘의 분석 대상입니다. 대략 110~120종목 규모입니다.</p>
+            <span class="flow-tag">비유: 오늘 볼 메뉴판을 새로 씀</span>
           </div>
         </div>
 
@@ -564,13 +570,20 @@
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
-            <h3>시세 데이터 가져오기</h3>
+            <h3>시세·수급·펀더멘털 가져오기</h3>
             <p>
-              각 종목의 최근 약 6개월 주가·거래량을 받아옵니다.
+              각 종목에 대해 대략 다음을 모읍니다.
+            </p>
+            <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
+              <li><strong>시세</strong> — Yahoo Finance OHLCV (최근 약 6개월). 장중이면 마지막 봉은 당일 미완성 시세일 수 있습니다.</li>
+              <li><strong>외국인·기관 순매수</strong> — 네이버 추이 API (보통 전일·최근 수일 누적)</li>
+              <li><strong>PER·PBR·시가총액·발행주식수</strong> — 리포트 표시용 (점수에는 넣지 않음)</li>
+            </ul>
+            <p style="margin:0.7rem 0 0;">
               데이터가 너무 짧으면(25거래일 미만) 다른 시장 접미사(.KS ↔ .KQ)로
               한 번 더 시도합니다. 그래도 부족하면 “데이터 부족”으로 표시합니다.
             </p>
-            <span class="flow-tag">재료 준비: 가격 기록장</span>
+            <span class="flow-tag">재료 준비: 가격·수급 기록장</span>
           </div>
         </div>
 
@@ -585,8 +598,8 @@
               가격 숫자만으로 상태를 요약합니다.
             </p>
             <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
-              <li><strong>이동평균(20·60일)</strong> — 최근 평균 가격보다 위에 있는지</li>
-              <li><strong>수익률(1·5·20일)</strong> — 단기·중기 상승/하락 폭</li>
+              <li><strong>이동평균(20·60·120일)</strong> — 점수용 추세 판별 (종가가 이평 위/아래)</li>
+              <li><strong>수익률(1·5·10·20·60·120일)</strong> — 단기~장기 상승/하락 폭 (리포트에 표시)</li>
               <li><strong>RSI(14)</strong> — 과매수·과매도 느낌의 온도계(0~100)</li>
               <li><strong>거래량 비율</strong> — 평소보다 많이 거래됐는지</li>
             </ul>
@@ -603,8 +616,10 @@
             <h3>점수 매기기 + 이유 문장 만들기</h3>
             <p>
               미리 정해 둔 규칙표에 따라 점수를 더하거나 뺍니다.
-              예: “20일선 위면 +8”, “RSI가 과열이면 −15”.
-              동시에 사람이 읽을 수 있는 <strong>이유 문장</strong>을 함께 남깁니다.
+              <strong>기술지표</strong>가 본점수이고, <strong>외국인·기관 수급</strong>은
+              그보다 작은 가중치(±3~8 정도)로 가산·감점합니다.
+              동시에 사람이 읽을 수 있는 <strong>이유 문장</strong>과
+              기여도가 큰 요인(드라이버)을 함께 남깁니다.
             </p>
             <span class="flow-tag">채점: 시험 답안지 채점과 비슷</span>
           </div>
@@ -616,11 +631,12 @@
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
-            <h3>뉴스 헤드라인 붙이기 (선택)</h3>
+            <h3>뉴스 헤드라인 붙이기 (기본 ON)</h3>
             <p>
-              최근 한국 뉴스 제목을 몇 개 가져옵니다.
+              최근 한국 뉴스 제목을 가져와 <strong>게시일</strong>과 함께 적고,
+              최신순으로 정렬합니다.
               <strong>뉴스 내용으로 점수를 올리거나 내리지는 않습니다.</strong>
-              “이런 기사가 있었다”는 참고용으로만 적습니다.
+              “이런 기사가 있었다”는 참고용입니다. <code>--no-news</code>로 끌 수 있습니다.
             </p>
             <span class="flow-tag">곁들임: 양념은 참고만</span>
           </div>
@@ -637,7 +653,7 @@
             <div class="actions" style="margin-top:0.9rem;">
               <div class="action">
                 <div class="badge buy">매수관심</div>
-                <div>점수 <strong>+25 이상</strong> — 기술지표상 상대적으로 우호</div>
+                <div>점수 <strong>+25 이상</strong> — 기술·수급 규칙상 상대적으로 우호</div>
               </div>
               <div class="action">
                 <div class="badge hold">관망</div>
@@ -660,10 +676,13 @@
           <div class="flow-body">
             <h3>리포트 저장</h3>
             <p>
-              모든 종목을 점수 순으로 정렬해
-              <strong>reports/daily/latest.md</strong> (및 날짜별 파일)에 저장합니다.
-              JSON 파일도 같이 만들어 두어 나중에 표로 쓰기 쉽게 합니다.
+              모든 종목을 점수 순으로 정렬해 저장합니다.
             </p>
+            <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
+              <li><strong>latest.html</strong> — 브라우저용 본문 (종합 요약 + 종목별)</li>
+              <li><strong>latest.txt / .md / .json</strong> — 메모장·마크다운·기계 읽기용</li>
+              <li><strong>YYYY-MM-DD/report.*</strong> — 같은 날 날짜별 보관본</li>
+            </ul>
             <span class="flow-tag">출력: 오늘의 성적표</span>
           </div>
         </div>
@@ -674,13 +693,16 @@
       <h2>점수는 어떻게 올라가나요?</h2>
       <p class="section-intro">
         “좋다/나쁘다”를 AI가 느끼는 게 아니라, 아래 같은 <strong>가산·감점 규칙</strong>의 합입니다.
+        총점은 −100~+100 사이로 잘라 둡니다.
       </p>
       <div class="card">
         <ul class="checklist">
-          <li>주가가 20일·60일 평균보다 위면 가점 (추세가 우호적이라는 뜻)</li>
+          <li>종가가 20·60일 평균 위면 가점, 20일선 아래면 감점 / 20≥60이면 정배열 가점</li>
+          <li>데이터가 충분하면 120일선 위·아래와 60↔120 배열도 가점·감점</li>
           <li>5일·20일 동안 많이 올랐으면 가점, 크게 빠졌으면 감점</li>
           <li>RSI가 중간~건전 구간이면 가점, 너무 뜨거우면(과매수) 감점</li>
           <li>거래량이 평소보다 크게 늘며 상승하면 가점, 하락하면 감점</li>
+          <li>외국인·기관 순매수/순매도(전일·최근 수일)는 <strong>기술보다 작은 가중치</strong>로 가점·감점</li>
         </ul>
       </div>
       <div class="callout">
@@ -688,6 +710,32 @@
           <strong>중요:</strong> 같은 규칙이라도 시장 전체가 약세면
           워치리스트 대부분이 「관망」「주의」로 나올 수 있습니다.
           그건 버그가 아니라, 오늘 데이터가 그렇게 채점된 결과입니다.
+          뉴스·PER·PBR·시가총액은 점수에 넣지 않습니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="report" class="reveal">
+      <h2>HTML 리포트에는 무엇이 있나요?</h2>
+      <p class="section-intro">
+        기본으로 볼 파일은 <strong>reports/daily/latest.html</strong> 입니다.
+        브라우저에서 세로로 스크롤하며 읽도록 만들어져 있습니다.
+      </p>
+      <div class="card">
+        <ul class="checklist">
+          <li><strong>종합 요약</strong> — 점수 순 순위, 상위 드라이버, 종목 섹션으로 바로 가는 링크</li>
+          <li><strong>종목 헤더</strong> — 이름·코드·시장 라벨(코스피/코스닥)·액션·점수</li>
+          <li><strong>핵심 수치</strong> — 종가, 1일%, 5일%, RSI14</li>
+          <li><strong>기간 수익률·펀더</strong> — 10/20/60/120일 상승률, PER, PBR, 시가총액, 발행주식수</li>
+          <li><strong>3개월 캔들 차트</strong> — 국내식 색(양봉 빨강 / 음봉 파랑) + SMA 20·60·120</li>
+          <li><strong>수급</strong> — 외국인·기관 1일·누적 순매수와 보유 비중(있을 때)</li>
+          <li><strong>뉴스</strong> — 게시일 포함, 최신순 (점수 미반영)</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <p>
+          JSON에는 차트 SVG를 넣지 않습니다(용량). 차트는 HTML에서만 보입니다.
+          날짜 폴더(<code>reports/daily/YYYY-MM-DD/</code>)에는 같은 내용의 보관본이 남습니다.
         </p>
       </div>
     </section>
@@ -702,7 +750,10 @@
           <div class="flow-rail"><div class="flow-num">A</div><div class="flow-line"></div></div>
           <div class="flow-body">
             <h3>리포트 읽기</h3>
-            <p>latest.md에서 순위표와 종목별 이유를 확인합니다.</p>
+            <p>
+              <strong>latest.html</strong>에서 순위표·차트·이유를 확인합니다.
+              메모장이면 <strong>latest.txt</strong>를 열면 됩니다.
+            </p>
           </div>
         </div>
         <div class="flow-step">
@@ -728,7 +779,7 @@
         <div class="card">
           <h3 style="margin-top:0;">❌ “AI가 미래 주가를 안다”</h3>
           <p style="margin:0;color:var(--ink-soft);">
-            아니요. 과거 가격으로 만든 <strong>규칙 점수</strong>입니다.
+            아니요. 과거 가격·수급으로 만든 <strong>규칙 점수</strong>입니다.
             내일 반드시 오른다는 뜻이 아닙니다.
           </p>
         </div>
@@ -749,8 +800,22 @@
         <div class="card">
           <h3 style="margin-top:0;">✅ “매일 같은 절차로 갱신된다”</h3>
           <p style="margin:0;color:var(--ink-soft);">
-            맞습니다. 실행할 때마다 최신 시세를 받아
+            맞습니다. 실행할 때마다 워치리스트·시세·수급을 받아
             같은 채점표로 다시 계산합니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">❌ “뉴스가 점수를 바꾼다”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            아니요. 뉴스는 참고용 헤드라인만 붙입니다.
+            점수에 반영되지 않습니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">❌ “종가는 항상 어제의 확정가”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            장중에는 마지막 봉이 <strong>당일 미완성 시세</strong>일 수 있습니다.
+            수급(외인·기관)은 보통 전일 기준입니다.
           </p>
         </div>
       </div>
@@ -772,7 +837,7 @@
   <script>
     const progress = document.getElementById("progress");
     const dots = [...document.querySelectorAll(".dots a")];
-    const sections = ["hero", "big-picture", "steps", "score", "you", "myth"].map(id => document.getElementById(id));
+    const sections = ["hero", "big-picture", "steps", "score", "report", "you", "myth"].map(id => document.getElementById(id));
 
     function onScroll() {
       const scrollTop = window.scrollY;

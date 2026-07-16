@@ -21,9 +21,54 @@ def _action_class(action: str) -> str:
     return "watch"
 
 
+def _fmt_pct(value: float | None) -> str:
+    if value is None:
+        return "—"
+    return f"{value:+.2f}%"
+
+
+def _fmt_ratio(value: float | None) -> str:
+    if value is None:
+        return "—"
+    return f"{value:.2f}"
+
+
+def _fmt_shares(value: float | None) -> str:
+    if value is None:
+        return "—"
+    n = float(value)
+    if n >= 1e8:
+        return f"{n / 1e8:.2f}억주"
+    if n >= 1e4:
+        return f"{n / 1e4:,.0f}만주"
+    return f"{n:,.0f}주"
+
+
 def _fmt_impact(impact: float) -> str:
     sign = "+" if impact > 0 else ""
     return f"{sign}{impact:.0f}"
+
+
+def _extra_metrics_html(r: Recommendation) -> str:
+    cap = r.market_cap_label or (
+        f"{r.market_cap/1e12:.2f}조" if r.market_cap and r.market_cap >= 1e12
+        else f"{r.market_cap/1e8:.0f}억" if r.market_cap
+        else "—"
+    )
+    return f"""
+              <div class="metrics extras">
+                <div><span>10일</span><strong>{_esc(_fmt_pct(r.ret_10d_pct))}</strong></div>
+                <div><span>20일</span><strong>{_esc(_fmt_pct(r.ret_20d_pct))}</strong></div>
+                <div><span>60일</span><strong>{_esc(_fmt_pct(r.ret_60d_pct))}</strong></div>
+                <div><span>120일</span><strong>{_esc(_fmt_pct(r.ret_120d_pct))}</strong></div>
+              </div>
+              <div class="metrics extras">
+                <div><span>PER</span><strong>{_esc(_fmt_ratio(r.per))}</strong></div>
+                <div><span>PBR</span><strong>{_esc(_fmt_ratio(r.pbr))}</strong></div>
+                <div><span>시가총액</span><strong>{_esc(cap)}</strong></div>
+                <div><span>발행주식수</span><strong>{_esc(_fmt_shares(r.shares_outstanding))}</strong></div>
+              </div>
+            """
 
 
 def _news_block(headlines: list) -> str:
@@ -195,6 +240,7 @@ def render_html(
                 <div><span>5일</span><strong>{r.ret_5d_pct:+.2f}%</strong></div>
                 <div><span>RSI14</span><strong>{_esc(r.rsi14)}</strong></div>
               </div>
+              {_extra_metrics_html(r)}
               {f'<div class="block chart">{r.chart_svg}</div>' if r.chart_svg else ''}
               {headlines_html}
               {flow_html}
@@ -447,7 +493,10 @@ def render_html(
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0.55rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.55rem;
+    }}
+    .metrics.extras {{
+      margin-bottom: 0.55rem;
     }}
     .metrics div {{
       background: rgba(255,255,255,0.55);
@@ -462,7 +511,7 @@ def render_html(
       margin-bottom: 0.15rem;
     }}
     .metrics strong {{
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       font-variant-numeric: tabular-nums;
     }}
     .block h3 {{
