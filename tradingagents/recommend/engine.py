@@ -75,7 +75,8 @@ def _action_from_score(score: float) -> str:
 def _fetch_history(symbol: str):
     """Fetch OHLCV; if KRX suffix has thin history, try the other board."""
     hist = yf.Ticker(symbol).history(period="6mo")
-    if hist is not None and len(hist) >= 25:
+    hist_len = 0 if hist is None or getattr(hist, "empty", True) else len(hist)
+    if hist_len >= 25:
         return hist, symbol
     if symbol.endswith(".KQ"):
         alt = symbol[:-3] + ".KS"
@@ -84,7 +85,8 @@ def _fetch_history(symbol: str):
     else:
         return hist, symbol
     alt_hist = yf.Ticker(alt).history(period="6mo")
-    if alt_hist is not None and len(alt_hist) > len(hist or []):
+    alt_len = 0 if alt_hist is None or getattr(alt_hist, "empty", True) else len(alt_hist)
+    if alt_len > hist_len:
         logger.info("Using alternate board %s instead of %s", alt, symbol)
         return alt_hist, alt
     return hist, symbol

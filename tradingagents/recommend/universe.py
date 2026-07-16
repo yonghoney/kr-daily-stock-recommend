@@ -1,9 +1,10 @@
 """Auto-refresh KR watchlist from KRX rankings.
 
 Each run rebuilds the universe as the union, per market (KOSPI / KOSDAQ), of:
-  - names that appeared in that market's daily trading-value (Amount) top-N
-    on any session in the last calendar week
+  - common shares only (preferred shares excluded)
   - that market's current market-cap (Marcap) top-N
+  - names that appeared in that market's daily trading-value (Amount) top-M
+    on any session in the last calendar week, after removing the Marcap top-N set
 
 Daily snapshots come from FinanceDataReader's KRX listing cache
 (https://github.com/FinanceData/fdr_krx_data_cache).
@@ -13,6 +14,7 @@ from __future__ import annotations
 
 import io
 import logging
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -31,6 +33,11 @@ _CACHE_BASE = (
 )
 _MARKET_ID = {"KOSPI": "STK", "KOSDAQ": "KSQ"}
 
+# KRX preferred-share name suffixes (보통주만 남김)
+_PREFERRED_NAME = re.compile(
+    r"(우B|우C|우D|우E|1우|2우|3우|4우|5우|우선주?|우)$"
+)
+
 
 def _project_root() -> Path:
     return Path(__file__).resolve().parents[2]
@@ -38,6 +45,15 @@ def _project_root() -> Path:
 
 def _universe_path(path: Path | None = None) -> Path:
     return path or (_project_root() / "config" / "kr_universe.yaml")
+
+
+def _is_preferred(name: object) -> bool:
+    text = str(name or "").strip()
+    if not text:
+        return False
+    # Drop parenthetical notes: "CJ4우(전환)" -> "CJ4우"
+    base = re.sub(r"\(.*?\)", "", text).strip()
+    return bool(_PREFERRED_NAME.search(base))
 
 
 def _normalize_listing(df: pd.DataFrame) -> pd.DataFrame:
@@ -93,13 +109,21 @@ def _fetch_listing_for_date(day: str, timeout: float = 20.0) -> pd.DataFrame | N
     return _normalize_listing(df)
 
 
-def _filter_market(df: pd.DataFrame, market: str) -> pd.DataFrame:
+def _filter_market(
+    df: pd.DataFrame,
+    market: str,
+    *,
+    exclude_preferred: bool = True,
+) -> pd.DataFrame:
     mid = _MARKET_ID[market]
     if "MarketId" in df.columns:
         out = df[df["MarketId"].astype(str) == mid]
     else:
         out = df[df["Market"].astype(str).str.upper().str.contains(market)]
-    return out[out["Marcap"] > 0].drop_duplicates(subset=["Code"], keep="first")
+    out = out[out["Marcap"] > 0].drop_duplicates(subset=["Code"], keep="first")
+    if exclude_preferred:
+        out = out[~out["Name"].map(_is_preferred)]
+    return out
 
 
 def _yahoo_ticker(code: str, market: str) -> str:
@@ -143,10 +167,11 @@ def _load_live_listings() -> pd.DataFrame:
 def refresh_and_save_watchlist(
     *,
     path: Path | None = None,
-    top_n: int = 50,
+    cap_top_n: int = 50,
+    amount_top_n: int = 20,
     lookback_days: int = 7,
 ) -> list[dict[str, str]]:
-    """Rebuild watchlist per-market: weekly Amount top-N union + Marcap top-N."""
+    """Rebuild watchlist: Marcap top-N ∪ (weekly Amount top-M outside Marcap top-N)."""
     path = _universe_path(path)
     as_of_dt = datetime.now(KST)
     as_of = as_of_dt.strftime("%Y-%m-%d")
@@ -169,34 +194,40 @@ def refresh_and_save_watchlist(
     amount_hits_by_day: dict[str, dict[str, list[str]]] = {}
 
     for market in ("KOSPI", "KOSDAQ"):
+        cap_df = _filter_market(latest, market)
+        cap_top = cap_df.nlargest(cap_top_n, "Marcap")
+        cap_codes = [str(c).zfill(6) for c in cap_top["Code"].tolist()]
+        cap_set = set(cap_codes)
+        by_cap[market] = cap_codes
+
         amount_codes: set[str] = set()
         for day, frame in daily_frames.items():
             mdf = _filter_market(frame, market)
             if mdf.empty:
                 continue
-            top = mdf.nlargest(top_n, "Amount")
-            day_codes = [str(c).zfill(6) for c in top["Code"].tolist()]
+            # Daily Amount top-M among common shares, then drop Marcap top-N
+            top = mdf.nlargest(amount_top_n, "Amount")
+            day_codes = [
+                str(c).zfill(6)
+                for c in top["Code"].tolist()
+                if str(c).zfill(6) not in cap_set
+            ]
             amount_codes.update(day_codes)
             amount_hits_by_day.setdefault(day, {})[market] = day_codes
 
-        cap_df = _filter_market(latest, market)
-        cap_top = cap_df.nlargest(top_n, "Marcap")
-        cap_codes = [str(c).zfill(6) for c in cap_top["Code"].tolist()]
         by_amount[market] = sorted(amount_codes)
-        by_cap[market] = cap_codes
 
         name_lookup = {
             str(r["Code"]).zfill(6): str(r.get("Name") or r["Code"])
             for _, r in cap_df.iterrows()
         }
-        # Enrich names from any session if missing on latest
         for frame in daily_frames.values():
             mdf = _filter_market(frame, market)
             for _, r in mdf.iterrows():
                 code = str(r["Code"]).zfill(6)
                 name_lookup.setdefault(code, str(r.get("Name") or code))
 
-        for code in amount_codes | set(cap_codes):
+        for code in set(cap_codes) | amount_codes:
             if code in selected:
                 continue
             selected[code] = {
@@ -216,10 +247,11 @@ def refresh_and_save_watchlist(
     kosdaq_codes = sorted(
         code for code, item in selected.items() if item["ticker"].endswith(".KQ")
     )
+    common_latest = latest[~latest["Name"].map(_is_preferred)]
     cap_rank = {
         str(c).zfill(6): i
         for i, c in enumerate(
-            latest.sort_values("Marcap", ascending=False)["Code"].tolist()
+            common_latest.sort_values("Marcap", ascending=False)["Code"].tolist()
         )
     }
     watchlist = sorted(
@@ -240,12 +272,14 @@ def refresh_and_save_watchlist(
         "universe_meta": {
             "as_of": as_of,
             "source": "FinanceDataReader fdr_krx_data_cache",
-            "top_n": top_n,
+            "exclude_preferred": True,
+            "cap_top_n": cap_top_n,
+            "amount_top_n": amount_top_n,
             "lookback_days": lookback_days,
             "session_dates": session_dates,
             "count": len(watchlist),
-            "by_trading_value": by_amount,
             "by_market_cap": by_cap,
+            "by_trading_value_ex_cap": by_amount,
             "amount_hits_by_day": amount_hits_by_day,
         },
     }
@@ -269,10 +303,10 @@ def refresh_and_save_watchlist(
 
     logger.info(
         "Watchlist refreshed: %d names "
-        "(per-market Amount top %d over %d days U Marcap top %d)",
+        "(per-market Marcap top %d U Amount top %d outside cap, %d days, no preferred)",
         len(watchlist),
-        top_n,
+        cap_top_n,
+        amount_top_n,
         len(session_dates),
-        top_n,
     )
     return watchlist
