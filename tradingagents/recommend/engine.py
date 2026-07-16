@@ -229,13 +229,65 @@ def render_markdown(
     return "\n".join(lines)
 
 
+def render_plain_text(
+    recs: list[Recommendation],
+    *,
+    as_of: str,
+) -> str:
+    """Notepad-friendly plain text (no markdown ornaments)."""
+    ranked = sorted(recs, key=lambda r: r.score, reverse=True)
+    lines = [
+        f"일일 추천 리스트 ({as_of} KST)",
+        "=" * 48,
+        "참고용 리포트입니다. 투자 자문이 아닙니다.",
+        "최종 판단과 주문은 본인이 직접 하세요.",
+        "",
+        "[요약]",
+    ]
+    for i, r in enumerate(ranked, 1):
+        lines.append(
+            f"{i}. {r.name} ({r.code}) | {r.action} | 점수 {r.score} | "
+            f"종가 {r.price:,.0f} | 1일 {r.ret_1d_pct:+.2f}% | "
+            f"5일 {r.ret_5d_pct:+.2f}% | RSI {r.rsi14}"
+        )
+
+    for action in ("매수관심", "관망", "주의"):
+        items = [r for r in ranked if r.action == action]
+        lines.extend(["", f"[{action}]", "-" * 48])
+        if not items:
+            lines.append("(해당 없음)")
+            continue
+        for r in items:
+            lines.append(f"{r.name} ({r.code} / {r.ticker}) — {r.action} · {r.score}")
+            if r.error:
+                lines.append(f"  - 오류: {r.error}")
+            for reason in r.reasons:
+                lines.append(f"  - {reason}")
+            if r.headlines:
+                lines.append("  - 뉴스:")
+                for h in r.headlines:
+                    lines.append(f"      · {h}")
+            lines.append("")
+
+    lines.extend(
+        [
+            "",
+            "[점수 기준]",
+            "- 이동평균, 5·20일 모멘텀, RSI14, 거래량으로 가중합",
+            "- 매수관심 ≥ +25 / 주의 ≤ -20 / 그 외 관망",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def run_daily_recommendations(
     *,
     universe_path: Path | None = None,
     output_dir: Path | None = None,
     include_news: bool = True,
 ) -> tuple[list[Recommendation], Path]:
-    """Analyze watchlist and write markdown reports. Returns (recs, latest_path)."""
+    """Analyze watchlist and write reports. Returns (recs, latest.txt path)."""
     as_of = datetime.now(KST).strftime("%Y-%m-%d")
     watchlist = load_watchlist(universe_path)
     if not watchlist:
@@ -254,12 +306,15 @@ def run_daily_recommendations(
     out = output_dir or (_project_root() / "reports" / "daily")
     out.mkdir(parents=True, exist_ok=True)
     md = render_markdown(recs, as_of=as_of)
-    dated = out / f"{as_of}.md"
-    latest = out / "latest.md"
-    dated.write_text(md, encoding="utf-8")
-    latest.write_text(md, encoding="utf-8")
+    txt = render_plain_text(recs, as_of=as_of)
 
-    # compact JSON for tooling
+    (out / f"{as_of}.md").write_text(md, encoding="utf-8")
+    (out / "latest.md").write_text(md, encoding="utf-8")
+    # UTF-8 BOM so Windows Notepad shows Korean correctly
+    (out / f"{as_of}.txt").write_text(txt, encoding="utf-8-sig")
+    latest_txt = out / "latest.txt"
+    latest_txt.write_text(txt, encoding="utf-8-sig")
+
     import json
 
     payload = {
@@ -274,4 +329,4 @@ def run_daily_recommendations(
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    return recs, latest
+    return recs, latest_txt

@@ -49,7 +49,7 @@ VS Code에서 이 폴더를 연 뒤, 인터프리터로 `.venv\Scripts\python.ex
 
 1. VS Code에서 [`run_daily.py`](run_daily.py) 열기  
 2. **▶ Run Python File** 또는 **F5**  
-3. 결과 확인: [`reports/daily/latest.md`](reports/daily/latest.md)
+3. 결과 확인: [`reports/daily/latest.txt`](reports/daily/latest.txt) (메모장) · [`latest.md`](reports/daily/latest.md)
 
 터미널:
 
@@ -94,8 +94,9 @@ watchlist:
 뉴스 헤드라인은 **참고용**이며 점수에는 반영하지 않습니다.
 
 생성 파일:
-- `reports/daily/latest.md` — 최신 리포트
-- `reports/daily/YYYY-MM-DD.md` — 날짜별 보관
+- `reports/daily/latest.txt` — 최신 리포트 (Windows 메모장용, UTF-8)
+- `reports/daily/latest.md` — 마크다운 리포트
+- `reports/daily/YYYY-MM-DD.txt` / `.md` / `.json` — 날짜별 보관
 - `reports/daily/latest.json` — 기계 읽기용
 
 ---
@@ -138,7 +139,7 @@ reports/daily/               ← 실행 결과 (gitignore)
 | `python` / `py` 를 찾을 수 없음 | Python 3.12 재설치, PATH 체크 후 터미널 재시작 |
 | 모듈 없음 (`yfinance` 등) | `.venv` 활성화 후 `pip install -r requirements-daily.txt` |
 | 시세가 비어 있음 | 인터넷 확인, 티커(`.KS`/`.KQ`) 확인 |
-| 콘솔 한글 깨짐 | 리포트는 `latest.md`를 VS Code로 열면 UTF-8로 정상 표시 |
+| 콘솔 한글 깨짐 | `latest.txt`를 메모장으로 열면 됨 (UTF-8 BOM) |
 
 ---
 
