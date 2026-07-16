@@ -19,6 +19,9 @@ _HEADERS = {
     "Referer": "https://m.stock.naver.com/",
 }
 
+# code6 -> list of parsed day rows (process-level cache for backfill)
+_FLOW_ROWS_CACHE: dict[str, list[dict[str, int | str]]] = {}
+
 
 def _parse_signed_int(raw: object) -> int:
     """Parse Naver quantities like '+1,799,843' / '-413,531'."""
@@ -54,45 +57,57 @@ def fetch_investor_flow(
     code: str,
     *,
     lookback: int = 5,
+    as_of: str | None = None,
     timeout: float = 12.0,
 ) -> InvestorFlowSnapshot | None:
-    """Fetch recent pure-buy quantities. Returns None on failure."""
+    """Fetch recent pure-buy quantities. Returns None on failure.
+
+    If ``as_of`` (YYYY-MM-DD) is set, only rows on or before that date are used
+    (point-in-time; avoids look-ahead when possible).
+    """
     code6 = str(code).zfill(6)
-    url = _TREND_URL.format(code=code6)
-    try:
-        resp = requests.get(url, headers=_HEADERS, timeout=timeout)
-        if resp.status_code != 200:
-            logger.debug("investor flow HTTP %s for %s", resp.status_code, code6)
+    if code6 not in _FLOW_ROWS_CACHE:
+        url = _TREND_URL.format(code=code6)
+        try:
+            resp = requests.get(url, headers=_HEADERS, timeout=timeout)
+            if resp.status_code != 200:
+                logger.debug("investor flow HTTP %s for %s", resp.status_code, code6)
+                return None
+            rows = resp.json()
+        except Exception as exc:
+            logger.warning("investor flow failed for %s: %s", code6, exc)
             return None
-        rows = resp.json()
-    except Exception as exc:
-        logger.warning("investor flow failed for %s: %s", code6, exc)
-        return None
 
-    if not isinstance(rows, list) or not rows:
-        return None
+        if not isinstance(rows, list) or not rows:
+            return None
 
-    parsed: list[dict[str, int | str]] = []
-    for row in rows:
-        if not isinstance(row, dict):
-            continue
-        biz = str(row.get("bizdate") or "")
-        if len(biz) == 8 and biz.isdigit():
-            as_of = f"{biz[:4]}-{biz[4:6]}-{biz[6:]}"
-        else:
-            as_of = biz
-        parsed.append(
-            {
-                "as_of": as_of,
-                "foreign": _parse_signed_int(row.get("foreignerPureBuyQuant")),
-                "organ": _parse_signed_int(row.get("organPureBuyQuant")),
-                "individual": _parse_signed_int(row.get("individualPureBuyQuant")),
-                "hold": str(row.get("foreignerHoldRatio") or ""),
-            }
-        )
+        parsed_all: list[dict[str, int | str]] = []
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            biz = str(row.get("bizdate") or "")
+            if len(biz) == 8 and biz.isdigit():
+                day = f"{biz[:4]}-{biz[4:6]}-{biz[6:]}"
+            else:
+                day = biz
+            parsed_all.append(
+                {
+                    "as_of": day,
+                    "foreign": _parse_signed_int(row.get("foreignerPureBuyQuant")),
+                    "organ": _parse_signed_int(row.get("organPureBuyQuant")),
+                    "individual": _parse_signed_int(row.get("individualPureBuyQuant")),
+                    "hold": str(row.get("foreignerHoldRatio") or ""),
+                }
+            )
+        if not parsed_all:
+            return None
+        _FLOW_ROWS_CACHE[code6] = parsed_all
 
-    if not parsed:
-        return None
+    parsed = list(_FLOW_ROWS_CACHE[code6])
+    if as_of:
+        parsed = [r for r in parsed if str(r["as_of"]) <= as_of]
+        if not parsed:
+            return None
 
     window = parsed[: max(1, lookback)]
     hold_raw = str(parsed[0].get("hold") or "").replace("%", "").strip()

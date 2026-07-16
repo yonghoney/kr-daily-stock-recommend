@@ -1,0 +1,7329 @@
+{
+  "as_of": "2025-01-30",
+  "mode": "backfill_pit_watchlist",
+  "watchlist_count": 116,
+  "recommendations": [
+    {
+      "code": "035420",
+      "name": "NAVER",
+      "ticker": "035420.KS",
+      "action": "매수관심",
+      "score": 82.0,
+      "price": 213203.64,
+      "ret_1d_pct": 6.13,
+      "ret_5d_pct": 5.61,
+      "rsi14": 64.5,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 6.13,
+      "ret_20d_pct": 8.3,
+      "ret_60d_pct": 24.14,
+      "ret_120d_pct": 23.71,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +5.6% (모멘텀)",
+        "20일 수익률 +8.3%",
+        "RSI14=65 (중립~건전 구간)",
+        "거래량 3.0× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.6% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +8.3%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=65 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 3.0× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "012330",
+      "name": "현대모비스",
+      "ticker": "012330.KS",
+      "action": "매수관심",
+      "score": 74.0,
+      "price": 254322.3,
+      "ret_1d_pct": 0.0,
+      "ret_5d_pct": 7.99,
+      "rsi14": 63.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 3.74,
+      "ret_20d_pct": 8.88,
+      "ret_60d_pct": 6.04,
+      "ret_120d_pct": 15.57,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +8.0% (모멘텀)",
+        "20일 수익률 +8.9%",
+        "RSI14=64 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +8.0% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +8.9%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=64 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "012450",
+      "name": "한화에어로스페이스",
+      "ticker": "012450.KS",
+      "action": "매수관심",
+      "score": 74.0,
+      "price": 396781.62,
+      "ret_1d_pct": -2.79,
+      "ret_5d_pct": 5.96,
+      "rsi14": 61.8,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 1.14,
+      "ret_20d_pct": 24.98,
+      "ret_60d_pct": 7.67,
+      "ret_120d_pct": 12.87,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +6.0% (모멘텀)",
+        "20일 수익률 +25.0%",
+        "RSI14=62 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +6.0% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +25.0%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=62 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "011200",
+      "name": "HMM",
+      "ticker": "011200.KS",
+      "action": "매수관심",
+      "score": 74.0,
+      "price": 17917.49,
+      "ret_1d_pct": 2.15,
+      "ret_5d_pct": 5.78,
+      "rsi14": 54.0,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 2.48,
+      "ret_20d_pct": 5.66,
+      "ret_60d_pct": 10.25,
+      "ret_120d_pct": 10.5,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +5.8% (모멘텀)",
+        "20일 수익률 +5.7%",
+        "RSI14=54 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.8% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +5.7%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=54 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "009150",
+      "name": "삼성전기",
+      "ticker": "009150.KS",
+      "action": "매수관심",
+      "score": 74.0,
+      "price": 132883.27,
+      "ret_1d_pct": 4.68,
+      "ret_5d_pct": 5.92,
+      "rsi14": 63.4,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 5.92,
+      "ret_20d_pct": 8.06,
+      "ret_60d_pct": 15.59,
+      "ret_120d_pct": -12.68,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +5.9% (모멘텀)",
+        "20일 수익률 +8.1%",
+        "RSI14=63 (중립~건전 구간)",
+        "거래량 2.0× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.9% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +8.1%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=63 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 2.0× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "141080",
+      "name": "리가켐바이오",
+      "ticker": "141080.KQ",
+      "action": "매수관심",
+      "score": 74.0,
+      "price": 126500.0,
+      "ret_1d_pct": 3.27,
+      "ret_5d_pct": 4.37,
+      "rsi14": 63.4,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 7.48,
+      "ret_20d_pct": 16.59,
+      "ret_60d_pct": -1.79,
+      "ret_120d_pct": 45.57,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +4.4% (모멘텀)",
+        "20일 수익률 +16.6%",
+        "RSI14=63 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +4.4% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +16.6%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=63 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "103590",
+      "name": "일진전기",
+      "ticker": "103590.KS",
+      "action": "매수관심",
+      "score": 74.0,
+      "price": 32240.59,
+      "ret_1d_pct": -10.21,
+      "ret_5d_pct": 11.47,
+      "rsi14": 60.2,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 15.22,
+      "ret_20d_pct": 19.45,
+      "ret_60d_pct": 32.69,
+      "ret_120d_pct": 31.37,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +11.5% (모멘텀)",
+        "20일 수익률 +19.4%",
+        "RSI14=60 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +11.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +19.4%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=60 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "214370",
+      "name": "케어젠",
+      "ticker": "214370.KQ",
+      "action": "매수관심",
+      "score": 74.0,
+      "price": 29649.13,
+      "ret_1d_pct": 6.56,
+      "ret_5d_pct": 6.94,
+      "rsi14": 57.7,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -1.48,
+      "ret_20d_pct": 6.94,
+      "ret_60d_pct": 85.28,
+      "ret_120d_pct": 35.46,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +6.9% (모멘텀)",
+        "20일 수익률 +6.9%",
+        "RSI14=58 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +6.9% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +6.9%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=58 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "211270",
+      "name": "AP위성",
+      "ticker": "211270.KQ",
+      "action": "매수관심",
+      "score": 74.0,
+      "price": 13950.0,
+      "ret_1d_pct": -2.45,
+      "ret_5d_pct": 8.98,
+      "rsi14": 56.1,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 4.49,
+      "ret_20d_pct": 10.89,
+      "ret_60d_pct": 30.99,
+      "ret_120d_pct": 5.36,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +9.0% (모멘텀)",
+        "20일 수익률 +10.9%",
+        "RSI14=56 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +9.0% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +10.9%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=56 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "024110",
+      "name": "기업은행",
+      "ticker": "024110.KS",
+      "action": "매수관심",
+      "score": 67.0,
+      "price": 13819.98,
+      "ret_1d_pct": 3.05,
+      "ret_5d_pct": 4.93,
+      "rsi14": 74.1,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 5.72,
+      "ret_20d_pct": 5.79,
+      "ret_60d_pct": 7.4,
+      "ret_120d_pct": 8.0,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +4.9% (모멘텀)",
+        "20일 수익률 +5.8%",
+        "RSI14=74 (과열 주의)",
+        "거래량 2.1× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +4.9% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +5.8%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 2.1× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=74 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "030200",
+      "name": "KT",
+      "ticker": "030200.KS",
+      "action": "매수관심",
+      "score": 67.0,
+      "price": 44958.47,
+      "ret_1d_pct": 2.13,
+      "ret_5d_pct": 4.23,
+      "rsi14": 66.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 8.11,
+      "ret_20d_pct": 5.49,
+      "ret_60d_pct": 8.23,
+      "ret_120d_pct": 24.26,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +4.2% (모멘텀)",
+        "20일 수익률 +5.5%",
+        "RSI14=67 (과열 주의)",
+        "거래량 1.8× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +4.2% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +5.5%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.8× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=67 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "042700",
+      "name": "한미반도체",
+      "ticker": "042700.KS",
+      "action": "매수관심",
+      "score": 66.0,
+      "price": 111957.46,
+      "ret_1d_pct": -6.14,
+      "ret_5d_pct": 4.72,
+      "rsi14": 58.3,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 5.89,
+      "ret_20d_pct": 37.21,
+      "ret_60d_pct": 17.55,
+      "ret_120d_pct": -17.61,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +4.7% (모멘텀)",
+        "20일 수익률 +37.2%",
+        "RSI14=58 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +4.7% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +37.2%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=58 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "028300",
+      "name": "HLB",
+      "ticker": "028300.KQ",
+      "action": "매수관심",
+      "score": 66.0,
+      "price": 80400.0,
+      "ret_1d_pct": 1.64,
+      "ret_5d_pct": 4.28,
+      "rsi14": 58.4,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 2.81,
+      "ret_20d_pct": 21.82,
+      "ret_60d_pct": 22.37,
+      "ret_120d_pct": 4.15,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +4.3% (모멘텀)",
+        "20일 수익률 +21.8%",
+        "RSI14=58 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +4.3% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +21.8%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=58 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "214150",
+      "name": "클래시스",
+      "ticker": "214150.KQ",
+      "action": "매수관심",
+      "score": 66.0,
+      "price": 53179.29,
+      "ret_1d_pct": 1.12,
+      "ret_5d_pct": 3.24,
+      "rsi14": 61.8,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 2.85,
+      "ret_20d_pct": 12.82,
+      "ret_60d_pct": 5.4,
+      "ret_120d_pct": 10.53,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +3.2% (모멘텀)",
+        "20일 수익률 +12.8%",
+        "RSI14=62 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +3.2% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +12.8%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=62 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "058470",
+      "name": "리노공업",
+      "ticker": "058470.KQ",
+      "action": "매수관심",
+      "score": 66.0,
+      "price": 42338.3,
+      "ret_1d_pct": -0.46,
+      "ret_5d_pct": 5.15,
+      "rsi14": 63.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 8.39,
+      "ret_20d_pct": 11.78,
+      "ret_60d_pct": 21.91,
+      "ret_120d_pct": 8.66,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +5.1% (모멘텀)",
+        "20일 수익률 +11.8%",
+        "RSI14=64 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.1% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +11.8%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=64 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "328130",
+      "name": "루닛",
+      "ticker": "328130.KQ",
+      "action": "매수관심",
+      "score": 66.0,
+      "price": 31934.21,
+      "ret_1d_pct": -4.34,
+      "ret_5d_pct": 9.46,
+      "rsi14": 53.8,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 5.89,
+      "ret_20d_pct": 8.24,
+      "ret_60d_pct": 75.13,
+      "ret_120d_pct": 67.4,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +9.5% (모멘텀)",
+        "20일 수익률 +8.2%",
+        "RSI14=54 (중립~건전 구간)",
+        "거래량 2.6× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +9.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +8.2%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=54 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 2.6× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "105560",
+      "name": "KB금융",
+      "ticker": "105560.KS",
+      "action": "매수관심",
+      "score": 64.0,
+      "price": 87105.01,
+      "ret_1d_pct": 3.15,
+      "ret_5d_pct": 3.27,
+      "rsi14": 61.8,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 2.69,
+      "ret_20d_pct": 7.25,
+      "ret_60d_pct": -2.34,
+      "ret_120d_pct": 1.99,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +3.3% (모멘텀)",
+        "20일 수익률 +7.3%",
+        "RSI14=62 (중립~건전 구간)",
+        "거래량 2.4× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +3.3% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +7.3%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=62 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 2.4× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "087010",
+      "name": "펩트론",
+      "ticker": "087010.KQ",
+      "action": "매수관심",
+      "score": 64.0,
+      "price": 97700.0,
+      "ret_1d_pct": 0.31,
+      "ret_5d_pct": 7.24,
+      "rsi14": 52.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 3.94,
+      "ret_20d_pct": -1.41,
+      "ret_60d_pct": 11.02,
+      "ret_120d_pct": 38.98,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +7.2% (모멘텀)",
+        "RSI14=53 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +7.2% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=53 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "096770",
+      "name": "SK이노베이션",
+      "ticker": "096770.KS",
+      "action": "매수관심",
+      "score": 62.0,
+      "price": 125231.32,
+      "ret_1d_pct": 0.31,
+      "ret_5d_pct": -1.47,
+      "rsi14": 58.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 1.59,
+      "ret_20d_pct": 13.33,
+      "ret_60d_pct": 7.32,
+      "ret_120d_pct": 21.43,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 +13.3%",
+        "RSI14=59 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +13.3%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=59 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "035900",
+      "name": "JYP Ent.",
+      "ticker": "035900.KQ",
+      "action": "매수관심",
+      "score": 62.0,
+      "price": 73977.06,
+      "ret_1d_pct": 0.0,
+      "ret_5d_pct": 0.4,
+      "rsi14": 58.3,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 5.93,
+      "ret_20d_pct": 7.35,
+      "ret_60d_pct": 52.83,
+      "ret_120d_pct": 38.92,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 +7.3%",
+        "RSI14=58 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +7.3%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=58 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "950160",
+      "name": "코오롱티슈진",
+      "ticker": "950160.KQ",
+      "action": "매수관심",
+      "score": 62.0,
+      "price": 28700.0,
+      "ret_1d_pct": -1.54,
+      "ret_5d_pct": 0.7,
+      "rsi14": 58.5,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 0.17,
+      "ret_20d_pct": 21.87,
+      "ret_60d_pct": 75.32,
+      "ret_120d_pct": 58.74,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 +21.9%",
+        "RSI14=58 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +21.9%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=58 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "140860",
+      "name": "파크시스템스",
+      "ticker": "140860.KQ",
+      "action": "매수관심",
+      "score": 62.0,
+      "price": 235448.59,
+      "ret_1d_pct": -3.48,
+      "ret_5d_pct": -2.88,
+      "rsi14": 55.7,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -1.87,
+      "ret_20d_pct": 18.59,
+      "ret_60d_pct": 15.41,
+      "ret_120d_pct": 37.47,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 +18.6%",
+        "RSI14=56 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +18.6%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=56 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "259960",
+      "name": "크래프톤",
+      "ticker": "259960.KS",
+      "action": "매수관심",
+      "score": 59.0,
+      "price": 360934.72,
+      "ret_1d_pct": 6.12,
+      "ret_5d_pct": 5.51,
+      "rsi14": 66.1,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 9.15,
+      "ret_20d_pct": 18.57,
+      "ret_60d_pct": 5.81,
+      "ret_120d_pct": 24.66,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +5.5% (모멘텀)",
+        "20일 수익률 +18.6%",
+        "RSI14=66 (과열 주의)",
+        "거래량 1.9× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +18.6%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.9× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=66 (과열 주의)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "010120",
+      "name": "LS ELECTRIC",
+      "ticker": "010120.KS",
+      "action": "매수관심",
+      "score": 59.0,
+      "price": 46015.93,
+      "ret_1d_pct": -5.33,
+      "ret_5d_pct": 10.0,
+      "rsi14": 70.4,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 28.62,
+      "ret_20d_pct": 47.6,
+      "ret_60d_pct": 57.06,
+      "ret_120d_pct": 20.16,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +10.0% (모멘텀)",
+        "20일 수익률 +47.6%",
+        "RSI14=70 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +10.0% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +47.6%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=70 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "083650",
+      "name": "비에이치아이",
+      "ticker": "083650.KQ",
+      "action": "매수관심",
+      "score": 59.0,
+      "price": 21950.0,
+      "ret_1d_pct": -6.6,
+      "ret_5d_pct": 24.93,
+      "rsi14": 69.5,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 27.76,
+      "ret_20d_pct": 47.91,
+      "ret_60d_pct": 83.22,
+      "ret_120d_pct": 148.02,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +24.9% (모멘텀)",
+        "20일 수익률 +47.9%",
+        "RSI14=70 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +24.9% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +47.9%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=70 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "050890",
+      "name": "쏠리드",
+      "ticker": "050890.KQ",
+      "action": "매수관심",
+      "score": 59.0,
+      "price": 7914.83,
+      "ret_1d_pct": 0.0,
+      "ret_5d_pct": 18.52,
+      "rsi14": 73.8,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 36.99,
+      "ret_20d_pct": 25.39,
+      "ret_60d_pct": 83.07,
+      "ret_120d_pct": 54.14,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +18.5% (모멘텀)",
+        "20일 수익률 +25.4%",
+        "RSI14=74 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +18.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +25.4%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=74 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "049070",
+      "name": "인탑스",
+      "ticker": "049070.KQ",
+      "action": "매수관심",
+      "score": 59.0,
+      "price": 21324.15,
+      "ret_1d_pct": 2.61,
+      "ret_5d_pct": 13.5,
+      "rsi14": 70.2,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 19.73,
+      "ret_20d_pct": 30.04,
+      "ret_60d_pct": 9.08,
+      "ret_120d_pct": 1.85,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +13.5% (모멘텀)",
+        "20일 수익률 +30.0%",
+        "RSI14=70 (과열 주의)",
+        "거래량 1.6× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +13.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +30.0%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.6× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=70 (과열 주의)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "277810",
+      "name": "레인보우로보틱스",
+      "ticker": "277810.KQ",
+      "action": "매수관심",
+      "score": 57.0,
+      "price": 299500.0,
+      "ret_1d_pct": 21.26,
+      "ret_5d_pct": 15.64,
+      "rsi14": 79.7,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 25.31,
+      "ret_20d_pct": 108.42,
+      "ret_60d_pct": 142.9,
+      "ret_120d_pct": 109.59,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +15.6% (모멘텀)",
+        "20일 수익률 +108.4%",
+        "RSI14=80 (과매수 — 조정 위험)",
+        "거래량 1.6× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -15,
+          "label": "RSI14=80 (과매수 — 조정 위험)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +15.6% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +108.4%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.6× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "437730",
+      "name": "삼현",
+      "ticker": "437730.KQ",
+      "action": "매수관심",
+      "score": 57.0,
+      "price": 12358.82,
+      "ret_1d_pct": 10.94,
+      "ret_5d_pct": 27.53,
+      "rsi14": 75.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 20.8,
+      "ret_20d_pct": 63.84,
+      "ret_60d_pct": 63.84,
+      "ret_120d_pct": 60.67,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +27.5% (모멘텀)",
+        "20일 수익률 +63.8%",
+        "RSI14=76 (과매수 — 조정 위험)",
+        "거래량 1.7× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -15,
+          "label": "RSI14=76 (과매수 — 조정 위험)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +27.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +63.8%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.7× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "267260",
+      "name": "HD현대일렉트릭",
+      "ticker": "267260.KS",
+      "action": "매수관심",
+      "score": 56.0,
+      "price": 401376.28,
+      "ret_1d_pct": -7.87,
+      "ret_5d_pct": 6.49,
+      "rsi14": 53.8,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 5.4,
+      "ret_20d_pct": 4.86,
+      "ret_60d_pct": 19.53,
+      "ret_120d_pct": 29.97,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +6.5% (모멘텀)",
+        "RSI14=54 (중립~건전 구간)",
+        "거래량 2.9× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +6.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=54 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 2.9× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "112040",
+      "name": "위메이드",
+      "ticker": "112040.KQ",
+      "action": "매수관심",
+      "score": 56.0,
+      "price": 39531.75,
+      "ret_1d_pct": 0.13,
+      "ret_5d_pct": 5.68,
+      "rsi14": 58.8,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 4.71,
+      "ret_20d_pct": 11.73,
+      "ret_60d_pct": 2.56,
+      "ret_120d_pct": 6.38,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +5.7% (모멘텀)",
+        "20일 수익률 +11.7%",
+        "RSI14=59 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.7% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +11.7%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=59 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "000810",
+      "name": "삼성화재",
+      "ticker": "000810.KS",
+      "action": "매수관심",
+      "score": 54.0,
+      "price": 348517.25,
+      "ret_1d_pct": 11.71,
+      "ret_5d_pct": 6.56,
+      "rsi14": 60.5,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 6.12,
+      "ret_20d_pct": 3.11,
+      "ret_60d_pct": 10.1,
+      "ret_120d_pct": 7.92,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +6.6% (모멘텀)",
+        "RSI14=60 (중립~건전 구간)",
+        "거래량 3.2× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +6.6% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=60 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 3.2× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "402340",
+      "name": "SK스퀘어",
+      "ticker": "402340.KS",
+      "action": "매수관심",
+      "score": 54.0,
+      "price": 93977.43,
+      "ret_1d_pct": -5.81,
+      "ret_5d_pct": -1.47,
+      "rsi14": 54.8,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 3.18,
+      "ret_20d_pct": 16.32,
+      "ret_60d_pct": 5.02,
+      "ret_120d_pct": 11.36,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 +16.3%",
+        "RSI14=55 (중립~건전 구간)",
+        "거래량 1.9× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +16.3%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=55 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 1.9× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "316140",
+      "name": "우리금융지주",
+      "ticker": "316140.KS",
+      "action": "매수관심",
+      "score": 54.0,
+      "price": 14682.53,
+      "ret_1d_pct": 2.22,
+      "ret_5d_pct": 3.47,
+      "rsi14": 63.0,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 3.47,
+      "ret_20d_pct": 3.14,
+      "ret_60d_pct": 1.26,
+      "ret_120d_pct": -0.29,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +3.5% (모멘텀)",
+        "RSI14=63 (중립~건전 구간)",
+        "거래량 1.8× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +3.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=63 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.8× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "034730",
+      "name": "SK",
+      "ticker": "034730.KS",
+      "action": "매수관심",
+      "score": 54.0,
+      "price": 138190.66,
+      "ret_1d_pct": -0.27,
+      "ret_5d_pct": 0.75,
+      "rsi14": 60.6,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 3.57,
+      "ret_20d_pct": 8.34,
+      "ret_60d_pct": -0.87,
+      "ret_120d_pct": 1.44,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "20일 수익률 +8.3%",
+        "RSI14=61 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +8.3%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=61 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "000100",
+      "name": "유한양행",
+      "ticker": "000100.KS",
+      "action": "매수관심",
+      "score": 54.0,
+      "price": 128912.47,
+      "ret_1d_pct": -0.23,
+      "ret_5d_pct": -1.22,
+      "rsi14": 54.0,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -5.88,
+      "ret_20d_pct": 12.89,
+      "ret_60d_pct": -8.33,
+      "ret_120d_pct": 35.17,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "20일 수익률 +12.9%",
+        "RSI14=54 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +12.9%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=54 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "067630",
+      "name": "HLB생명과학",
+      "ticker": "067630.KQ",
+      "action": "매수관심",
+      "score": 54.0,
+      "price": 10640.0,
+      "ret_1d_pct": 0.28,
+      "ret_5d_pct": 0.47,
+      "rsi14": 54.4,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -0.93,
+      "ret_20d_pct": 9.58,
+      "ret_60d_pct": 21.46,
+      "ret_120d_pct": 0.38,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "20일 수익률 +9.6%",
+        "RSI14=54 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +9.6%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=54 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "031980",
+      "name": "피에스케이홀딩스",
+      "ticker": "031980.KQ",
+      "action": "매수관심",
+      "score": 54.0,
+      "price": 52741.75,
+      "ret_1d_pct": -6.57,
+      "ret_5d_pct": 1.5,
+      "rsi14": 62.3,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 14.16,
+      "ret_20d_pct": 57.43,
+      "ret_60d_pct": 9.11,
+      "ret_120d_pct": 6.99,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "20일 수익률 +57.4%",
+        "RSI14=62 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +57.4%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=62 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "033100",
+      "name": "제룡전기",
+      "ticker": "033100.KQ",
+      "action": "매수관심",
+      "score": 54.0,
+      "price": 53836.51,
+      "ret_1d_pct": -9.02,
+      "ret_5d_pct": 2.02,
+      "rsi14": 58.2,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 8.82,
+      "ret_20d_pct": 19.74,
+      "ret_60d_pct": 5.98,
+      "ret_120d_pct": -28.05,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "20일 수익률 +19.7%",
+        "RSI14=58 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +19.7%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=58 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "329180",
+      "name": "HD현대중공업",
+      "ticker": "329180.KS",
+      "action": "매수관심",
+      "score": 52.0,
+      "price": 305504.75,
+      "ret_1d_pct": 3.15,
+      "ret_5d_pct": 0.81,
+      "rsi14": 60.6,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 0.48,
+      "ret_20d_pct": 4.36,
+      "ret_60d_pct": 65.96,
+      "ret_120d_pct": 49.52,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "RSI14=61 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=61 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "207940",
+      "name": "삼성바이오로직스",
+      "ticker": "207940.KS",
+      "action": "매수관심",
+      "score": 51.0,
+      "price": 1662076.38,
+      "ret_1d_pct": -0.55,
+      "ret_5d_pct": 6.5,
+      "rsi14": 68.4,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 6.82,
+      "ret_20d_pct": 15.37,
+      "ret_60d_pct": 4.85,
+      "ret_120d_pct": 15.0,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +6.5% (모멘텀)",
+        "20일 수익률 +15.4%",
+        "RSI14=68 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +6.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +15.4%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=68 (과열 주의)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "034020",
+      "name": "두산에너빌리티",
+      "ticker": "034020.KS",
+      "action": "매수관심",
+      "score": 51.0,
+      "price": 23900.0,
+      "ret_1d_pct": -3.24,
+      "ret_5d_pct": 9.13,
+      "rsi14": 73.5,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 18.91,
+      "ret_20d_pct": 33.82,
+      "ret_60d_pct": 11.68,
+      "ret_120d_pct": 28.98,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +9.1% (모멘텀)",
+        "20일 수익률 +33.8%",
+        "RSI14=73 (과열 주의)",
+        "거래량 1.7× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +9.1% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +33.8%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 1.7× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=73 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "000250",
+      "name": "삼천당제약",
+      "ticker": "000250.KQ",
+      "action": "매수관심",
+      "score": 51.0,
+      "price": 183958.38,
+      "ret_1d_pct": 6.98,
+      "ret_5d_pct": 6.85,
+      "rsi14": 68.7,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 13.09,
+      "ret_20d_pct": 19.79,
+      "ret_60d_pct": 44.62,
+      "ret_120d_pct": 0.13,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +6.9% (모멘텀)",
+        "20일 수익률 +19.8%",
+        "RSI14=69 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +6.9% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +19.8%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=69 (과열 주의)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "007660",
+      "name": "이수페타시스",
+      "ticker": "007660.KS",
+      "action": "매수관심",
+      "score": 51.0,
+      "price": 38476.3,
+      "ret_1d_pct": -5.38,
+      "ret_5d_pct": 38.46,
+      "rsi14": 71.1,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 47.43,
+      "ret_20d_pct": 37.23,
+      "ret_60d_pct": -4.09,
+      "ret_120d_pct": -12.15,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +38.5% (모멘텀)",
+        "20일 수익률 +37.2%",
+        "RSI14=71 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +38.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +37.2%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=71 (과열 주의)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "298380",
+      "name": "에이비엘바이오",
+      "ticker": "298380.KQ",
+      "action": "매수관심",
+      "score": 51.0,
+      "price": 36350.0,
+      "ret_1d_pct": 2.97,
+      "ret_5d_pct": 14.13,
+      "rsi14": 67.9,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 18.4,
+      "ret_20d_pct": 27.54,
+      "ret_60d_pct": -2.94,
+      "ret_120d_pct": 20.56,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +14.1% (모멘텀)",
+        "20일 수익률 +27.5%",
+        "RSI14=68 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +14.1% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +27.5%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=68 (과열 주의)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "010140",
+      "name": "삼성중공업",
+      "ticker": "010140.KS",
+      "action": "매수관심",
+      "score": 50.0,
+      "price": 13010.0,
+      "ret_1d_pct": 0.77,
+      "ret_5d_pct": -3.56,
+      "rsi14": 60.0,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 11.2,
+      "ret_20d_pct": 12.16,
+      "ret_60d_pct": 35.66,
+      "ret_120d_pct": 9.97,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -3.6% (단기 조정)",
+        "20일 수익률 +12.2%",
+        "RSI14=60 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -3.6% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +12.2%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=60 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "403870",
+      "name": "HPSP",
+      "ticker": "403870.KQ",
+      "action": "매수관심",
+      "score": 50.0,
+      "price": 30056.46,
+      "ret_1d_pct": -7.56,
+      "ret_5d_pct": -6.29,
+      "rsi14": 54.4,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 7.76,
+      "ret_20d_pct": 19.8,
+      "ret_60d_pct": 6.54,
+      "ret_120d_pct": -4.38,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -6.3% (단기 조정)",
+        "20일 수익률 +19.8%",
+        "RSI14=54 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -6.3% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +19.8%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=54 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "204270",
+      "name": "제이앤티씨",
+      "ticker": "204270.KQ",
+      "action": "매수관심",
+      "score": 50.0,
+      "price": 21900.0,
+      "ret_1d_pct": -6.21,
+      "ret_5d_pct": -8.37,
+      "rsi14": 51.3,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 4.53,
+      "ret_20d_pct": 15.87,
+      "ret_60d_pct": 4.53,
+      "ret_120d_pct": -0.68,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -8.4% (단기 조정)",
+        "20일 수익률 +15.9%",
+        "RSI14=51 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -8.4% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +15.9%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=51 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "042660",
+      "name": "한화오션",
+      "ticker": "042660.KS",
+      "action": "매수관심",
+      "score": 49.0,
+      "price": 57200.0,
+      "ret_1d_pct": 0.88,
+      "ret_5d_pct": 10.42,
+      "rsi14": 78.0,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 26.69,
+      "ret_20d_pct": 51.52,
+      "ret_60d_pct": 107.62,
+      "ret_120d_pct": 90.03,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +10.4% (모멘텀)",
+        "20일 수익률 +51.5%",
+        "RSI14=78 (과매수 — 조정 위험)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -15,
+          "label": "RSI14=78 (과매수 — 조정 위험)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +10.4% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +51.5%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "086280",
+      "name": "현대글로비스",
+      "ticker": "086280.KS",
+      "action": "매수관심",
+      "score": 49.0,
+      "price": 141243.09,
+      "ret_1d_pct": 3.68,
+      "ret_5d_pct": 19.52,
+      "rsi14": 76.3,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 13.96,
+      "ret_20d_pct": 25.44,
+      "ret_60d_pct": 22.96,
+      "ret_120d_pct": 19.81,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +19.5% (모멘텀)",
+        "20일 수익률 +25.4%",
+        "RSI14=76 (과매수 — 조정 위험)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -15,
+          "label": "RSI14=76 (과매수 — 조정 위험)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +19.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +25.4%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "160190",
+      "name": "하이젠알앤엠",
+      "ticker": "160190.KQ",
+      "action": "매수관심",
+      "score": 49.0,
+      "price": 38500.0,
+      "ret_1d_pct": 22.42,
+      "ret_5d_pct": 46.11,
+      "rsi14": 86.5,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 55.56,
+      "ret_20d_pct": 201.72,
+      "ret_60d_pct": 419.57,
+      "ret_120d_pct": 296.91,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +46.1% (모멘텀)",
+        "20일 수익률 +201.7%",
+        "RSI14=86 (과매수 — 조정 위험)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -15,
+          "label": "RSI14=86 (과매수 — 조정 위험)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +46.1% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +201.7%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "274090",
+      "name": "켄코아에어로스페이스",
+      "ticker": "274090.KQ",
+      "action": "매수관심",
+      "score": 49.0,
+      "price": 14940.0,
+      "ret_1d_pct": 2.19,
+      "ret_5d_pct": 39.5,
+      "rsi14": 78.5,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 35.94,
+      "ret_20d_pct": 54.18,
+      "ret_60d_pct": 83.54,
+      "ret_120d_pct": 33.16,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +39.5% (모멘텀)",
+        "20일 수익률 +54.2%",
+        "RSI14=79 (과매수 — 조정 위험)",
+        "거래량 3.7× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -15,
+          "label": "RSI14=79 (과매수 — 조정 위험)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +39.5% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +54.2%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 3.7× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "138040",
+      "name": "메리츠금융지주",
+      "ticker": "138040.KS",
+      "action": "매수관심",
+      "score": 47.0,
+      "price": 112944.55,
+      "ret_1d_pct": 4.48,
+      "ret_5d_pct": 2.98,
+      "rsi14": 67.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 4.67,
+      "ret_20d_pct": 15.35,
+      "ret_60d_pct": 11.41,
+      "ret_120d_pct": 37.26,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 +15.4%",
+        "RSI14=68 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +15.4%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=68 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "352820",
+      "name": "하이브",
+      "ticker": "352820.KS",
+      "action": "매수관심",
+      "score": 47.0,
+      "price": 224488.91,
+      "ret_1d_pct": 1.58,
+      "ret_5d_pct": 2.04,
+      "rsi14": 65.4,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 5.14,
+      "ret_20d_pct": 15.09,
+      "ret_60d_pct": 17.0,
+      "ret_120d_pct": 28.94,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 +15.1%",
+        "RSI14=65 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +15.1%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=65 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "035720",
+      "name": "카카오",
+      "ticker": "035720.KS",
+      "action": "매수관심",
+      "score": 42.0,
+      "price": 38238.59,
+      "ret_1d_pct": 7.27,
+      "ret_5d_pct": 5.21,
+      "rsi14": 53.1,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 5.07,
+      "ret_20d_pct": -0.52,
+      "ret_60d_pct": 2.68,
+      "ret_120d_pct": -4.01,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +5.2% (모멘텀)",
+        "RSI14=53 (중립~건전 구간)",
+        "거래량 3.8× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.2% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=53 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 3.8× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "033780",
+      "name": "KT&G",
+      "ticker": "033780.KS",
+      "action": "매수관심",
+      "score": 42.0,
+      "price": 102360.09,
+      "ret_1d_pct": 4.44,
+      "ret_5d_pct": 5.74,
+      "rsi14": 56.4,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 1.0,
+      "ret_20d_pct": 1.19,
+      "ret_60d_pct": 0.55,
+      "ret_120d_pct": 19.57,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +5.7% (모멘텀)",
+        "RSI14=56 (중립~건전 구간)",
+        "거래량 1.7× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.7% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=56 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.7× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "078600",
+      "name": "대주전자재료",
+      "ticker": "078600.KQ",
+      "action": "매수관심",
+      "score": 42.0,
+      "price": 102347.02,
+      "ret_1d_pct": -0.77,
+      "ret_5d_pct": -5.27,
+      "rsi14": 64.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 29.26,
+      "ret_20d_pct": 35.58,
+      "ret_60d_pct": -3.63,
+      "ret_120d_pct": -8.28,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -5.3% (단기 조정)",
+        "20일 수익률 +35.6%",
+        "RSI14=65 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -5.3% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +35.6%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=65 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "196170",
+      "name": "알테오젠",
+      "ticker": "196170.KQ",
+      "action": "매수관심",
+      "score": 41.0,
+      "price": 371186.06,
+      "ret_1d_pct": 2.62,
+      "ret_5d_pct": 16.64,
+      "rsi14": 69.1,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 24.25,
+      "ret_20d_pct": 23.22,
+      "ret_60d_pct": -1.98,
+      "ret_120d_pct": 24.46,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +16.6% (모멘텀)",
+        "20일 수익률 +23.2%",
+        "RSI14=69 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +16.6% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +23.2%"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=69 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "041510",
+      "name": "에스엠",
+      "ticker": "041510.KQ",
+      "action": "매수관심",
+      "score": 41.0,
+      "price": 82412.62,
+      "ret_1d_pct": -0.6,
+      "ret_5d_pct": 6.64,
+      "rsi14": 66.8,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 15.97,
+      "ret_20d_pct": 9.01,
+      "ret_60d_pct": 19.91,
+      "ret_120d_pct": 19.91,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +6.6% (모멘텀)",
+        "20일 수익률 +9.0%",
+        "RSI14=67 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +6.6% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +9.0%"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=67 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "098460",
+      "name": "고영",
+      "ticker": "098460.KQ",
+      "action": "매수관심",
+      "score": 41.0,
+      "price": 16106.51,
+      "ret_1d_pct": 3.48,
+      "ret_5d_pct": 33.8,
+      "rsi14": 89.1,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 89.02,
+      "ret_20d_pct": 98.42,
+      "ret_60d_pct": 51.25,
+      "ret_120d_pct": 40.83,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +33.8% (모멘텀)",
+        "20일 수익률 +98.4%",
+        "RSI14=89 (과매수 — 조정 위험)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -15,
+          "label": "RSI14=89 (과매수 — 조정 위험)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +33.8% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +98.4%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "091810",
+      "name": "티웨이항공",
+      "ticker": "091810.KS",
+      "action": "매수관심",
+      "score": 41.0,
+      "price": 3900.0,
+      "ret_1d_pct": -5.11,
+      "ret_5d_pct": 27.24,
+      "rsi14": 76.3,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 40.54,
+      "ret_20d_pct": 56.94,
+      "ret_60d_pct": 11.43,
+      "ret_120d_pct": 48.29,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +27.2% (모멘텀)",
+        "20일 수익률 +56.9%",
+        "RSI14=76 (과매수 — 조정 위험)",
+        "거래량 2.9× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -15,
+          "label": "RSI14=76 (과매수 — 조정 위험)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +27.2% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +56.9%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 2.9× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "039200",
+      "name": "오스코텍",
+      "ticker": "039200.KQ",
+      "action": "매수관심",
+      "score": 38.0,
+      "price": 26700.0,
+      "ret_1d_pct": -2.73,
+      "ret_5d_pct": 0.56,
+      "rsi14": 56.9,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 5.53,
+      "ret_20d_pct": 12.9,
+      "ret_60d_pct": -5.99,
+      "ret_120d_pct": -35.97,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "20일 수익률 +12.9%",
+        "RSI14=57 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +12.9%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=57 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "028260",
+      "name": "삼성물산",
+      "ticker": "028260.KS",
+      "action": "매수관심",
+      "score": 36.0,
+      "price": 118504.08,
+      "ret_1d_pct": 4.26,
+      "ret_5d_pct": -0.66,
+      "rsi14": 52.8,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 0.08,
+      "ret_20d_pct": 4.26,
+      "ret_60d_pct": -5.61,
+      "ret_120d_pct": -19.34,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=53 (중립~건전 구간)",
+        "거래량 2.5× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=53 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 2.5× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "229640",
+      "name": "LS에코에너지",
+      "ticker": "229640.KS",
+      "action": "매수관심",
+      "score": 35.0,
+      "price": 45100.82,
+      "ret_1d_pct": -2.89,
+      "ret_5d_pct": -3.1,
+      "rsi14": 67.7,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 25.28,
+      "ret_20d_pct": 47.0,
+      "ret_60d_pct": 65.68,
+      "ret_120d_pct": 62.43,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -3.1% (단기 조정)",
+        "20일 수익률 +47.0%",
+        "RSI14=68 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -3.1% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +47.0%"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=68 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "086790",
+      "name": "하나금융지주",
+      "ticker": "086790.KS",
+      "action": "매수관심",
+      "score": 30.0,
+      "price": 55655.51,
+      "ret_1d_pct": 2.2,
+      "ret_5d_pct": 5.77,
+      "rsi14": 60.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 3.24,
+      "ret_20d_pct": 3.77,
+      "ret_60d_pct": -3.35,
+      "ret_120d_pct": -3.01,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +5.8% (모멘텀)",
+        "RSI14=61 (중립~건전 구간)",
+        "거래량 1.6× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +5.8% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=61 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.6× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "003490",
+      "name": "대한항공",
+      "ticker": "003490.KS",
+      "action": "매수관심",
+      "score": 29.0,
+      "price": 24064.82,
+      "ret_1d_pct": 0.81,
+      "ret_5d_pct": 2.69,
+      "rsi14": 65.1,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 7.83,
+      "ret_20d_pct": 7.59,
+      "ret_60d_pct": 6.47,
+      "ret_120d_pct": 19.94,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 +7.6%",
+        "RSI14=65 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +7.6%"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=65 (과열 주의)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "003550",
+      "name": "LG",
+      "ticker": "003550.KS",
+      "action": "관망",
+      "score": 18.0,
+      "price": 68980.66,
+      "ret_1d_pct": 1.77,
+      "ret_5d_pct": 1.08,
+      "rsi14": 53.7,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 1.35,
+      "ret_20d_pct": 1.08,
+      "ret_60d_pct": -3.97,
+      "ret_120d_pct": -11.15,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20·60일 이동평균 위 (추세 우호)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=54 (중립~건전 구간)",
+        "거래량 2.6× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 20,
+          "label": "종가가 20·60일 이동평균 위 (추세 우호)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=54 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 2.6× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "214450",
+      "name": "파마리서치",
+      "ticker": "214450.KQ",
+      "action": "관망",
+      "score": 17.0,
+      "price": 239139.23,
+      "ret_1d_pct": -0.82,
+      "ret_5d_pct": -1.43,
+      "rsi14": 46.0,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -2.42,
+      "ret_20d_pct": -7.61,
+      "ret_60d_pct": 3.64,
+      "ret_120d_pct": 75.23,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "RSI14=46 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=46 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "065350",
+      "name": "신성델타테크",
+      "ticker": "065350.KQ",
+      "action": "관망",
+      "score": 17.0,
+      "price": 92306.62,
+      "ret_1d_pct": 4.05,
+      "ret_5d_pct": 4.05,
+      "rsi14": 51.1,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 3.35,
+      "ret_20d_pct": -23.92,
+      "ret_60d_pct": 113.1,
+      "ret_120d_pct": 68.35,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +4.0% (모멘텀)",
+        "20일 수익률 -23.9% (중기 약세)",
+        "RSI14=51 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +4.0% (모멘텀)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -23.9% (중기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=51 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "065500",
+      "name": "오리엔트정공",
+      "ticker": "065500.KQ",
+      "action": "관망",
+      "score": 17.0,
+      "price": 5060.0,
+      "ret_1d_pct": -1.75,
+      "ret_5d_pct": 10.72,
+      "rsi14": 50.2,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -23.33,
+      "ret_20d_pct": -12.46,
+      "ret_60d_pct": 320.97,
+      "ret_120d_pct": 298.11,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 +10.7% (모멘텀)",
+        "20일 수익률 -12.5% (중기 약세)",
+        "RSI14=50 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 12,
+          "label": "5일 수익률 +10.7% (모멘텀)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -12.5% (중기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=50 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "263750",
+      "name": "펄어비스",
+      "ticker": "263750.KQ",
+      "action": "관망",
+      "score": 16.0,
+      "price": 29050.0,
+      "ret_1d_pct": 3.2,
+      "ret_5d_pct": 2.65,
+      "rsi14": 47.0,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 3.38,
+      "ret_20d_pct": 6.8,
+      "ret_60d_pct": -25.03,
+      "ret_120d_pct": -35.66,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "20일 수익률 +6.8%",
+        "RSI14=47 (중립~건전 구간)",
+        "거래량 1.5× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": 10,
+          "label": "20일 수익률 +6.8%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=47 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.5× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "089030",
+      "name": "테크윙",
+      "ticker": "089030.KQ",
+      "action": "관망",
+      "score": 15.0,
+      "price": 45316.17,
+      "ret_1d_pct": -8.18,
+      "ret_5d_pct": -8.64,
+      "rsi14": 51.4,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -1.2,
+      "ret_20d_pct": 24.28,
+      "ret_60d_pct": 9.64,
+      "ret_120d_pct": -14.74,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -8.6% (단기 조정)",
+        "20일 수익률 +24.3%",
+        "RSI14=51 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -8.6% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +24.3%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=51 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "036930",
+      "name": "주성엔지니어링",
+      "ticker": "036930.KQ",
+      "action": "관망",
+      "score": 15.0,
+      "price": 31639.89,
+      "ret_1d_pct": -4.08,
+      "ret_5d_pct": -8.12,
+      "rsi14": 47.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -3.21,
+      "ret_20d_pct": 7.78,
+      "ret_60d_pct": 7.23,
+      "ret_120d_pct": 12.12,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -8.1% (단기 조정)",
+        "20일 수익률 +7.8%",
+        "RSI14=48 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -8.1% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +7.8%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=48 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "310210",
+      "name": "보로노이",
+      "ticker": "310210.KQ",
+      "action": "관망",
+      "score": 10.0,
+      "price": 86100.0,
+      "ret_1d_pct": 7.22,
+      "ret_5d_pct": 9.26,
+      "rsi14": 57.1,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 11.38,
+      "ret_20d_pct": 2.5,
+      "ret_60d_pct": -16.16,
+      "ret_120d_pct": 8.03,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 +9.3% (모멘텀)",
+        "RSI14=57 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 12,
+          "label": "5일 수익률 +9.3% (모멘텀)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=57 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "000270",
+      "name": "기아",
+      "ticker": "000270.KS",
+      "action": "관망",
+      "score": 9.0,
+      "price": 91282.25,
+      "ret_1d_pct": 0.29,
+      "ret_5d_pct": 0.99,
+      "rsi14": 52.1,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -3.23,
+      "ret_20d_pct": -0.87,
+      "ret_60d_pct": 8.4,
+      "ret_120d_pct": -10.29,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=52 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=52 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "000660",
+      "name": "SK하이닉스",
+      "ticker": "000660.KS",
+      "action": "관망",
+      "score": 7.0,
+      "price": 196741.45,
+      "ret_1d_pct": -9.86,
+      "ret_5d_pct": -6.04,
+      "rsi14": 50.5,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 2.52,
+      "ret_20d_pct": 17.11,
+      "ret_60d_pct": 2.15,
+      "ret_120d_pct": 2.01,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -6.0% (단기 조정)",
+        "20일 수익률 +17.1%",
+        "RSI14=51 (중립~건전 구간)",
+        "거래량 2.4× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -6.0% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +17.1%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=51 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 2.4× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "015760",
+      "name": "한국전력",
+      "ticker": "015760.KS",
+      "action": "관망",
+      "score": 6.0,
+      "price": 20380.74,
+      "ret_1d_pct": 0.24,
+      "ret_5d_pct": 1.45,
+      "rsi14": 54.5,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 4.47,
+      "ret_20d_pct": 4.28,
+      "ret_60d_pct": -7.31,
+      "ret_120d_pct": 8.14,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "RSI14=55 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 10,
+          "label": "RSI14=55 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "323410",
+      "name": "카카오뱅크",
+      "ticker": "323410.KS",
+      "action": "관망",
+      "score": 6.0,
+      "price": 20553.24,
+      "ret_1d_pct": 2.66,
+      "ret_5d_pct": 1.92,
+      "rsi14": 47.1,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 0.47,
+      "ret_20d_pct": -2.75,
+      "ret_60d_pct": -4.07,
+      "ret_120d_pct": -2.97,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "RSI14=47 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 10,
+          "label": "RSI14=47 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "009540",
+      "name": "HD한국조선해양",
+      "ticker": "009540.KS",
+      "action": "관망",
+      "score": 5.0,
+      "price": 220307.73,
+      "ret_1d_pct": 1.53,
+      "ret_5d_pct": -4.92,
+      "rsi14": 51.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -1.28,
+      "ret_20d_pct": -1.49,
+      "ret_60d_pct": 24.2,
+      "ret_120d_pct": 14.29,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -4.9% (단기 조정)",
+        "RSI14=52 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -4.9% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=52 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "095340",
+      "name": "ISC",
+      "ticker": "095340.KQ",
+      "action": "관망",
+      "score": 5.0,
+      "price": 66458.13,
+      "ret_1d_pct": -8.09,
+      "ret_5d_pct": -7.33,
+      "rsi14": 45.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -4.42,
+      "ret_20d_pct": -0.73,
+      "ret_60d_pct": 5.61,
+      "ret_120d_pct": 38.38,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -7.3% (단기 조정)",
+        "RSI14=46 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -7.3% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=46 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "450950",
+      "name": "아스테라시스",
+      "ticker": "450950.KQ",
+      "action": "관망",
+      "score": 0.0,
+      "price": 0.0,
+      "ret_1d_pct": 0.0,
+      "ret_5d_pct": 0.0,
+      "rsi14": 50.0,
+      "market": "코스닥",
+      "sector": null,
+      "ret_10d_pct": null,
+      "ret_20d_pct": null,
+      "ret_60d_pct": null,
+      "ret_120d_pct": null,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [],
+      "drivers": [],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": "시세 데이터 부족 (25거래일 미만)"
+    },
+    {
+      "code": "478560",
+      "name": "블랙야크아이앤씨",
+      "ticker": "478560.KQ",
+      "action": "관망",
+      "score": 0.0,
+      "price": 0.0,
+      "ret_1d_pct": 0.0,
+      "ret_5d_pct": 0.0,
+      "rsi14": 50.0,
+      "market": "코스닥",
+      "sector": null,
+      "ret_10d_pct": null,
+      "ret_20d_pct": null,
+      "ret_60d_pct": null,
+      "ret_120d_pct": null,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [],
+      "drivers": [],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": "시세 데이터 부족 (25거래일 미만)"
+    },
+    {
+      "code": "055550",
+      "name": "신한지주",
+      "ticker": "055550.KS",
+      "action": "관망",
+      "score": -2.0,
+      "price": 48377.32,
+      "ret_1d_pct": 2.2,
+      "ret_5d_pct": 2.3,
+      "rsi14": 56.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 2.2,
+      "ret_20d_pct": 4.5,
+      "ret_60d_pct": -6.24,
+      "ret_120d_pct": -15.01,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=57 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": 10,
+          "label": "RSI14=57 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "247540",
+      "name": "에코프로비엠",
+      "ticker": "247540.KQ",
+      "action": "관망",
+      "score": -4.0,
+      "price": 130935.31,
+      "ret_1d_pct": 1.08,
+      "ret_5d_pct": -5.07,
+      "rsi14": 53.7,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 10.92,
+      "ret_20d_pct": 19.2,
+      "ret_60d_pct": -23.03,
+      "ret_120d_pct": -26.49,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -5.1% (단기 조정)",
+        "20일 수익률 +19.2%",
+        "RSI14=54 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -12,
+          "label": "5일 수익률 -5.1% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +19.2%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=54 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "068270",
+      "name": "셀트리온",
+      "ticker": "068270.KS",
+      "action": "관망",
+      "score": -7.0,
+      "price": 163874.77,
+      "ret_1d_pct": -0.28,
+      "ret_5d_pct": -0.55,
+      "rsi14": 47.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -2.23,
+      "ret_20d_pct": -1.08,
+      "ret_60d_pct": 0.92,
+      "ret_120d_pct": -9.37,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=48 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=48 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "237690",
+      "name": "에스티팜",
+      "ticker": "237690.KQ",
+      "action": "관망",
+      "score": -7.0,
+      "price": 86527.56,
+      "ret_1d_pct": -0.69,
+      "ret_5d_pct": 1.76,
+      "rsi14": 47.3,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -3.98,
+      "ret_20d_pct": 0.35,
+      "ret_60d_pct": -10.37,
+      "ret_120d_pct": -6.43,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=47 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=47 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "032830",
+      "name": "삼성생명",
+      "ticker": "032830.KS",
+      "action": "관망",
+      "score": -9.0,
+      "price": 86193.97,
+      "ret_1d_pct": 9.73,
+      "ret_5d_pct": 1.14,
+      "rsi14": 45.9,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -5.11,
+      "ret_20d_pct": -7.19,
+      "ret_60d_pct": -8.37,
+      "ret_120d_pct": -3.14,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "RSI14=46 (중립~건전 구간)",
+        "거래량 2.1× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=46 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 2.1× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "017670",
+      "name": "SK텔레콤",
+      "ticker": "017670.KS",
+      "action": "관망",
+      "score": -9.0,
+      "price": 52286.04,
+      "ret_1d_pct": 1.09,
+      "ret_5d_pct": 0.0,
+      "rsi14": 46.7,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -1.07,
+      "ret_20d_pct": -2.29,
+      "ret_60d_pct": -2.64,
+      "ret_120d_pct": 3.7,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "RSI14=47 (중립~건전 구간)",
+        "거래량 1.9× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=47 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 1.9× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "005380",
+      "name": "현대차",
+      "ticker": "005380.KS",
+      "action": "관망",
+      "score": -11.0,
+      "price": 191624.69,
+      "ret_1d_pct": 0.49,
+      "ret_5d_pct": -1.2,
+      "rsi14": 41.6,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -6.36,
+      "ret_20d_pct": -5.29,
+      "ret_60d_pct": -6.58,
+      "ret_120d_pct": -18.75,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=42 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=42 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "096530",
+      "name": "씨젠",
+      "ticker": "096530.KQ",
+      "action": "관망",
+      "score": -11.0,
+      "price": 22464.7,
+      "ret_1d_pct": -1.87,
+      "ret_5d_pct": -2.07,
+      "rsi14": 43.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -7.98,
+      "ret_20d_pct": 2.38,
+      "ret_60d_pct": 1.51,
+      "ret_120d_pct": 8.53,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=44 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=44 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "005490",
+      "name": "POSCO홀딩스",
+      "ticker": "005490.KS",
+      "action": "관망",
+      "score": -14.0,
+      "price": 248673.69,
+      "ret_1d_pct": -0.38,
+      "ret_5d_pct": -3.87,
+      "rsi14": 46.5,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 1.36,
+      "ret_20d_pct": 1.76,
+      "ret_60d_pct": -23.38,
+      "ret_120d_pct": -27.77,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 위",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -3.9% (단기 조정)",
+        "RSI14=47 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -12,
+          "label": "5일 수익률 -3.9% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=47 (중립~건전 구간)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 20일선 위"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "178320",
+      "name": "서진시스템",
+      "ticker": "178320.KQ",
+      "action": "관망",
+      "score": -17.0,
+      "price": 24800.0,
+      "ret_1d_pct": -0.4,
+      "ret_5d_pct": 2.06,
+      "rsi14": 45.2,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 1.22,
+      "ret_20d_pct": -6.42,
+      "ret_60d_pct": -11.11,
+      "ret_120d_pct": -7.64,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "RSI14=45 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=45 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "007390",
+      "name": "네이처셀",
+      "ticker": "007390.KQ",
+      "action": "관망",
+      "score": -17.0,
+      "price": 18060.0,
+      "ret_1d_pct": -0.44,
+      "ret_5d_pct": 2.03,
+      "rsi14": 42.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 0.44,
+      "ret_20d_pct": -9.7,
+      "ret_60d_pct": -9.7,
+      "ret_120d_pct": 51.76,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 위 (장기 추세 우호)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 -9.7% (중기 약세)",
+        "RSI14=43 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -9.7% (중기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": 8,
+          "label": "종가가 120일선 위 (장기 추세 우호)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=43 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "257720",
+      "name": "실리콘투",
+      "ticker": "257720.KQ",
+      "action": "관망",
+      "score": -19.0,
+      "price": 30606.7,
+      "ret_1d_pct": -2.83,
+      "ret_5d_pct": -4.78,
+      "rsi14": 45.8,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -2.37,
+      "ret_20d_pct": -2.68,
+      "ret_60d_pct": -20.28,
+      "ret_120d_pct": -32.79,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -4.8% (단기 조정)",
+        "RSI14=46 (중립~건전 구간)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -4.8% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=46 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "039030",
+      "name": "이오테크닉스",
+      "ticker": "039030.KQ",
+      "action": "주의",
+      "score": -21.0,
+      "price": 142837.69,
+      "ret_1d_pct": -9.41,
+      "ret_5d_pct": -7.42,
+      "rsi14": 43.5,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -9.23,
+      "ret_20d_pct": 9.13,
+      "ret_60d_pct": -14.0,
+      "ret_120d_pct": -16.35,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -7.4% (단기 조정)",
+        "20일 수익률 +9.1%",
+        "RSI14=44 (과매도 근접, 반등 여지)",
+        "거래량 1.6× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -7.4% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +9.1%"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 1.6× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=44 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "068760",
+      "name": "셀트리온제약",
+      "ticker": "068760.KQ",
+      "action": "주의",
+      "score": -23.0,
+      "price": 51984.97,
+      "ret_1d_pct": -0.56,
+      "ret_5d_pct": -2.74,
+      "rsi14": 40.1,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -5.51,
+      "ret_20d_pct": -9.61,
+      "ret_60d_pct": -9.9,
+      "ret_120d_pct": -44.64,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "20일 수익률 -9.6% (중기 약세)",
+        "RSI14=40 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -9.6% (중기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=40 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "018290",
+      "name": "브이티",
+      "ticker": "018290.KQ",
+      "action": "주의",
+      "score": -27.0,
+      "price": 32250.0,
+      "ret_1d_pct": -2.27,
+      "ret_5d_pct": -7.73,
+      "rsi14": 36.1,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -9.66,
+      "ret_20d_pct": -19.17,
+      "ret_60d_pct": 1.26,
+      "ret_120d_pct": -14.0,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 ≥ 60일선 (중기 정배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -7.7% (단기 조정)",
+        "20일 수익률 -19.2% (중기 약세)",
+        "RSI14=36 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -7.7% (단기 조정)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -19.2% (중기 약세)"
+        },
+        {
+          "impact": 10,
+          "label": "20일선 ≥ 60일선 (중기 정배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=36 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "066570",
+      "name": "LG전자",
+      "ticker": "066570.KS",
+      "action": "주의",
+      "score": -29.0,
+      "price": 82513.93,
+      "ret_1d_pct": -1.06,
+      "ret_5d_pct": 0.12,
+      "rsi14": 44.4,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -0.12,
+      "ret_20d_pct": -1.75,
+      "ret_60d_pct": -7.98,
+      "ret_120d_pct": -19.66,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=44 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=44 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "293490",
+      "name": "카카오게임즈",
+      "ticker": "293490.KQ",
+      "action": "주의",
+      "score": -29.0,
+      "price": 16230.0,
+      "ret_1d_pct": 1.82,
+      "ret_5d_pct": -2.58,
+      "rsi14": 42.9,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -0.43,
+      "ret_20d_pct": -4.53,
+      "ret_60d_pct": -7.63,
+      "ret_120d_pct": -12.27,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=43 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=43 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "035760",
+      "name": "CJ ENM",
+      "ticker": "035760.KQ",
+      "action": "주의",
+      "score": -29.0,
+      "price": 53600.0,
+      "ret_1d_pct": 1.32,
+      "ret_5d_pct": 1.13,
+      "rsi14": 43.5,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 3.28,
+      "ret_20d_pct": -3.77,
+      "ret_60d_pct": -13.55,
+      "ret_120d_pct": -30.48,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=44 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=44 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "195940",
+      "name": "HK이노엔",
+      "ticker": "195940.KQ",
+      "action": "주의",
+      "score": -29.0,
+      "price": 34889.95,
+      "ret_1d_pct": -1.11,
+      "ret_5d_pct": -1.53,
+      "rsi14": 39.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -6.08,
+      "ret_20d_pct": -1.39,
+      "ret_60d_pct": -24.95,
+      "ret_120d_pct": -11.91,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=40 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=40 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "010130",
+      "name": "고려아연",
+      "ticker": "010130.KS",
+      "action": "주의",
+      "score": -33.0,
+      "price": 808253.0,
+      "ret_1d_pct": -2.49,
+      "ret_5d_pct": -0.72,
+      "rsi14": 40.8,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -2.25,
+      "ret_20d_pct": -31.99,
+      "ret_60d_pct": -23.3,
+      "ret_120d_pct": 67.5,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 -32.0% (중기 약세)",
+        "RSI14=41 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -32.0% (중기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=41 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "018260",
+      "name": "삼성에스디에스",
+      "ticker": "018260.KS",
+      "action": "주의",
+      "score": -33.0,
+      "price": 118443.07,
+      "ret_1d_pct": 6.16,
+      "ret_5d_pct": -3.13,
+      "rsi14": 42.3,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -3.44,
+      "ret_20d_pct": -4.51,
+      "ret_60d_pct": -18.77,
+      "ret_120d_pct": -19.46,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -3.1% (단기 조정)",
+        "RSI14=42 (과매도 근접, 반등 여지)",
+        "거래량 2.1× + 상승일 (수급 유입)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -3.1% (단기 조정)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 8,
+          "label": "거래량 2.1× + 상승일 (수급 유입)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=42 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "253450",
+      "name": "스튜디오드래곤",
+      "ticker": "253450.KQ",
+      "action": "주의",
+      "score": -33.0,
+      "price": 37550.0,
+      "ret_1d_pct": -0.66,
+      "ret_5d_pct": -2.47,
+      "rsi14": 32.2,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -2.21,
+      "ret_20d_pct": -17.92,
+      "ret_60d_pct": -6.48,
+      "ret_120d_pct": -1.05,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "20일 수익률 -17.9% (중기 약세)",
+        "RSI14=32 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -17.9% (중기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=32 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "005290",
+      "name": "동진쎄미켐",
+      "ticker": "005290.KQ",
+      "action": "주의",
+      "score": -35.0,
+      "price": 21526.87,
+      "ret_1d_pct": -5.4,
+      "ret_5d_pct": -4.99,
+      "rsi14": 45.5,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -1.35,
+      "ret_20d_pct": 5.04,
+      "ret_60d_pct": -16.88,
+      "ret_120d_pct": -37.98,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -5.0% (단기 조정)",
+        "20일 수익률 +5.0%",
+        "RSI14=45 (중립~건전 구간)",
+        "거래량 1.6× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -5.0% (단기 조정)"
+        },
+        {
+          "impact": 10,
+          "label": "20일 수익률 +5.0%"
+        },
+        {
+          "impact": 10,
+          "label": "RSI14=45 (중립~건전 구간)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 1.6× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "005930",
+      "name": "삼성전자",
+      "ticker": "005930.KS",
+      "action": "주의",
+      "score": -37.0,
+      "price": 51187.7,
+      "ret_1d_pct": -2.42,
+      "ret_5d_pct": -1.87,
+      "rsi14": 40.4,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -3.14,
+      "ret_20d_pct": -1.57,
+      "ret_60d_pct": -10.73,
+      "ret_120d_pct": -34.66,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "RSI14=40 (과매도 근접, 반등 여지)",
+        "거래량 2.3× + 하락일 (매도 압력)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "거래량 2.3× + 하락일 (매도 압력)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=40 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "476060",
+      "name": "온코닉테라퓨틱스",
+      "ticker": "476060.KQ",
+      "action": "주의",
+      "score": -40.0,
+      "price": 3637.5,
+      "ret_1d_pct": 0.83,
+      "ret_5d_pct": -1.36,
+      "rsi14": 71.9,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -17.42,
+      "ret_20d_pct": -11.71,
+      "ret_60d_pct": null,
+      "ret_120d_pct": null,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "20일 수익률 -11.7% (중기 약세)",
+        "RSI14=72 (과열 주의)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -11.7% (중기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -5,
+          "label": "RSI14=72 (과열 주의)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "373220",
+      "name": "LG에너지솔루션",
+      "ticker": "373220.KS",
+      "action": "주의",
+      "score": -41.0,
+      "price": 352000.0,
+      "ret_1d_pct": -0.42,
+      "ret_5d_pct": -4.99,
+      "rsi14": 44.6,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": 1.29,
+      "ret_20d_pct": 2.18,
+      "ret_60d_pct": -14.46,
+      "ret_120d_pct": 6.83,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -5.0% (단기 조정)",
+        "RSI14=45 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -5.0% (단기 조정)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=45 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "051910",
+      "name": "LG화학",
+      "ticker": "051910.KS",
+      "action": "주의",
+      "score": -41.0,
+      "price": 235105.16,
+      "ret_1d_pct": -0.84,
+      "ret_5d_pct": -5.94,
+      "rsi14": 39.0,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -1.45,
+      "ret_20d_pct": -4.23,
+      "ret_60d_pct": -25.9,
+      "ret_120d_pct": -22.89,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -5.9% (단기 조정)",
+        "RSI14=39 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -5.9% (단기 조정)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=39 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "003670",
+      "name": "포스코퓨처엠",
+      "ticker": "003670.KS",
+      "action": "주의",
+      "score": -41.0,
+      "price": 142629.19,
+      "ret_1d_pct": 0.71,
+      "ret_5d_pct": -8.34,
+      "rsi14": 41.5,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -4.42,
+      "ret_20d_pct": 0.14,
+      "ret_60d_pct": -37.51,
+      "ret_120d_pct": -33.27,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -8.3% (단기 조정)",
+        "RSI14=42 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -8.3% (단기 조정)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=42 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "086520",
+      "name": "에코프로",
+      "ticker": "086520.KQ",
+      "action": "주의",
+      "score": -41.0,
+      "price": 59653.52,
+      "ret_1d_pct": 0.0,
+      "ret_5d_pct": -5.72,
+      "rsi14": 43.8,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": 0.83,
+      "ret_20d_pct": 3.92,
+      "ret_60d_pct": -24.13,
+      "ret_120d_pct": -35.86,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -5.7% (단기 조정)",
+        "RSI14=44 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -5.7% (단기 조정)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=44 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "348370",
+      "name": "엔켐",
+      "ticker": "348370.KQ",
+      "action": "주의",
+      "score": -41.0,
+      "price": 130000.0,
+      "ret_1d_pct": -1.96,
+      "ret_5d_pct": -14.81,
+      "rsi14": 39.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -12.04,
+      "ret_20d_pct": 4.17,
+      "ret_60d_pct": -25.24,
+      "ret_120d_pct": -22.02,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -14.8% (단기 조정)",
+        "RSI14=40 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -14.8% (단기 조정)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=40 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "357780",
+      "name": "솔브레인",
+      "ticker": "357780.KQ",
+      "action": "주의",
+      "score": -41.0,
+      "price": 165855.98,
+      "ret_1d_pct": -4.04,
+      "ret_5d_pct": -8.31,
+      "rsi14": 42.6,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -3.54,
+      "ret_20d_pct": 3.3,
+      "ret_60d_pct": -13.44,
+      "ret_120d_pct": -33.54,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -8.3% (단기 조정)",
+        "RSI14=43 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -8.3% (단기 조정)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=43 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "240810",
+      "name": "원익IPS",
+      "ticker": "240810.KQ",
+      "action": "주의",
+      "score": -41.0,
+      "price": 22483.58,
+      "ret_1d_pct": -4.04,
+      "ret_5d_pct": -5.85,
+      "rsi14": 43.3,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -3.63,
+      "ret_20d_pct": 1.58,
+      "ret_60d_pct": -17.82,
+      "ret_120d_pct": -35.43,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -5.8% (단기 조정)",
+        "RSI14=43 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -5.8% (단기 조정)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=43 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "145020",
+      "name": "휴젤",
+      "ticker": "145020.KQ",
+      "action": "주의",
+      "score": -45.0,
+      "price": 237500.0,
+      "ret_1d_pct": 2.81,
+      "ret_5d_pct": -3.06,
+      "rsi14": 37.2,
+      "market": "코스닥",
+      "sector": "기타",
+      "ret_10d_pct": -11.21,
+      "ret_20d_pct": -14.26,
+      "ret_60d_pct": -13.16,
+      "ret_120d_pct": -5.19,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 ≥ 120일선 (중장기 정배열 성향)",
+        "5일 수익률 -3.1% (단기 조정)",
+        "20일 수익률 -14.3% (중기 약세)",
+        "RSI14=37 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -3.1% (단기 조정)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -14.3% (중기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=37 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": 4,
+          "label": "60일선 ≥ 120일선 (중장기 정배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    },
+    {
+      "code": "006400",
+      "name": "삼성SDI",
+      "ticker": "006400.KS",
+      "action": "주의",
+      "score": -53.0,
+      "price": 222000.0,
+      "ret_1d_pct": -1.99,
+      "ret_5d_pct": -8.83,
+      "rsi14": 37.1,
+      "market": "코스피",
+      "sector": "기타",
+      "ret_10d_pct": -3.27,
+      "ret_20d_pct": -9.76,
+      "ret_60d_pct": -34.25,
+      "ret_120d_pct": -33.57,
+      "per": null,
+      "pbr": null,
+      "market_cap": null,
+      "market_cap_label": null,
+      "shares_outstanding": null,
+      "reasons": [
+        "종가가 20일선 아래 (단기 약세)",
+        "20일선 < 60일선 (중기 역배열 성향)",
+        "종가가 120일선 아래 (장기 약세)",
+        "60일선 < 120일선 (중장기 역배열 성향)",
+        "5일 수익률 -8.8% (단기 조정)",
+        "20일 수익률 -9.8% (중기 약세)",
+        "RSI14=37 (과매도 근접, 반등 여지)"
+      ],
+      "drivers": [
+        {
+          "impact": -15,
+          "label": "종가가 20일선 아래 (단기 약세)"
+        },
+        {
+          "impact": -12,
+          "label": "5일 수익률 -8.8% (단기 조정)"
+        },
+        {
+          "impact": -12,
+          "label": "20일 수익률 -9.8% (중기 약세)"
+        },
+        {
+          "impact": -8,
+          "label": "20일선 < 60일선 (중기 역배열 성향)"
+        },
+        {
+          "impact": -8,
+          "label": "종가가 120일선 아래 (장기 약세)"
+        },
+        {
+          "impact": 6,
+          "label": "RSI14=37 (과매도 근접, 반등 여지)"
+        },
+        {
+          "impact": -4,
+          "label": "60일선 < 120일선 (중장기 역배열 성향)"
+        }
+      ],
+      "headlines": [],
+      "flow": null,
+      "signal_buy_count": 0,
+      "signal_caution_count": 0,
+      "error": null
+    }
+  ]
+}

@@ -28,6 +28,40 @@ class FundamentalSnapshot:
     bps: float | None = None
     market_cap_krw: float | None = None
     market_cap_label: str | None = None  # e.g. Naver display string
+    industry_code: str | None = None
+    sector: str | None = None  # e.g. 반도체와반도체장비
+
+
+_INDUSTRY_NAME_CACHE: dict[str, str] = {}
+
+
+def fetch_industry_name(
+    industry_code: str,
+    *,
+    timeout: float = 12.0,
+) -> str | None:
+    """Resolve Naver industry code to Korean sector name (cached per process)."""
+    code = str(industry_code or "").strip()
+    if not code:
+        return None
+    if code in _INDUSTRY_NAME_CACHE:
+        return _INDUSTRY_NAME_CACHE[code]
+    try:
+        resp = requests.get(
+            f"https://m.stock.naver.com/api/stocks/industry/{code}",
+            headers=_HEADERS,
+            timeout=timeout,
+        )
+        if resp.status_code != 200:
+            return None
+        payload = resp.json()
+        name = str((payload.get("groupInfo") or {}).get("name") or "").strip()
+        if name:
+            _INDUSTRY_NAME_CACHE[code] = name
+            return name
+    except Exception as exc:
+        logger.warning("industry name failed for %s: %s", code, exc)
+    return None
 
 
 def _parse_multiple(raw: object) -> float | None:
@@ -94,6 +128,11 @@ def fetch_fundamentals(
     if "marketValue" in infos:
         market_label = str(infos["marketValue"].get("value") or "") or None
 
+    industry_code = str(payload.get("industryCode") or "").strip() or None
+    sector = (
+        fetch_industry_name(industry_code, timeout=timeout) if industry_code else None
+    )
+
     return FundamentalSnapshot(
         per=_parse_multiple((infos.get("per") or {}).get("value")),
         pbr=_parse_multiple((infos.get("pbr") or {}).get("value")),
@@ -103,4 +142,6 @@ def fetch_fundamentals(
             (infos.get("marketValue") or {}).get("value")
         ),
         market_cap_label=market_label,
+        industry_code=industry_code,
+        sector=sector,
     )

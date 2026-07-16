@@ -386,6 +386,96 @@
       box-shadow: inset 0 0 0 3px var(--paper);
     }
 
+    .score-block {
+      margin: 1.35rem 0 0;
+    }
+    .score-block > h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: 1.35rem;
+      margin: 0 0 0.45rem;
+    }
+    .score-block > p {
+      margin: 0 0 0.85rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+    .score-table th,
+    .score-table td {
+      text-align: left;
+      padding: 0.65rem 0.7rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      color: var(--ink-soft);
+    }
+    .score-table th {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .score-table td:last-child,
+    .score-table th:last-child {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .score-table .pos { color: #0a6b53; }
+    .score-table .neg { color: #b5470a; }
+    .score-table tr:last-child td { border-bottom: none; }
+
+    .term {
+      appearance: none;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+      color: inherit;
+      cursor: help;
+      border-bottom: 1px dashed rgba(13, 138, 106, 0.55);
+      text-align: inherit;
+      line-height: inherit;
+    }
+    .term:hover,
+    .term[aria-expanded="true"] {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .badge .term {
+      border-bottom-color: currentColor;
+      font-weight: 700;
+    }
+    .term-note {
+      position: fixed;
+      z-index: 200;
+      max-width: min(280px, calc(100vw - 1.5rem));
+      padding: 0.8rem 0.95rem;
+      border-radius: 12px;
+      background: #fffef8;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 36px rgba(20, 32, 28, 0.16);
+      font-size: 0.86rem;
+      line-height: 1.45;
+      color: var(--ink);
+      font-family: "Outfit", system-ui, sans-serif;
+    }
+    .term-note[hidden] { display: none; }
+    .term-hint {
+      margin: 0.85rem 0 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
     footer {
       margin-top: 4rem;
       padding-top: 2rem;
@@ -429,6 +519,8 @@
     <a href="#steps" title="단계별 흐름"></a>
     <a href="#score" title="점수 규칙"></a>
     <a href="#report" title="리포트 구성"></a>
+    <a href="#backtest" title="백테스트"></a>
+    <a href="#files" title="폴더 구조"></a>
     <a href="#you" title="사람이 하는 일"></a>
     <a href="#myth" title="오해 풀기"></a>
   </nav>
@@ -448,6 +540,7 @@
         <span class="chip">자동매매 없음</span>
         <span class="chip">최종 판단은 사람</span>
       </div>
+      <p class="term-hint">점선 밑줄 용어를 <strong>클릭</strong>하면 초보자용 설명이 노트로 뜹니다. (다시 클릭·바깥 클릭·Esc로 닫힘)</p>
       <div class="scroll-hint"><span></span> 아래로 스크롤하며 흐름을 따라가 보세요</div>
     </header>
 
@@ -536,6 +629,9 @@
               VS Code에서 재생 버튼을 누르면 Python이 이 스크립트를 엽니다.
               Cursor나 채팅 AI와 연결되지 않아도 됩니다. 인터넷만 되면
               시세·수급·뉴스를 받아올 수 있습니다.
+              <strong>기본 기준일은 마지막 확정 세션 종가</strong>입니다.
+              평일 15:30(KST) 이후면 당일, 장중·주말이면 직전 거래일입니다.
+              리포트 폴더명(<code>YYYY/MM/DD</code>)도 그 기준일과 같습니다.
               뉴스를 빼고 빠르게 돌리려면 <code>python run_daily.py --no-news</code> 를 씁니다.
             </p>
             <span class="flow-tag">당신이 하는 일: 실행 버튼</span>
@@ -545,6 +641,25 @@
         <div class="flow-step">
           <div class="flow-rail">
             <div class="flow-num">02</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>누락 리포트 보완 (선택적 · 기본 켜짐)</h3>
+            <p>
+              매일 실행하지 못해도 괜찮습니다. <code>reports/daily/.run_state.json</code>에
+              마지막으로 채운 거래일을 저장해 두었다가, 다음 실행 때
+              <strong>그 이후~기준일</strong> 사이에 빠진 날짜만 찾습니다
+              (처음 한 번만 2025-01-01부터 검사). 빠진 날은 그날의
+              PIT 워치리스트로 리포트를 생성합니다. 건너뛰려면
+              <code>--no-gap-fill</code>.
+            </p>
+            <span class="flow-tag">자동 · 누락일만</span>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">03</div>
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
@@ -566,7 +681,7 @@
 
         <div class="flow-step">
           <div class="flow-rail">
-            <div class="flow-num">03</div>
+            <div class="flow-num">04</div>
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
@@ -589,7 +704,7 @@
 
         <div class="flow-step">
           <div class="flow-rail">
-            <div class="flow-num">04</div>
+            <div class="flow-num">05</div>
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
@@ -609,7 +724,7 @@
 
         <div class="flow-step">
           <div class="flow-rail">
-            <div class="flow-num">05</div>
+            <div class="flow-num">06</div>
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
@@ -627,7 +742,7 @@
 
         <div class="flow-step">
           <div class="flow-rail">
-            <div class="flow-num">06</div>
+            <div class="flow-num">07</div>
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
@@ -644,7 +759,7 @@
 
         <div class="flow-step">
           <div class="flow-rail">
-            <div class="flow-num">07</div>
+            <div class="flow-num">08</div>
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
@@ -670,7 +785,7 @@
 
         <div class="flow-step">
           <div class="flow-rail">
-            <div class="flow-num">08</div>
+            <div class="flow-num">09</div>
             <div class="flow-line"></div>
           </div>
           <div class="flow-body">
@@ -679,9 +794,10 @@
               모든 종목을 점수 순으로 정렬해 저장합니다.
             </p>
             <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
-              <li><strong>latest.html</strong> — 브라우저용 본문 (종합 요약 + 종목별)</li>
+              <li><strong>latest.html</strong> — 브라우저용 (종합 요약 중심 · 클릭 시 좌목록+우상세 · 시장/업종 필터)</li>
               <li><strong>latest.txt / .md / .json</strong> — 메모장·마크다운·기계 읽기용</li>
-              <li><strong>YYYY-MM-DD/report.*</strong> — 같은 날 날짜별 보관본</li>
+              <li><strong>YYYY/MM/DD/report.*</strong> — 같은 날 날짜별 보관본 (연 → 월 → 일)</li>
+              <li><strong>signals.jsonl</strong> — 그날의 점수·액션을 백테스트 로그에 추가</li>
             </ul>
             <span class="flow-tag">출력: 오늘의 성적표</span>
           </div>
@@ -692,25 +808,128 @@
     <section id="score" class="reveal">
       <h2>점수는 어떻게 올라가나요?</h2>
       <p class="section-intro">
-        “좋다/나쁘다”를 AI가 느끼는 게 아니라, 아래 같은 <strong>가산·감점 규칙</strong>의 합입니다.
-        총점은 −100~+100 사이로 잘라 둡니다.
+        “좋다/나쁘다”를 AI가 느끼는 게 아니라, 아래 <strong>가산·감점 규칙</strong>의 합입니다.
+        기술지표가 본점수이고, 외국인·기관
+        <button type="button" class="term" aria-expanded="false" data-tip="산 수량 − 판 수량입니다. +면 순매수, −면 순매도입니다.">수급</button>은
+        그보다 작은 가중치로 더합니다.
+        최종 합은 <strong>−100~+100</strong>으로 자릅니다.
       </p>
-      <div class="card">
-        <ul class="checklist">
-          <li>종가가 20·60일 평균 위면 가점, 20일선 아래면 감점 / 20≥60이면 정배열 가점</li>
-          <li>데이터가 충분하면 120일선 위·아래와 60↔120 배열도 가점·감점</li>
-          <li>5일·20일 동안 많이 올랐으면 가점, 크게 빠졌으면 감점</li>
-          <li>RSI가 중간~건전 구간이면 가점, 너무 뜨거우면(과매수) 감점</li>
-          <li>거래량이 평소보다 크게 늘며 상승하면 가점, 하락하면 감점</li>
-          <li>외국인·기관 순매수/순매도(전일·최근 수일)는 <strong>기술보다 작은 가중치</strong>로 가점·감점</li>
-        </ul>
+
+      <div class="actions" style="margin-bottom:1.25rem;">
+        <div class="action">
+          <div class="badge buy"><button type="button" class="term" aria-expanded="false" data-tip="규칙 점수가 +25 이상일 때 붙는 라벨입니다. ‘반드시 사라’는 뜻이 아닙니다.">매수관심</button></div>
+          <div>총점 <strong>≥ +25</strong></div>
+        </div>
+        <div class="action">
+          <div class="badge hold"><button type="button" class="term" aria-expanded="false" data-tip="규칙 점수가 중간일 때 붙는 라벨입니다. 뚜렷한 매수·주의 신호가 없다는 뜻입니다.">관망</button></div>
+          <div>그 사이 (−19 ~ +24)</div>
+        </div>
+        <div class="action">
+          <div class="badge warn"><button type="button" class="term" aria-expanded="false" data-tip="규칙 점수가 −20 이하일 때 붙는 라벨입니다. 약세·과열 등 리스크 신호가 있다는 뜻입니다.">주의</button></div>
+          <div>총점 <strong>≤ −20</strong></div>
+        </div>
       </div>
+
+      <div class="card score-block">
+        <h3>1) 기술지표 — 추세 (<button type="button" class="term" aria-expanded="false" data-tip="최근 N일 종가의 평균 가격(이평선)입니다. 주가가 이보다 위/아래인지를 추세 판별에 씁니다.">이동평균</button>)</h3>
+        <p>
+          <button type="button" class="term" aria-expanded="false" data-tip="그날 마지막으로 체결된 가격입니다. run_daily 기본은 직전 거래일 종가까지만 사용합니다.">종가</button>와
+          20·60·120일 이동평균의 위치·배열로 채점합니다.
+          <button type="button" class="term" aria-expanded="false" data-tip="N일 이동평균선입니다. 예: 20일선 = 최근 20거래일 종가의 평균.">일선</button>은
+          그 평균값을 선으로 본 것입니다.
+        </p>
+        <table class="score-table">
+          <thead><tr><th>조건</th><th>점수</th></tr></thead>
+          <tbody>
+            <tr><td>종가 ≥ 20일선·60일선 둘 다</td><td class="pos">+20</td></tr>
+            <tr><td>종가 ≥ 20일선만</td><td class="pos">+8</td></tr>
+            <tr><td>종가 &lt; 20일선</td><td class="neg">−15</td></tr>
+            <tr><td>20일선 ≥ 60일선 (<button type="button" class="term" aria-expanded="false" data-tip="단기 이평이 장기 이평 위에 있는 상태. 상승 추세 성향으로 보는 경우가 많습니다.">정배열</button> 성향)</td><td class="pos">+10</td></tr>
+            <tr><td>20일선 &lt; 60일선 (<button type="button" class="term" aria-expanded="false" data-tip="단기 이평이 장기 이평 아래에 있는 상태. 하락 추세 성향으로 보는 경우가 많습니다.">역배열</button> 성향)</td><td class="neg">−8</td></tr>
+            <tr><td>봉 ≥ 80개 · 종가 ≥ 120일선</td><td class="pos">+8</td></tr>
+            <tr><td>봉 ≥ 80개 · 종가 &lt; 120일선</td><td class="neg">−8</td></tr>
+            <tr><td>봉 ≥ 80개 · 60일선 ≥ 120일선</td><td class="pos">+4</td></tr>
+            <tr><td>봉 ≥ 80개 · 60일선 &lt; 120일선</td><td class="neg">−4</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card score-block">
+        <h3>2) 기술지표 — <button type="button" class="term" aria-expanded="false" data-tip="최근 기간 주가가 오른/내린 ‘힘’입니다. 이 프로그램에서는 주로 5일·20일 수익률로 봅니다.">모멘텀</button></h3>
+        <p>5일·20일 종가 대비 수익률입니다. (리포트에 보이는 10·60·120일 %는 표시용이며 점수에는 안 넣습니다.)</p>
+        <table class="score-table">
+          <thead><tr><th>조건</th><th>점수</th></tr></thead>
+          <tbody>
+            <tr><td>5일 수익률 &gt; +3%</td><td class="pos">+12</td></tr>
+            <tr><td>5일 수익률 &lt; −3%</td><td class="neg">−12</td></tr>
+            <tr><td>20일 수익률 &gt; +5%</td><td class="pos">+10</td></tr>
+            <tr><td>20일 수익률 &lt; −8%</td><td class="neg">−12</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card score-block">
+        <h3>3) 기술지표 — <button type="button" class="term" aria-expanded="false" data-tip="최근 14일 상승·하락 강도를 0~100으로 요약한 지표입니다. 높으면 과열(과매수), 낮으면 과매도 성향으로 봅니다.">RSI14</button></h3>
+        <p>
+          0~100
+          <button type="button" class="term" aria-expanded="false" data-tip="최근 너무 많이 올라 조정이 나올 수 있다고 보는 상태입니다. RSI가 높은 구간과 맞물립니다.">과매수</button>·
+          <button type="button" class="term" aria-expanded="false" data-tip="최근 너무 많이 내려 반등 여지가 있다고도 보지만, 추가 하락도 가능한 상태입니다.">과매도</button>
+          온도계입니다. 구간은 서로 겹치지 않게 하나만 적용됩니다.
+        </p>
+        <table class="score-table">
+          <thead><tr><th>조건</th><th>점수</th></tr></thead>
+          <tbody>
+            <tr><td>45 ≤ RSI ≤ 65 (중립~건전)</td><td class="pos">+10</td></tr>
+            <tr><td>30 ≤ RSI &lt; 45 (과매도 근접)</td><td class="pos">+6</td></tr>
+            <tr><td>RSI &lt; 30 (과매도)</td><td class="pos">+2</td></tr>
+            <tr><td>65 &lt; RSI ≤ 75 (과열 주의)</td><td class="neg">−5</td></tr>
+            <tr><td>RSI &gt; 75 (과매수)</td><td class="neg">−15</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card score-block">
+        <h3>4) 기술지표 — <button type="button" class="term" aria-expanded="false" data-tip="그날 거래된 주식 수입니다. 평소보다 크게 늘면 관심이 커진 신호로 봅니다.">거래량</button></h3>
+        <p>당일 거래량 ÷ 20일 평균이 1.5배 이상일 때만 적용합니다.</p>
+        <table class="score-table">
+          <thead><tr><th>조건</th><th>점수</th></tr></thead>
+          <tbody>
+            <tr><td>거래량 ≥ 1.5× 이고 당일 상승</td><td class="pos">+8</td></tr>
+            <tr><td>거래량 ≥ 1.5× 이고 당일 하락</td><td class="neg">−8</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card score-block">
+        <h3>5) 수급 — <button type="button" class="term" aria-expanded="false" data-tip="해외 투자자입니다. 국내 주식시장에서 매매 규모가 큰 참여자 중 하나입니다.">외국인</button>·
+        <button type="button" class="term" aria-expanded="false" data-tip="펀드·연기금·증권사 등 기관투자자입니다.">기관</button>
+        (네이버)</h3>
+        <p>기술보다 작은 가중치입니다. 전일
+          <button type="button" class="term" aria-expanded="false" data-tip="산 수량 − 판 수량입니다. +면 순매수, −면 순매도입니다.">순매수</button>와
+          최근 약 5일 누적을 각각 채점해 더합니다.</p>
+        <table class="score-table">
+          <thead><tr><th>조건</th><th>점수</th></tr></thead>
+          <tbody>
+            <tr><td>전일 외인·기관 동반 순매수</td><td class="pos">+8</td></tr>
+            <tr><td>전일 외인·기관 동반 순매도</td><td class="neg">−8</td></tr>
+            <tr><td>전일 외인만 순매수 / 순매도</td><td><span class="pos">+4</span> / <span class="neg">−4</span></td></tr>
+            <tr><td>전일 기관만 순매수 / 순매도</td><td><span class="pos">+3</span> / <span class="neg">−3</span></td></tr>
+            <tr><td>최근 N일 외인·기관 동반 순매수</td><td class="pos">+6</td></tr>
+            <tr><td>최근 N일 외인·기관 동반 순매도</td><td class="neg">−6</td></tr>
+            <tr><td>최근 N일 외인만 누적 순매수 / 순매도</td><td><span class="pos">+3</span> / <span class="neg">−3</span></td></tr>
+            <tr><td>최근 N일 기관만 누적 순매수 / 순매도</td><td><span class="pos">+2</span> / <span class="neg">−2</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="callout">
         <p>
-          <strong>중요:</strong> 같은 규칙이라도 시장 전체가 약세면
-          워치리스트 대부분이 「관망」「주의」로 나올 수 있습니다.
-          그건 버그가 아니라, 오늘 데이터가 그렇게 채점된 결과입니다.
-          뉴스·PER·PBR·시가총액은 점수에 넣지 않습니다.
+          <strong>점수에 안 들어가는 것:</strong> 뉴스 헤드라인,
+          <button type="button" class="term" aria-expanded="false" data-tip="주가 ÷ 주당순이익. 이익 대비 주가가 비싼지 싼지 참고하는 값입니다.">PER</button>·
+          <button type="button" class="term" aria-expanded="false" data-tip="주가 ÷ 주당순자산. 자산 대비 주가 수준을 참고하는 값입니다.">PBR</button>·
+          <button type="button" class="term" aria-expanded="false" data-tip="주가 × 발행주식수. 시장이 매긴 회사 규모입니다.">시가총액</button>·발행주식수,
+          리포트용 10·60·120일 상승률.
+          같은 규칙이라도 시장 전체가 약세면 「관망」「주의」가 많을 수 있습니다 — 버그가 아닙니다.
         </p>
       </div>
     </section>
@@ -719,15 +938,23 @@
       <h2>HTML 리포트에는 무엇이 있나요?</h2>
       <p class="section-intro">
         기본으로 볼 파일은 <strong>reports/daily/latest.html</strong> 입니다.
-        브라우저에서 세로로 스크롤하며 읽도록 만들어져 있습니다.
+        처음에는 <strong>종합 요약</strong>이 중앙에 있고, 종목을 클릭하면
+        왼쪽 목록 + 오른쪽 상세로 나뉩니다.
       </p>
       <div class="card">
         <ul class="checklist">
-          <li><strong>종합 요약</strong> — 점수 순 순위, 상위 드라이버, 종목 섹션으로 바로 가는 링크</li>
-          <li><strong>종목 헤더</strong> — 이름·코드·시장 라벨(코스피/코스닥)·액션·점수</li>
+          <li><strong>시장 점수 vs 지수</strong> — 종합 요약 위에 코스피/코스닥별 종목 점수합·액션합(+1/0/−1)과 지수 비교 차트 (<strong>최근 3개월</strong>)</li>
+          <li><strong>종합 요약</strong> — 점수 순 순위·상위 드라이버. 행을 클릭하면 상세 열림</li>
+          <li><strong>필터</strong> — 시장(코스피/코스닥), 업종(네이버 업종명)으로 목록 좁히기</li>
+          <li><strong>종목 상세</strong> — 오른쪽(모바일은 전체)에 메트릭·차트·수급·뉴스·점수 요인</li>
+          <li><strong>시그널</strong> — 상단에 90일 매수관심/주의 횟수, 차트에 ▲매수·▼주의 표시</li>
+          <li><strong>점수 vs 종가</strong> — 주가 차트 아래 최근 6개월 점수(좌)·종가(우) 이중축 차트</li>
+          <li><strong>점수대 통계</strong> — <code>reports/backtest/score_stats.html</code>에서 1·3·6개월 선수익 참고</li>
           <li><strong>핵심 수치</strong> — 종가, 1일%, 5일%, RSI14</li>
           <li><strong>기간 수익률·펀더</strong> — 10/20/60/120일 상승률, PER, PBR, 시가총액, 발행주식수</li>
-          <li><strong>3개월 캔들 차트</strong> — 국내식 색(양봉 빨강 / 음봉 파랑) + SMA 20·60·120</li>
+          <li><strong>3개월 캔들 차트</strong> — 국내식 색(
+            <button type="button" class="term" aria-expanded="false" data-tip="종가가 시가보다 같거나 높은 날의 봉. 국내 차트에서는 보통 빨강입니다.">양봉</button> 빨강 /
+            <button type="button" class="term" aria-expanded="false" data-tip="종가가 시가보다 낮은 날의 봉. 국내 차트에서는 보통 파랑입니다.">음봉</button> 파랑) + SMA 20·60·120</li>
           <li><strong>수급</strong> — 외국인·기관 1일·누적 순매수와 보유 비중(있을 때)</li>
           <li><strong>뉴스</strong> — 게시일 포함, 최신순 (점수 미반영)</li>
         </ul>
@@ -735,7 +962,124 @@
       <div class="callout">
         <p>
           JSON에는 차트 SVG를 넣지 않습니다(용량). 차트는 HTML에서만 보입니다.
-          날짜 폴더(<code>reports/daily/YYYY-MM-DD/</code>)에는 같은 내용의 보관본이 남습니다.
+          날짜 폴더(<code>reports/daily/YYYY/MM/DD/</code>)에는 같은 내용의 보관본이 남습니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="backtest" class="reveal">
+      <h2>백테스트는 어떻게 돌아가나요?</h2>
+      <p class="section-intro">
+        “그때 그 점수가 나중에 얼마나 맞았나”를 보기 위해,
+        <strong>그 날짜 이전 데이터만</strong>으로 점수를 다시 매기고(PIT),
+        이후 1·3·6개월 수익률을 점수대별로 모아 둡니다.
+        과거 성적표이지, 미래 수익 보장은 아닙니다.
+      </p>
+
+      <div class="card score-block">
+        <h3>1) PIT (Point-In-Time) — 미래 정보 차단</h3>
+        <p>
+          <code>--as-of YYYY-MM-DD</code> 또는 백필을 쓰면,
+          시세·수급을 <strong>그 날짜 당일 포함 이전</strong>만 사용합니다.
+          그다음 날 가격으로 점수를 만드는 “미래 엿보기”를 막습니다.
+        </p>
+        <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
+          <li>단건: <code>python run_daily.py --as-of 2026-07-10 --no-news</code></li>
+          <li>기간: <code>python run_backfill.py --from 2025-01-01</code>
+              (거래일마다 그날 기준으로 워치리스트도 다시 만듦 · yaml은 덮어쓰지 않음)</li>
+          <li>백필은 속도 때문에 <strong>뉴스·차트·펀더멘털 표시</strong>를 생략하고,
+              시세·기술·수급(가능 시)만으로 <code>report.json</code>을 쌓습니다.
+              워치리스트 일자 데이터는 FDR 일별 CSV가 없으면
+              <strong>FinanceData marcap</strong> 연간 파일을 내려받아 씁니다
+              (<code>data/marcap/</code>).</li>
+        </ul>
+      </div>
+
+      <div class="card score-block">
+        <h3>2) 시그널 로그 — signals.jsonl</h3>
+        <p>
+          매일(또는 백필 각 거래일) 종목별 <strong>날짜·코드·점수·액션·가격</strong>을
+          한 줄씩 <code>reports/backtest/signals.jsonl</code>에 남깁니다.
+          일일 실행 시에는 append, 긴 백필 뒤에는 날짜별
+          <code>report.json</code>에서 다시 모아 재구축할 수 있습니다.
+        </p>
+      </div>
+
+      <div class="card score-block">
+        <h3>3) 점수대 선수익 — score_stats</h3>
+        <p>
+          시그널 시점 종가 대비, 대략 거래일 기준
+          <strong>1개월(21일) · 3개월(63일) · 6개월(126일)</strong> 뒤 수익률을 계산하고,
+          액션 구간(주의 / 관망 / 매수관심)별 평균을 냅니다.
+        </p>
+        <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
+          <li><code>reports/backtest/score_stats.json</code> — 기계 읽기용</li>
+          <li><code>reports/backtest/score_stats.html</code> — 브라우저용 표 (리포트에서 링크)</li>
+        </ul>
+        <p style="margin:0.7rem 0 0;">
+          표본이 적거나 보유 기간이 아직 안 지난 날은 평균이 비어 있을 수 있습니다.
+          네이버 수급 API는 최근 구간만 잘 나오므로, 먼 과거 날짜는
+          <strong>기술지표 위주</strong>로 채점된 날이 많습니다.
+        </p>
+      </div>
+
+      <div class="card score-block">
+        <h3>4) 리포트에 어떻게 쓰이나?</h3>
+        <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
+          <li><strong>차트 마커</strong> — 과거 매수관심(▲)·주의(▼)가 찍힌 날</li>
+          <li><strong>90일 시그널 횟수</strong> — 최근 매수관심/주의가 몇 번이었는지</li>
+          <li>둘 다 <code>signals.jsonl</code>을 읽어 붙입니다. 백필을 안 돌렸으면 비어 있을 수 있습니다.</li>
+        </ul>
+        <span class="flow-tag">비유: 예전 시험 점수로 채점표가 잘 맞는지 점검</span>
+      </div>
+
+      <div class="callout">
+        <p>
+          <strong>한계:</strong> 수수료·슬리피지·배당·상장폐지·워치리스트 변경을
+          전부 반영한 “실전 백테스트”는 아닙니다.
+          같은 규칙이 과거 점수대에서 어떤 선수익을 보였는지
+          <em>참고 통계</em>로 보세요.
+        </p>
+      </div>
+    </section>
+
+    <section id="files" class="reveal">
+      <h2>파일·폴더는 어디에 쌓이나요?</h2>
+      <p class="section-intro">
+        날짜가 많아지면 한 폴더에 날짜명이 잔뜩 쌓이지 않도록,
+        <strong>연 → 월 → 일</strong>로 나눕니다.
+      </p>
+      <div class="card">
+        <pre style="margin:0;white-space:pre-wrap;font-size:0.92rem;line-height:1.55;color:var(--ink-soft);">reports/
+  how_it_works.html          ← 이 설명서
+  daily/
+    latest.html / .txt / .md / .json   ← 오늘(최신) 바로가기
+    2026/
+      07/
+        16/
+          report.html / .txt / .md / .json
+  backtest/
+    signals.jsonl            ← 날짜×종목 시그널 로그
+    score_stats.html / .json ← 점수대별 1·3·6개월 선수익</pre>
+      </div>
+      <div class="grid-2" style="margin-top:1rem;">
+        <div class="metric">
+          <div class="label">일일 실행</div>
+          <div class="value" style="font-size:1.15rem;">run_daily.py</div>
+          <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem;">latest 갱신 + YYYY/MM/DD 보관 + 시그널 append</p>
+        </div>
+        <div class="metric">
+          <div class="label">과거 백필</div>
+          <div class="value" style="font-size:1.15rem;">run_backfill.py</div>
+          <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem;">거래일마다 PIT report.json → 시그널 재구축 → 통계</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p>
+          예전에 <code>reports/daily/2026-07-16/</code>처럼 날짜 한 칸이었던 폴더는
+          <code>scripts/migrate_daily_layout.py</code>로
+          <code>2026/07/16/</code> 구조로 옮길 수 있습니다.
+          (이미 이 PC에서는 마이그레이션이 적용된 상태입니다.)
         </p>
       </div>
     </section>
@@ -751,7 +1095,7 @@
           <div class="flow-body">
             <h3>리포트 읽기</h3>
             <p>
-              <strong>latest.html</strong>에서 순위표·차트·이유를 확인합니다.
+              <strong>latest.html</strong>에서 종합 요약·필터·종목 상세를 확인합니다.
               메모장이면 <strong>latest.txt</strong>를 열면 됩니다.
             </p>
           </div>
@@ -812,10 +1156,23 @@
           </p>
         </div>
         <div class="card">
-          <h3 style="margin-top:0;">❌ “종가는 항상 어제의 확정가”</h3>
+          <h3 style="margin-top:0;">✅ “기본 실행은 확정 세션 종가까지”</h3>
           <p style="margin:0;color:var(--ink-soft);">
-            장중에는 마지막 봉이 <strong>당일 미완성 시세</strong>일 수 있습니다.
-            수급(외인·기관)은 보통 전일 기준입니다.
+            맞습니다. 평일 <strong>15:30 이후</strong>면 당일 종가, 장중이면 전일 종가까지 씁니다.
+            폴더명도 그 기준일입니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">❌ “백테스트 수익 = 앞으로 벌 돈”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            아니요. 과거 점수대 평균 선수익일 뿐입니다.
+            수수료·체결·시장 국면 변화는 반영되지 않습니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">✅ “과거 날짜는 그 시점 데이터만 쓴다”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            맞습니다. <code>--as-of</code>·백필은 PIT로 잘린 시세·수급만 사용합니다.
           </p>
         </div>
       </div>
@@ -834,10 +1191,11 @@
     </footer>
   </div>
 
+  <div class="term-note" id="term-note" hidden role="tooltip"></div>
   <script>
     const progress = document.getElementById("progress");
     const dots = [...document.querySelectorAll(".dots a")];
-    const sections = ["hero", "big-picture", "steps", "score", "report", "you", "myth"].map(id => document.getElementById(id));
+    const sections = ["hero", "big-picture", "steps", "score", "report", "backtest", "files", "you", "myth"].map(id => document.getElementById(id));
 
     function onScroll() {
       const scrollTop = window.scrollY;
@@ -860,6 +1218,53 @@
 
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+
+    (function () {
+      const note = document.getElementById("term-note");
+      let openBtn = null;
+
+      function place(btn) {
+        note.textContent = btn.getAttribute("data-tip") || "";
+        note.hidden = false;
+        const r = btn.getBoundingClientRect();
+        const pad = 10;
+        const w = note.offsetWidth;
+        const h = note.offsetHeight;
+        let left = r.left;
+        if (left + w > window.innerWidth - pad) left = window.innerWidth - w - pad;
+        if (left < pad) left = pad;
+        let top = r.bottom + 8;
+        if (top + h > window.innerHeight - pad) top = Math.max(pad, r.top - h - 8);
+        note.style.left = left + "px";
+        note.style.top = top + "px";
+      }
+
+      function closeNote() {
+        if (openBtn) openBtn.setAttribute("aria-expanded", "false");
+        openBtn = null;
+        note.hidden = true;
+      }
+
+      document.addEventListener("click", function (e) {
+        const btn = e.target.closest(".term");
+        if (btn) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (openBtn === btn) { closeNote(); return; }
+          if (openBtn) openBtn.setAttribute("aria-expanded", "false");
+          openBtn = btn;
+          btn.setAttribute("aria-expanded", "true");
+          place(btn);
+          return;
+        }
+        if (!e.target.closest(".term-note")) closeNote();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeNote();
+      });
+      window.addEventListener("scroll", closeNote, { passive: true });
+      window.addEventListener("resize", closeNote);
+    })();
   </script>
 </body>
 </html>

@@ -55,8 +55,11 @@ def run_daily(
     as_of = datetime.now(KST).strftime("%Y-%m-%d")
     console.print(f"\n리포트: [green]{latest}[/green]")
     console.print("같은 폴더: latest.html / latest.txt / latest.md / latest.json")
+    from tradingagents.recommend.paths import dated_report_dir
+
+    as_of = datetime.now(KST).strftime("%Y-%m-%d")
     console.print(
-        f"날짜별 보관: [cyan]{latest.parent / as_of}[/cyan] "
+        f"날짜별 보관: [cyan]{dated_report_dir(as_of)}[/cyan] "
         "(report.html / .txt / .md / .json)"
     )
     return 0

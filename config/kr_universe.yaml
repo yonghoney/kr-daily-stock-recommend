@@ -20,12 +20,12 @@ watchlist:
 - code: 032830
   name: 삼성생명
   ticker: 032830.KS
-- code: '105560'
-  name: KB금융
-  ticker: 105560.KS
 - code: '207940'
   name: 삼성바이오로직스
   ticker: 207940.KS
+- code: '105560'
+  name: KB금융
+  ticker: 105560.KS
 - code: '000270'
   name: 기아
   ticker: 000270.KS
@@ -62,12 +62,12 @@ watchlist:
 - code: 000810
   name: 삼성화재
   ticker: 000810.KS
-- code: '066570'
-  name: LG전자
-  ticker: 066570.KS
 - code: '035420'
   name: NAVER
   ticker: 035420.KS
+- code: '066570'
+  name: LG전자
+  ticker: 066570.KS
 - code: '267260'
   name: HD현대일렉트릭
   ticker: 267260.KS
@@ -104,21 +104,21 @@ watchlist:
 - code: 096770
   name: SK이노베이션
   ticker: 096770.KS
-- code: '017670'
-  name: SK텔레콤
-  ticker: 017670.KS
 - code: '138040'
   name: 메리츠금융지주
   ticker: 138040.KS
-- code: '000150'
-  name: 두산
-  ticker: 000150.KS
-- code: '011200'
-  name: HMM
-  ticker: 011200.KS
 - code: '010140'
   name: 삼성중공업
   ticker: 010140.KS
+- code: '000150'
+  name: 두산
+  ticker: 000150.KS
+- code: '017670'
+  name: SK텔레콤
+  ticker: 017670.KS
+- code: '011200'
+  name: HMM
+  ticker: 011200.KS
 - code: 051910
   name: LG화학
   ticker: 051910.KS
@@ -137,18 +137,18 @@ watchlist:
 - code: 010950
   name: S-Oil
   ticker: 010950.KS
-- code: '011070'
-  name: LG이노텍
-  ticker: 011070.KS
 - code: '267250'
   name: HD현대
   ticker: 267250.KS
+- code: '011070'
+  name: LG이노텍
+  ticker: 011070.KS
 - code: '035720'
   name: 카카오
   ticker: 035720.KS
-- code: '003550'
-  name: LG
-  ticker: 003550.KS
+- code: 018260
+  name: 삼성에스디에스
+  ticker: 018260.KS
 - code: '196170'
   name: 알테오젠
   ticker: 196170.KQ
@@ -164,18 +164,18 @@ watchlist:
 - code: '277810'
   name: 레인보우로보틱스
   ticker: 277810.KQ
-- code: '007660'
-  name: 이수페타시스
-  ticker: 007660.KS
 - code: '353200'
   name: 대덕전자
   ticker: 353200.KS
-- code: '950160'
-  name: 코오롱티슈진
-  ticker: 950160.KQ
 - code: '240810'
   name: 원익IPS
   ticker: 240810.KQ
+- code: '007660'
+  name: 이수페타시스
+  ticker: 007660.KS
+- code: '950160'
+  name: 코오롱티슈진
+  ticker: 950160.KQ
 - code: '319660'
   name: 피에스케이
   ticker: 319660.KQ
@@ -194,15 +194,15 @@ watchlist:
 - code: 039030
   name: 이오테크닉스
   ticker: 039030.KQ
-- code: '141080'
-  name: 리가켐바이오
-  ticker: 141080.KQ
 - code: '222800'
   name: 심텍
   ticker: 222800.KQ
 - code: 095610
   name: 테스
   ticker: 095610.KQ
+- code: '141080'
+  name: 리가켐바이오
+  ticker: 141080.KQ
 - code: '440110'
   name: 파두
   ticker: 440110.KQ
@@ -224,63 +224,60 @@ watchlist:
 - code: 095340
   name: ISC
   ticker: 095340.KQ
-- code: 031980
-  name: 피에스케이홀딩스
-  ticker: 031980.KQ
 - code: '131290'
   name: 티에스이
   ticker: 131290.KQ
-- code: '108490'
-  name: 로보티즈
-  ticker: 108490.KQ
+- code: 031980
+  name: 피에스케이홀딩스
+  ticker: 031980.KQ
 - code: '145020'
   name: 휴젤
   ticker: 145020.KQ
 - code: '214150'
   name: 클래시스
   ticker: 214150.KQ
+- code: '108490'
+  name: 로보티즈
+  ticker: 108490.KQ
 - code: '226950'
   name: 올릭스
   ticker: 226950.KQ
+- code: 089970
+  name: 브이엠
+  ticker: 089970.KQ
 - code: 080220
   name: 제주반도체
   ticker: 080220.KQ
 - code: 087010
   name: 펩트론
   ticker: 087010.KQ
-- code: 089970
-  name: 브이엠
-  ticker: 089970.KQ
 - code: '310210'
   name: 보로노이
   ticker: 310210.KQ
-- code: '279570'
-  name: 케이뱅크
-  ticker: 279570.KS
-- code: '178320'
-  name: 서진시스템
-  ticker: 178320.KQ
 - code: '237690'
   name: 에스티팜
   ticker: 237690.KQ
-- code: '257720'
-  name: 실리콘투
-  ticker: 257720.KQ
+- code: '178320'
+  name: 서진시스템
+  ticker: 178320.KQ
 - code: '064760'
   name: 티씨케이
   ticker: 064760.KQ
+- code: '257720'
+  name: 실리콘투
+  ticker: 257720.KQ
 - code: '067310'
   name: 하나마이크론
   ticker: 067310.KQ
-- code: '319400'
-  name: 현대무벡스
-  ticker: 319400.KQ
 - code: '357780'
   name: 솔브레인
   ticker: 357780.KQ
 - code: 005290
   name: 동진쎄미켐
   ticker: 005290.KQ
+- code: '319400'
+  name: 현대무벡스
+  ticker: 319400.KQ
 - code: '263750'
   name: 펄어비스
   ticker: 263750.KQ
@@ -290,18 +287,18 @@ watchlist:
 - code: '290650'
   name: 엘앤씨바이오
   ticker: 290650.KQ
-- code: '475150'
-  name: SK이터닉스
-  ticker: 475150.KS
-- code: '140860'
-  name: 파크시스템스
-  ticker: 140860.KQ
-- code: 098460
-  name: 고영
-  ticker: 098460.KQ
 - code: 089030
   name: 테크윙
   ticker: 089030.KQ
+- code: '475150'
+  name: SK이터닉스
+  ticker: 475150.KS
+- code: 098460
+  name: 고영
+  ticker: 098460.KQ
+- code: '140860'
+  name: 파크시스템스
+  ticker: 140860.KQ
 - code: 068760
   name: 셀트리온제약
   ticker: 068760.KQ
@@ -347,21 +344,15 @@ watchlist:
 - code: '387690'
   name: 레메디
   ticker: 387690.KQ
-- code: 079650
-  name: 서산
-  ticker: 079650.KQ
 - code: '263800'
   name: 데이타솔루션
   ticker: 263800.KQ
-- code: '005360'
-  name: 모나미
-  ticker: 005360.KS
+- code: 079650
+  name: 서산
+  ticker: 079650.KQ
 - code: '365660'
   name: 레몬헬스케어
   ticker: 365660.KQ
-- code: '463480'
-  name: 모티브링크
-  ticker: 463480.KQ
 kosdaq:
 - '000250'
 - 005290
@@ -423,7 +414,6 @@ kosdaq:
 - '413630'
 - '420770'
 - '440110'
-- '463480'
 - '477850'
 - '950160'
 risk:
@@ -446,7 +436,7 @@ universe_meta:
   - '2026-07-14'
   - '2026-07-15'
   - '2026-07-16'
-  count: 121
+  count: 118
   by_market_cap:
     KOSPI:
     - 005930
@@ -456,8 +446,8 @@ universe_meta:
     - 005380
     - '373220'
     - 032830
-    - '105560'
     - '207940'
+    - '105560'
     - '000270'
     - 028260
     - '055550'
@@ -470,8 +460,8 @@ universe_meta:
     - 086790
     - '006400'
     - 000810
-    - '066570'
     - '035420'
+    - '066570'
     - '267260'
     - '010120'
     - '042660'
@@ -484,38 +474,38 @@ universe_meta:
     - '015760'
     - '010130'
     - 096770
-    - '017670'
     - '138040'
-    - '000150'
-    - '011200'
     - '010140'
+    - '000150'
+    - '017670'
+    - '011200'
     - 051910
     - 033780
     - '064350'
     - '024110'
     - 079550
     - 010950
-    - '011070'
     - '267250'
+    - '011070'
     - '035720'
-    - '003550'
+    - 018260
     KOSDAQ:
     - '196170'
     - '247540'
     - 086520
     - 036930
     - '277810'
-    - '950160'
     - '240810'
+    - '950160'
     - '319660'
     - 058470
     - 028300
     - '000250'
     - '298380'
     - 039030
-    - '141080'
     - '222800'
     - 095610
+    - '141080'
     - '440110'
     - '403870'
     - '214450'
@@ -523,30 +513,30 @@ universe_meta:
     - '214370'
     - '347850'
     - 095340
-    - 031980
     - '131290'
-    - '108490'
+    - 031980
     - '145020'
     - '214150'
+    - '108490'
     - '226950'
+    - 089970
     - 080220
     - 087010
-    - 089970
     - '310210'
-    - '178320'
     - '237690'
-    - '257720'
+    - '178320'
     - '064760'
+    - '257720'
     - '067310'
-    - '319400'
     - '357780'
     - 005290
+    - '319400'
     - '263750'
     - '420770'
     - '290650'
-    - '140860'
-    - 098460
     - 089030
+    - 098460
+    - '140860'
     - 068760
     - 032820
     - 035900
@@ -554,10 +544,8 @@ universe_meta:
     KOSPI:
     - 002990
     - '004310'
-    - '005360'
     - '006340'
     - '007660'
-    - '279570'
     - '353200'
     - '475150'
     KOSDAQ:
@@ -572,25 +560,21 @@ universe_meta:
     - '365660'
     - '387690'
     - '413630'
-    - '463480'
     - '477850'
   amount_hits_by_day:
     '2026-07-16':
       KOSPI:
       - '475150'
       - '004310'
-      - '005360'
-      - '279570'
       - '353200'
       KOSDAQ:
-      - 049080
       - '037070'
       - 067290
+      - 049080
       - 069540
-      - '413630'
       - '024060'
+      - '413630'
       - '010170'
-      - '463480'
     '2026-07-15':
       KOSPI:
       - '475150'

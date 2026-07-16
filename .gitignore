@@ -220,5 +220,9 @@ __marimo__/
 
 # Enterprise env file (secrets) and generated run reports
 .env.enterprise
-reports/daily/
+reports/daily/.run_state.json
 # Keep how_it_works.html and other static docs under reports/
+
+# Local marcap yearly caches (FinanceData/marcap)
+data/marcap/
+

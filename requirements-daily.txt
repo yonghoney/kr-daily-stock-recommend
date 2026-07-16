@@ -7,3 +7,4 @@ requests>=2.32
 pytz>=2024.1
 finance-datareader>=0.9.50
 lxml>=5.0
+pyarrow>=14.0
