@@ -45,6 +45,46 @@ VS Code에서 이 폴더를 연 뒤, 인터프리터로 `.venv\Scripts\python.ex
 
 ---
 
+## 다른 PC에서 이어서 쓰기 (Git)
+
+저장소에는 **2025-01-01 이후 거래일별 `report.json`** 과 **최근 `latest.*`**, **백테스트 산출물**이 포함되어 있습니다.  
+다른 PC에서 `git clone` 후 `run_daily.py`만 실행하면, 그 PC에서도 리포트가 **누적**됩니다.
+
+### 실행하면 일어나는 일
+
+1. **Git에서 받은 과거 `report.json`** 은 그대로 둡니다.
+2. **누락 보완** — `reports/daily/.run_state.json`(로컬 전용, Git 미포함)을 보고 빠진 거래일만 채웁니다.  
+   첫 실행이라 상태 파일이 없으면 2025-01-01부터 검사하지만, **이미 있는 `report.json`은 건너뜁니다.**
+3. **오늘 분석** — 마지막 확정 세션 기준으로 `latest.*` 와 `reports/daily/YYYY/MM/DD/report.*` 를 갱신합니다.
+
+### 무엇이 Git에 있고, 없는지
+
+| 경로 | Git | 설명 |
+|------|-----|------|
+| `reports/daily/YYYY/MM/DD/report.json` | ✅ | 과거 일별 점수·액션 (백필·누락 보완) |
+| `reports/daily/latest.*` | ✅ | 마지막으로 push된 최신 리포트 |
+| `reports/daily/YYYY/MM/DD/report.html` 등 | 일부 | 최근 실행분만 풀셋일 수 있음 |
+| `reports/daily/.run_state.json` | ❌ | PC마다 따로 생성 |
+| `data/marcap/` | ❌ | PIT 누락 보완용 로컬 캐시 |
+
+과거 날짜는 대부분 **`report.json`만** 있고 HTML은 **`latest`와 최근 며칠**에만 있을 수 있습니다.  
+브라우저로 보려면 `latest.html`을 열면 됩니다.
+
+### GitHub에 다시 올리기
+
+`run_daily.py`는 **자동으로 push하지 않습니다.** 다른 PC에서 쌓은 리포트를 공유하려면:
+
+```powershell
+git add reports/daily reports/backtest
+git commit -m "chore: update daily reports"
+git push
+```
+
+PIT 누락 보완이 오래된 날짜를 채우려면 `data/marcap/` 캐시가 필요할 수 있습니다(`data/marcap/`는 Git 제외).  
+캐시 없이도 **이미 clone으로 받은 `report.json`은 그대로** 사용됩니다.
+
+---
+
 ## 매일 실행 (이것만 하면 됨)
 
 1. VS Code에서 [`run_daily.py`](run_daily.py) 열기  
@@ -151,12 +191,14 @@ python scripts/update_market_pulse.py
 ```
 run_daily.py                 ← 실행 진입점 (이것만 실행)
 requirements-daily.txt       ← 다른 PC용 최소 의존성
-config/kr_universe.yaml      ← 관심 종목
-tradingagents/recommend/     ← 추천 엔진
-run_backfill.py              ← 과거 거래일 PIT 백필
+config/kr_universe.yaml      ← 관심 종목 (실행마다 자동 갱신)
+tradingagents/recommend/     ← 추천 엔진 (session, gap_fill, market_pulse 등)
+run_backfill.py              ← 과거 거래일 PIT 백필 (대량)
+run_strategy_bt.py           ← 점수 기반 전략 백테스트
 reports/how_it_works.html    ← 동작 설명서
-reports/daily/               ← latest.* + YYYY/MM/DD/ (gitignore)
-reports/backtest/            ← signals.jsonl · score_stats.html
+reports/daily/               ← latest.* + YYYY/MM/DD/ (Git 포함, .run_state.json 제외)
+reports/backtest/            ← signals.jsonl · score_stats · strategy · market_pulse
+data/marcap/                 ← PIT용 로컬 캐시 (Git 제외)
 .vscode/                     ← VS Code 인터프리터·F5 설정
 ```
 
@@ -170,6 +212,8 @@ reports/backtest/            ← signals.jsonl · score_stats.html
 | 모듈 없음 (`yfinance` 등) | `.venv` 활성화 후 `pip install -r requirements-daily.txt` |
 | 시세가 비어 있음 | 인터넷 확인, 티커(`.KS`/`.KQ`) 확인 |
 | 콘솔 한글 깨짐 | `latest.txt`를 메모장으로 열면 됨 (UTF-8 BOM) |
+| 다른 PC에서 과거 HTML이 없음 | 정상 — 과거는 `report.json` 위주. `latest.html` 사용 |
+| 누락 보완이 오래된 날 실패 | `data/marcap/` 캐시 필요. 이미 있는 `report.json`은 유지됨 |
 
 ---
 

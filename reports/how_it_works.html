@@ -521,6 +521,7 @@
     <a href="#report" title="리포트 구성"></a>
     <a href="#backtest" title="백테스트"></a>
     <a href="#files" title="폴더 구조"></a>
+    <a href="#git-sync" title="Git 이어쓰기"></a>
     <a href="#you" title="사람이 하는 일"></a>
     <a href="#myth" title="오해 풀기"></a>
   </nav>
@@ -649,9 +650,11 @@
               매일 실행하지 못해도 괜찮습니다. <code>reports/daily/.run_state.json</code>에
               마지막으로 채운 거래일을 저장해 두었다가, 다음 실행 때
               <strong>그 이후~기준일</strong> 사이에 빠진 날짜만 찾습니다
-              (처음 한 번만 2025-01-01부터 검사). 빠진 날은 그날의
-              PIT 워치리스트로 리포트를 생성합니다. 건너뛰려면
-              <code>--no-gap-fill</code>.
+              (처음 한 번만 2025-01-01부터 검사).
+              <strong>이미 <code>report.json</code>이 있으면 건너뜁니다.</strong>
+              빠진 날은 그날의 PIT 워치리스트로 리포트를 생성합니다.
+              이 상태 파일은 <strong>PC마다 따로</strong> 생기며 Git에는 올라가지 않습니다.
+              건너뛰려면 <code>--no-gap-fill</code>.
             </p>
             <span class="flow-tag">자동 · 누락일만</span>
           </div>
@@ -1084,6 +1087,32 @@
       </div>
     </section>
 
+    <section id="git-sync" class="reveal">
+      <h2>다른 PC · Git으로 이어서 쓰기</h2>
+      <p class="section-intro">
+        저장소를 clone하면 <strong>과거 <code>report.json</code></strong> 과
+        <strong>latest 리포트</strong>가 함께 옵니다.
+        그 PC에서 <code>run_daily.py</code>만 실행해도 날짜별 데이터가 이어집니다.
+      </p>
+      <div class="card">
+        <ul class="checklist">
+          <li><strong>clone 후</strong> — venv 설치 → <code>python run_daily.py</code> (README 참고)</li>
+          <li><strong>누적</strong> — 매 실행마다 <code>latest.*</code> 갱신 + 기준일 폴더 <code>YYYY/MM/DD/</code> 보관</li>
+          <li><strong>과거 HTML</strong> — 대부분의 옛날은 <code>report.json</code>만 있음. 브라우저는 <code>latest.html</code></li>
+          <li><strong>.run_state.json</strong> — 로컬만. Git 미포함. 첫 실행 시 넓게 검사 후 빠른 모드로 전환</li>
+          <li><strong>자동 push 없음</strong> — GitHub에 올리려면 직접 <code>git add / commit / push</code></li>
+          <li><strong>marcap 캐시</strong> — <code>data/marcap/</code>는 Git 제외. 오래된 누락일 PIT 보완 시 필요할 수 있음</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <p>
+          다른 PC에서 쌓은 리포트를 공유할 때:
+          <code>git add reports/daily reports/backtest</code> →
+          <code>git commit</code> → <code>git push</code>
+        </p>
+      </div>
+    </section>
+
     <section id="you" class="reveal">
       <h2>그리고… 사람이 하는 일</h2>
       <p class="section-intro">
@@ -1120,6 +1149,19 @@
     <section id="myth" class="reveal">
       <h2>자주 생기는 오해</h2>
       <div class="grid-2">
+        <div class="card">
+          <h3 style="margin-top:0;">✅ “clone만 해도 과거 리포트가 있다”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            맞습니다. Git에 포함된 <code>report.json</code> 시계열을 받습니다.
+            <code>run_daily</code>로 최신 분석을 이어갈 수 있습니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">❌ “run_daily가 GitHub에 자동 업로드한다”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            아니요. 로컬 파일만 갱신합니다. 공유하려면 직접 commit·push 하세요.
+          </p>
+        </div>
         <div class="card">
           <h3 style="margin-top:0;">❌ “AI가 미래 주가를 안다”</h3>
           <p style="margin:0;color:var(--ink-soft);">
