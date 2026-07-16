@@ -5,16 +5,22 @@ VS Code / 로컬에서 바로 실행하는 일일 추천 진입점.
   1. 이 파일을 연 뒤 Run Python File (▶) 또는 F5
   2. 또는 터미널:  python run_daily.py
   3. 결과: reports/daily/latest.html  (및 .txt / .md / .json)
+             + reports/daily/YYYY-MM-DD/report.*
 """
 
 from __future__ import annotations
 
 import sys
+from datetime import datetime
 from pathlib import Path
+
+import pytz
 
 ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+KST = pytz.timezone("Asia/Seoul")
 
 
 def main() -> int:
@@ -44,8 +50,10 @@ def main() -> int:
             f"{r.price:>12,.0f} {r.ret_5d_pct:>+7.2f}"
         )
     print()
+    as_of = datetime.now(KST).strftime("%Y-%m-%d")
     print(f"리포트(html): {latest}")
-    print(f"같은 폴더: latest.txt / latest.md / latest.json / YYYY-MM-DD.*")
+    print("같은 폴더: latest.txt / latest.md / latest.json")
+    print(f"날짜별 보관: {latest.parent / as_of} (report.html / .txt / .md / .json)")
     return 0
 
 

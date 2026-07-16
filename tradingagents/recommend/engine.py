@@ -330,21 +330,24 @@ def run_daily_recommendations(
 
     out = output_dir or (_project_root() / "reports" / "daily")
     out.mkdir(parents=True, exist_ok=True)
+    dated_dir = out / as_of
+    dated_dir.mkdir(parents=True, exist_ok=True)
+
     md = render_markdown(recs, as_of=as_of)
     txt = render_plain_text(recs, as_of=as_of)
     from tradingagents.recommend.html_report import render_html
 
     html_doc = render_html(recs, as_of=as_of)
 
-    (out / f"{as_of}.md").write_text(md, encoding="utf-8")
+    # Keep only latest.* at the daily root; archive under YYYY-MM-DD/
     (out / "latest.md").write_text(md, encoding="utf-8")
+    (dated_dir / "report.md").write_text(md, encoding="utf-8")
     # UTF-8 BOM so Windows Notepad shows Korean correctly
-    (out / f"{as_of}.txt").write_text(txt, encoding="utf-8-sig")
-    latest_txt = out / "latest.txt"
-    latest_txt.write_text(txt, encoding="utf-8-sig")
-    (out / f"{as_of}.html").write_text(html_doc, encoding="utf-8")
+    (out / "latest.txt").write_text(txt, encoding="utf-8-sig")
+    (dated_dir / "report.txt").write_text(txt, encoding="utf-8-sig")
     latest_html = out / "latest.html"
     latest_html.write_text(html_doc, encoding="utf-8")
+    (dated_dir / "report.html").write_text(html_doc, encoding="utf-8")
 
     import json
 
@@ -352,12 +355,7 @@ def run_daily_recommendations(
         "as_of": as_of,
         "recommendations": [r.to_dict() for r in sorted(recs, key=lambda x: -x.score)],
     }
-    (out / f"{as_of}.json").write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    (out / "latest.json").write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    json_text = json.dumps(payload, ensure_ascii=False, indent=2)
+    (out / "latest.json").write_text(json_text, encoding="utf-8")
+    (dated_dir / "report.json").write_text(json_text, encoding="utf-8")
     return recs, latest_html

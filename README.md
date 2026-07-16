@@ -99,8 +99,8 @@ python run_daily.py --no-news
 - `reports/daily/latest.html` — 세로 스크롤 HTML 리포트 (종합 요약 + 종목별 리포트)
 - `reports/daily/latest.txt` — 최신 리포트 (Windows 메모장용, UTF-8)
 - `reports/daily/latest.md` — 마크다운 리포트
-- `reports/daily/YYYY-MM-DD.html` / `.txt` / `.md` / `.json` — 날짜별 보관
 - `reports/daily/latest.json` — 기계 읽기용
+- `reports/daily/YYYY-MM-DD/report.*` — 날짜별 보관 (html / txt / md / json)
 
 ---
 
@@ -129,7 +129,7 @@ requirements-daily.txt       ← 다른 PC용 최소 의존성
 config/kr_universe.yaml      ← 관심 종목
 tradingagents/recommend/     ← 추천 엔진
 reports/how_it_works.html    ← 동작 설명서
-reports/daily/               ← 실행 결과 (gitignore)
+reports/daily/               ← latest.* + YYYY-MM-DD/ (gitignore)
 .vscode/                     ← VS Code 인터프리터·F5 설정
 ```
 

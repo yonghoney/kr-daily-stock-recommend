@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+from datetime import datetime
 from pathlib import Path
 
+import pytz
 import typer
 from rich.console import Console
 from rich.table import Table
@@ -11,6 +13,7 @@ from rich.table import Table
 from tradingagents.recommend.engine import run_daily_recommendations
 
 console = Console()
+KST = pytz.timezone("Asia/Seoul")
 
 
 def run_daily(
@@ -49,9 +52,12 @@ def run_daily(
             f"{r.ret_5d_pct:+.2f}",
         )
     console.print(table)
+    as_of = datetime.now(KST).strftime("%Y-%m-%d")
     console.print(f"\n리포트: [green]{latest}[/green]")
+    console.print("같은 폴더: latest.html / latest.txt / latest.md / latest.json")
     console.print(
-        "같은 폴더: latest.html / latest.txt / latest.md / latest.json / YYYY-MM-DD.*"
+        f"날짜별 보관: [cyan]{latest.parent / as_of}[/cyan] "
+        "(report.html / .txt / .md / .json)"
     )
     return 0
 
