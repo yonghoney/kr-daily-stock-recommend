@@ -48,7 +48,9 @@ def run_daily(
         )
     console.print(table)
     console.print(f"\n리포트: [green]{latest}[/green]")
-    console.print("같은 폴더: latest.md / latest.json / latest.txt / YYYY-MM-DD.*")
+    console.print(
+        "같은 폴더: latest.html / latest.txt / latest.md / latest.json / YYYY-MM-DD.*"
+    )
     return 0
 
 

@@ -4,7 +4,7 @@ VS Code / 로컬에서 바로 실행하는 일일 추천 진입점.
 사용법:
   1. 이 파일을 연 뒤 Run Python File (▶) 또는 F5
   2. 또는 터미널:  python run_daily.py
-  3. 결과: reports/daily/latest.txt  (및 .md / .json)
+  3. 결과: reports/daily/latest.html  (및 .txt / .md / .json)
 """
 
 from __future__ import annotations
@@ -42,8 +42,8 @@ def main() -> int:
             f"{r.price:>12,.0f} {r.ret_5d_pct:>+7.2f}"
         )
     print()
-    print(f"리포트(txt): {latest}")
-    print(f"같은 폴더: latest.md / latest.json / YYYY-MM-DD.*")
+    print(f"리포트(html): {latest}")
+    print(f"같은 폴더: latest.txt / latest.md / latest.json / YYYY-MM-DD.*")
     return 0
 
 

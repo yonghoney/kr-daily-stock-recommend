@@ -16,9 +16,11 @@ def _synth(n: int = 80, trend: float = 1.0) -> pd.DataFrame:
 def test_compute_tech_uptrend_scores_positive():
     snap = compute_tech(_synth(trend=1.0))
     assert snap is not None
-    score, reasons = score_tech(snap)
+    score, reasons, factors = score_tech(snap)
     assert reasons
+    assert factors
     assert score > 0
+    assert abs(factors[0].impact) >= abs(factors[-1].impact)
 
 
 def test_compute_tech_needs_history():

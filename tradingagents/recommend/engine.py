@@ -32,6 +32,7 @@ class Recommendation:
     ret_5d_pct: float
     rsi14: float
     reasons: list[str] = field(default_factory=list)
+    drivers: list[dict[str, Any]] = field(default_factory=list)
     headlines: list[str] = field(default_factory=list)
     error: str | None = None
 
@@ -115,7 +116,10 @@ def analyze_ticker(
                 reasons=[],
                 error="시세 데이터 부족 (25거래일 미만)",
             )
-        score, reasons = score_tech(snap)
+        score, reasons, factors = score_tech(snap)
+        drivers = [
+            {"impact": round(f.impact, 1), "label": f.label} for f in factors
+        ]
         headlines: list[str] = []
         if include_news:
             try:
@@ -140,6 +144,7 @@ def analyze_ticker(
             ret_5d_pct=round(snap.ret_5d * 100, 2),
             rsi14=round(snap.rsi14, 1),
             reasons=reasons,
+            drivers=drivers,
             headlines=headlines[:news_limit],
         )
     except Exception as exc:
@@ -287,7 +292,7 @@ def run_daily_recommendations(
     output_dir: Path | None = None,
     include_news: bool = True,
 ) -> tuple[list[Recommendation], Path]:
-    """Analyze watchlist and write reports. Returns (recs, latest.txt path)."""
+    """Analyze watchlist and write reports. Returns (recs, latest.html path)."""
     as_of = datetime.now(KST).strftime("%Y-%m-%d")
     watchlist = load_watchlist(universe_path)
     if not watchlist:
@@ -307,6 +312,9 @@ def run_daily_recommendations(
     out.mkdir(parents=True, exist_ok=True)
     md = render_markdown(recs, as_of=as_of)
     txt = render_plain_text(recs, as_of=as_of)
+    from tradingagents.recommend.html_report import render_html
+
+    html_doc = render_html(recs, as_of=as_of)
 
     (out / f"{as_of}.md").write_text(md, encoding="utf-8")
     (out / "latest.md").write_text(md, encoding="utf-8")
@@ -314,6 +322,9 @@ def run_daily_recommendations(
     (out / f"{as_of}.txt").write_text(txt, encoding="utf-8-sig")
     latest_txt = out / "latest.txt"
     latest_txt.write_text(txt, encoding="utf-8-sig")
+    (out / f"{as_of}.html").write_text(html_doc, encoding="utf-8")
+    latest_html = out / "latest.html"
+    latest_html.write_text(html_doc, encoding="utf-8")
 
     import json
 
@@ -329,4 +340,4 @@ def run_daily_recommendations(
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    return recs, latest_txt
+    return recs, latest_html

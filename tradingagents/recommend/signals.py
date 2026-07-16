@@ -24,6 +24,14 @@ class TechSnapshot:
     bars: int
 
 
+@dataclass
+class ScoreFactor:
+    """One scoring rule contribution."""
+
+    impact: float
+    label: str
+
+
 def _rsi(series: pd.Series, period: int = 14) -> float:
     delta = series.diff()
     gain = delta.clip(lower=0.0)
@@ -41,7 +49,11 @@ def compute_tech(hist: pd.DataFrame) -> TechSnapshot | None:
         return None
     df = hist.copy()
     close = df["Close"].astype(float)
-    volume = df["Volume"].astype(float) if "Volume" in df.columns else pd.Series(0.0, index=df.index)
+    volume = (
+        df["Volume"].astype(float)
+        if "Volume" in df.columns
+        else pd.Series(0.0, index=df.index)
+    )
 
     sma20 = float(close.tail(20).mean())
     sma60 = float(close.tail(min(60, len(close))).mean())
@@ -68,67 +80,58 @@ def compute_tech(hist: pd.DataFrame) -> TechSnapshot | None:
     )
 
 
-def score_tech(snap: TechSnapshot) -> tuple[float, list[str]]:
-    """Return score in roughly [-100, 100] and human-readable reasons."""
+def score_tech(snap: TechSnapshot) -> tuple[float, list[str], list[ScoreFactor]]:
+    """Return score, reason strings, and factors sorted by |impact| desc."""
     score = 0.0
-    reasons: list[str] = []
+    factors: list[ScoreFactor] = []
+
+    def add(impact: float, label: str) -> None:
+        nonlocal score
+        score += impact
+        factors.append(ScoreFactor(impact=impact, label=label))
 
     # Trend
     if snap.above_sma20 and snap.above_sma60:
-        score += 20
-        reasons.append("종가가 20·60일 이동평균 위 (추세 우호)")
+        add(20, "종가가 20·60일 이동평균 위 (추세 우호)")
     elif snap.above_sma20:
-        score += 8
-        reasons.append("종가가 20일선 위")
+        add(8, "종가가 20일선 위")
     else:
-        score -= 15
-        reasons.append("종가가 20일선 아래 (단기 약세)")
+        add(-15, "종가가 20일선 아래 (단기 약세)")
 
     if snap.golden_cross_proxy:
-        score += 10
-        reasons.append("20일선 ≥ 60일선 (중기 정배열 성향)")
+        add(10, "20일선 ≥ 60일선 (중기 정배열 성향)")
     else:
-        score -= 8
-        reasons.append("20일선 < 60일선 (중기 역배열 성향)")
+        add(-8, "20일선 < 60일선 (중기 역배열 성향)")
 
     # Momentum
     if snap.ret_5d > 0.03:
-        score += 12
-        reasons.append(f"5일 수익률 +{snap.ret_5d*100:.1f}% (모멘텀)")
+        add(12, f"5일 수익률 +{snap.ret_5d * 100:.1f}% (모멘텀)")
     elif snap.ret_5d < -0.03:
-        score -= 12
-        reasons.append(f"5일 수익률 {snap.ret_5d*100:.1f}% (단기 조정)")
+        add(-12, f"5일 수익률 {snap.ret_5d * 100:.1f}% (단기 조정)")
 
     if snap.ret_20d > 0.05:
-        score += 10
-        reasons.append(f"20일 수익률 +{snap.ret_20d*100:.1f}%")
+        add(10, f"20일 수익률 +{snap.ret_20d * 100:.1f}%")
     elif snap.ret_20d < -0.08:
-        score -= 12
-        reasons.append(f"20일 수익률 {snap.ret_20d*100:.1f}% (중기 약세)")
+        add(-12, f"20일 수익률 {snap.ret_20d * 100:.1f}% (중기 약세)")
 
     # RSI
     if 45 <= snap.rsi14 <= 65:
-        score += 10
-        reasons.append(f"RSI14={snap.rsi14:.0f} (중립~건전 구간)")
+        add(10, f"RSI14={snap.rsi14:.0f} (중립~건전 구간)")
     elif 30 <= snap.rsi14 < 45:
-        score += 6
-        reasons.append(f"RSI14={snap.rsi14:.0f} (과매도 근접, 반등 여지)")
+        add(6, f"RSI14={snap.rsi14:.0f} (과매도 근접, 반등 여지)")
     elif snap.rsi14 < 30:
-        score += 2
-        reasons.append(f"RSI14={snap.rsi14:.0f} (과매도 — 반등·추가하락 모두 가능)")
+        add(2, f"RSI14={snap.rsi14:.0f} (과매도 — 반등·추가하락 모두 가능)")
     elif 65 < snap.rsi14 <= 75:
-        score -= 5
-        reasons.append(f"RSI14={snap.rsi14:.0f} (과열 주의)")
+        add(-5, f"RSI14={snap.rsi14:.0f} (과열 주의)")
     else:
-        score -= 15
-        reasons.append(f"RSI14={snap.rsi14:.0f} (과매수 — 조정 위험)")
+        add(-15, f"RSI14={snap.rsi14:.0f} (과매수 — 조정 위험)")
 
     # Volume
     if snap.vol_ratio >= 1.5 and snap.ret_1d > 0:
-        score += 8
-        reasons.append(f"거래량 {snap.vol_ratio:.1f}× + 상승일 (수급 유입)")
+        add(8, f"거래량 {snap.vol_ratio:.1f}× + 상승일 (수급 유입)")
     elif snap.vol_ratio >= 1.5 and snap.ret_1d < 0:
-        score -= 8
-        reasons.append(f"거래량 {snap.vol_ratio:.1f}× + 하락일 (매도 압력)")
+        add(-8, f"거래량 {snap.vol_ratio:.1f}× + 하락일 (매도 압력)")
 
-    return max(-100.0, min(100.0, score)), reasons
+    factors_sorted = sorted(factors, key=lambda f: abs(f.impact), reverse=True)
+    reasons = [f.label for f in factors]
+    return max(-100.0, min(100.0, score)), reasons, factors_sorted

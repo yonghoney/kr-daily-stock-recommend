@@ -49,7 +49,7 @@ VS Code에서 이 폴더를 연 뒤, 인터프리터로 `.venv\Scripts\python.ex
 
 1. VS Code에서 [`run_daily.py`](run_daily.py) 열기  
 2. **▶ Run Python File** 또는 **F5**  
-3. 결과 확인: [`reports/daily/latest.txt`](reports/daily/latest.txt) (메모장) · [`latest.md`](reports/daily/latest.md)
+3. 결과 확인: [`reports/daily/latest.html`](reports/daily/latest.html) (브라우저) · [`latest.txt`](reports/daily/latest.txt) (메모장)
 
 터미널:
 
@@ -96,9 +96,10 @@ python run_daily.py --no-news
 뉴스 헤드라인은 **참고용**이며 점수에는 반영하지 않습니다.
 
 생성 파일:
+- `reports/daily/latest.html` — 세로 스크롤 HTML 리포트 (종합 요약 + 종목별 리포트)
 - `reports/daily/latest.txt` — 최신 리포트 (Windows 메모장용, UTF-8)
 - `reports/daily/latest.md` — 마크다운 리포트
-- `reports/daily/YYYY-MM-DD.txt` / `.md` / `.json` — 날짜별 보관
+- `reports/daily/YYYY-MM-DD.html` / `.txt` / `.md` / `.json` — 날짜별 보관
 - `reports/daily/latest.json` — 기계 읽기용
 
 ---
