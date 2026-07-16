@@ -25,11 +25,11 @@ Windows 11 + VS Code + **Python 3.12** 환경에서
 ### 2) 저장소 받기
 
 ```powershell
-git clone https://github.com/<YOUR_GITHUB_USERNAME>/kr-daily-stock-recommend.git
+git clone https://github.com/yonghoney/kr-daily-stock-recommend.git
 cd kr-daily-stock-recommend
 ```
 
-GitHub 저장소 URL은 업로드 후 실제 주소로 바꾸면 됩니다. (ZIP으로 받아 압축을 풀어도 됩니다.)
+ZIP으로 받아 압축을 풀어도 됩니다: https://github.com/yonghoney/kr-daily-stock-recommend
 
 ### 3) 가상환경 + 의존성
 
