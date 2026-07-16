@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>일일 추천은 어떻게 만들어질까? — 동작 흐름 보고서</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14201c;
+      --ink-soft: #2a3d36;
+      --muted: #5c6f67;
+      --paper: #f3f0e7;
+      --paper-2: #e8e4d8;
+      --card: rgba(255, 252, 245, 0.78);
+      --accent: #0d8a6a;
+      --accent-2: #e85d04;
+      --line: rgba(20, 32, 28, 0.12);
+      --glow: rgba(13, 138, 106, 0.18);
+      --shadow: 0 18px 50px rgba(20, 32, 28, 0.08);
+      --radius: 22px;
+      --max: 820px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(13, 138, 106, 0.14), transparent 55%),
+        radial-gradient(900px 500px at 100% 20%, rgba(232, 93, 4, 0.10), transparent 50%),
+        linear-gradient(180deg, #f7f4ec 0%, var(--paper) 40%, #efebe0 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+      padding: 0 0 6rem;
+    }
+
+    /* Progress */
+    .progress {
+      position: fixed;
+      top: 0; left: 0; height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      z-index: 50;
+      transition: width 0.1s linear;
+    }
+
+    /* Nav dots */
+    .dots {
+      position: fixed;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      z-index: 40;
+    }
+    .dots a {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: rgba(20, 32, 28, 0.2);
+      transition: transform 0.25s, background 0.25s;
+    }
+    .dots a:hover, .dots a.active {
+      background: var(--accent);
+      transform: scale(1.35);
+    }
+    @media (max-width: 720px) { .dots { display: none; } }
+
+    /* Hero */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 0 3rem;
+      animation: rise 0.9s ease both;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px; height: 2px;
+      background: var(--accent);
+    }
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 7vw, 4.1rem);
+      line-height: 1.08;
+      margin: 0 0 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .lede {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 36rem;
+      margin: 0 0 2rem;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+    .scroll-hint {
+      margin-top: 3.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      animation: bounce 2s ease infinite;
+    }
+    .scroll-hint span {
+      width: 22px; height: 34px;
+      border: 1.5px solid var(--muted);
+      border-radius: 12px;
+      position: relative;
+    }
+    .scroll-hint span::after {
+      content: "";
+      position: absolute;
+      top: 7px; left: 50%;
+      width: 3px; height: 7px;
+      margin-left: -1.5px;
+      border-radius: 2px;
+      background: var(--muted);
+    }
+
+    section {
+      padding: 4.5rem 0 1rem;
+      animation: rise 0.8s ease both;
+    }
+    h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .section-intro {
+      color: var(--muted);
+      margin: 0 0 2rem;
+      max-width: 38rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      padding: 1.5rem 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .card strong { color: var(--ink); }
+
+    /* Big flowchart */
+    .flow {
+      display: grid;
+      gap: 0;
+      position: relative;
+      margin: 1.5rem 0 2rem;
+    }
+    .flow-step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+    .flow-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .flow-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #f7f4ec;
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 0 0 6px var(--glow);
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .flow-step:nth-child(odd) .flow-num {
+      background: linear-gradient(145deg, var(--accent), #0a6b53);
+    }
+    .flow-step:nth-child(even) .flow-num {
+      background: linear-gradient(145deg, var(--ink), #2f443c);
+    }
+    .flow-line {
+      width: 2px;
+      flex: 1;
+      min-height: 28px;
+      background: linear-gradient(180deg, var(--accent), rgba(20,32,28,0.15));
+    }
+    .flow-step:last-child .flow-line { display: none; }
+    .flow-body {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.15rem 1.35rem 1.25rem;
+      margin-bottom: 1.1rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .flow-body:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 55px rgba(20, 32, 28, 0.12);
+    }
+    .flow-body h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    .flow-body p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+    .flow-tag {
+      display: inline-block;
+      margin-top: 0.7rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      background: rgba(13, 138, 106, 0.1);
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    /* Mermaid-like simple SVG diagram */
+    .diagram {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(13,138,106,0.08), rgba(232,93,4,0.06)),
+        var(--card);
+      border: 1px solid var(--line);
+    }
+    .diagram svg { width: 100%; max-width: 720px; display: block; margin: 0 auto; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .metric {
+      padding: 1.2rem 1.3rem;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+    .metric .label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .metric .value {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.7rem;
+      line-height: 1.2;
+    }
+
+    .actions {
+      display: grid;
+      gap: 0.85rem;
+    }
+    .action {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 1.2rem;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+    .badge {
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.55rem 0.4rem;
+      border-radius: 12px;
+    }
+    .badge.buy { background: rgba(13,138,106,0.15); color: #0a6b53; }
+    .badge.hold { background: rgba(20,32,28,0.08); color: var(--ink-soft); }
+    .badge.warn { background: rgba(232,93,4,0.14); color: #b5470a; }
+
+    .callout {
+      border-left: 4px solid var(--accent-2);
+      background: rgba(232, 93, 4, 0.07);
+      padding: 1.1rem 1.25rem;
+      border-radius: 0 16px 16px 0;
+      margin: 1.5rem 0;
+    }
+    .callout p { margin: 0; color: var(--ink-soft); }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checklist li {
+      position: relative;
+      padding: 0.85rem 0 0.85rem 2.2rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-soft);
+    }
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 1.15rem;
+      width: 1.15rem; height: 1.15rem;
+      border-radius: 6px;
+      border: 2px solid var(--accent);
+      background:
+        linear-gradient(135deg, transparent 45%, var(--accent) 45%, var(--accent) 55%, transparent 55%),
+        linear-gradient(45deg, transparent 45%, var(--accent) 45%, var(--accent) 55%, transparent 55%);
+      background-size: 0 0;
+    }
+    .checklist li:nth-child(odd)::before {
+      background: var(--accent);
+      box-shadow: inset 0 0 0 3px var(--paper);
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.84em;
+      background: rgba(20,32,28,0.06);
+      padding: 0.1em 0.4em;
+      border-radius: 5px;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <nav class="dots" aria-label="섹션 이동">
+    <a href="#hero" class="active" title="시작"></a>
+    <a href="#big-picture" title="한눈에 보기"></a>
+    <a href="#steps" title="단계별 흐름"></a>
+    <a href="#score" title="점수 규칙"></a>
+    <a href="#you" title="사람이 하는 일"></a>
+    <a href="#myth" title="오해 풀기"></a>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero" id="hero">
+      <div class="eyebrow">How it works · 초보자용 가이드</div>
+      <h1>추천 결과는<br /><em>마법이 아니라</em><br />순서 있는 계산입니다</h1>
+      <p class="lede">
+        VS Code에서 <strong>run_daily.py</strong>를 실행하면, 프로그램이
+        관심 종목의 시세와 뉴스를 모아 점수표처럼 정리한 뒤
+        「매수관심 / 관망 / 주의」를 붙입니다.
+        ChatGPT 같은 AI에게 물어보는 방식이 <em>아닙니다</em>.
+      </p>
+      <div class="hero-meta">
+        <span class="chip">API 키 불필요</span>
+        <span class="chip">자동매매 없음</span>
+        <span class="chip">최종 판단은 사람</span>
+      </div>
+      <div class="scroll-hint"><span></span> 아래로 스크롤하며 흐름을 따라가 보세요</div>
+    </header>
+
+    <section id="big-picture" class="reveal">
+      <h2>한눈에 보는 전체 그림</h2>
+      <p class="section-intro">
+        식당에서 메뉴를 고를 때와 비슷합니다. 재료(데이터)를 보고,
+        맛·상태(지표)를 체크한 뒤, 점수표로 순위를 매깁니다.
+      </p>
+
+      <div class="diagram" aria-label="전체 순서도">
+        <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0d8a6a"/>
+              <stop offset="100%" stop-color="#0a6b53"/>
+            </linearGradient>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#2a3d36"/>
+            </marker>
+          </defs>
+          <!-- boxes -->
+          <rect x="20" y="70" width="110" height="64" rx="14" fill="#14201c"/>
+          <text x="75" y="98" text-anchor="middle" fill="#f7f4ec" font-family="Outfit,sans-serif" font-size="13" font-weight="600">1. 관심종목</text>
+          <text x="75" y="118" text-anchor="middle" fill="#b8c7c0" font-family="Outfit,sans-serif" font-size="11">목록 읽기</text>
+
+          <rect x="160" y="70" width="110" height="64" rx="14" fill="url(#g1)"/>
+          <text x="215" y="98" text-anchor="middle" fill="#fff" font-family="Outfit,sans-serif" font-size="13" font-weight="600">2. 시세 수집</text>
+          <text x="215" y="118" text-anchor="middle" fill="#d7f3ea" font-family="Outfit,sans-serif" font-size="11">가격·거래량</text>
+
+          <rect x="300" y="70" width="110" height="64" rx="14" fill="#14201c"/>
+          <text x="355" y="98" text-anchor="middle" fill="#f7f4ec" font-family="Outfit,sans-serif" font-size="13" font-weight="600">3. 지표 계산</text>
+          <text x="355" y="118" text-anchor="middle" fill="#b8c7c0" font-family="Outfit,sans-serif" font-size="11">이평·RSI 등</text>
+
+          <rect x="440" y="70" width="110" height="64" rx="14" fill="url(#g1)"/>
+          <text x="495" y="98" text-anchor="middle" fill="#fff" font-family="Outfit,sans-serif" font-size="13" font-weight="600">4. 점수·등급</text>
+          <text x="495" y="118" text-anchor="middle" fill="#d7f3ea" font-family="Outfit,sans-serif" font-size="11">규칙표 적용</text>
+
+          <rect x="580" y="70" width="120" height="64" rx="14" fill="#e85d04"/>
+          <text x="640" y="98" text-anchor="middle" fill="#fff" font-family="Outfit,sans-serif" font-size="13" font-weight="600">5. 리포트</text>
+          <text x="640" y="118" text-anchor="middle" fill="#ffe8d6" font-family="Outfit,sans-serif" font-size="11">latest.md</text>
+
+          <!-- arrows -->
+          <line x1="130" y1="102" x2="155" y2="102" stroke="#2a3d36" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="270" y1="102" x2="295" y2="102" stroke="#2a3d36" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="410" y1="102" x2="435" y2="102" stroke="#2a3d36" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="550" y1="102" x2="575" y2="102" stroke="#2a3d36" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <text x="360" y="30" text-anchor="middle" fill="#5c6f67" font-family="Outfit,sans-serif" font-size="12">
+            run_daily.py 실행 → 자동으로 아래 순서를 한 바퀴 돕니다
+          </text>
+          <text x="360" y="195" text-anchor="middle" fill="#5c6f67" font-family="Outfit,sans-serif" font-size="12">
+            그다음: 사람이 리포트를 읽고 HTS/앱에서 직접 투자 결정
+          </text>
+        </svg>
+      </div>
+
+      <div class="grid-2">
+        <div class="metric">
+          <div class="label">입력</div>
+          <div class="value">관심 종목 목록</div>
+          <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem;">config/kr_universe.yaml</p>
+        </div>
+        <div class="metric">
+          <div class="label">출력</div>
+          <div class="value">추천 리포트</div>
+          <p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem;">reports/daily/latest.md</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="steps" class="reveal">
+      <h2>단계별 흐름 — 결론이 나오기까지</h2>
+      <p class="section-intro">
+        프로그램은 아래 순서를 <strong>위에서 아래로</strong> 그대로 따릅니다.
+        중간에 AI가 “감으로” 끼어들지 않습니다.
+      </p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">01</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>시작 — run_daily.py 실행</h3>
+            <p>
+              VS Code에서 재생 버튼을 누르면 Python이 이 스크립트를 엽니다.
+              Cursor나 채팅 AI와 연결되지 않아도 됩니다. 인터넷만 되면
+              시세·뉴스를 받아올 수 있습니다.
+            </p>
+            <span class="flow-tag">당신이 하는 일: 실행 버튼</span>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">02</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>관심 종목 목록 읽기</h3>
+            <p>
+              <strong>config/kr_universe.yaml</strong> 파일에 적힌 종목
+              (예: 삼성전자, SK하이닉스…)을 하나씩 불러옵니다.
+              종목 코드를 Yahoo Finance 형식(005930.KS)으로 맞춥니다.
+            </p>
+            <span class="flow-tag">비유: 오늘 볼 메뉴판을 펼침</span>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">03</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>시세 데이터 가져오기</h3>
+            <p>
+              각 종목의 최근 약 6개월 주가·거래량을 받아옵니다.
+              데이터가 너무 짧으면(25거래일 미만) 다른 시장 접미사(.KS ↔ .KQ)로
+              한 번 더 시도합니다. 그래도 부족하면 “데이터 부족”으로 표시합니다.
+            </p>
+            <span class="flow-tag">재료 준비: 가격 기록장</span>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">04</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>기술 지표 계산</h3>
+            <p>
+              가격 숫자만으로 상태를 요약합니다.
+            </p>
+            <ul style="margin:0.6rem 0 0;padding-left:1.2rem;color:var(--ink-soft);">
+              <li><strong>이동평균(20·60일)</strong> — 최근 평균 가격보다 위에 있는지</li>
+              <li><strong>수익률(1·5·20일)</strong> — 단기·중기 상승/하락 폭</li>
+              <li><strong>RSI(14)</strong> — 과매수·과매도 느낌의 온도계(0~100)</li>
+              <li><strong>거래량 비율</strong> — 평소보다 많이 거래됐는지</li>
+            </ul>
+            <span class="flow-tag">요리: 재료를 재고 간 보기</span>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">05</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>점수 매기기 + 이유 문장 만들기</h3>
+            <p>
+              미리 정해 둔 규칙표에 따라 점수를 더하거나 뺍니다.
+              예: “20일선 위면 +8”, “RSI가 과열이면 −15”.
+              동시에 사람이 읽을 수 있는 <strong>이유 문장</strong>을 함께 남깁니다.
+            </p>
+            <span class="flow-tag">채점: 시험 답안지 채점과 비슷</span>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">06</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>뉴스 헤드라인 붙이기 (선택)</h3>
+            <p>
+              최근 한국 뉴스 제목을 몇 개 가져옵니다.
+              <strong>뉴스 내용으로 점수를 올리거나 내리지는 않습니다.</strong>
+              “이런 기사가 있었다”는 참고용으로만 적습니다.
+            </p>
+            <span class="flow-tag">곁들임: 양념은 참고만</span>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">07</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>등급 붙이기</h3>
+            <p>총점으로 세 가지 중 하나를 고릅니다.</p>
+            <div class="actions" style="margin-top:0.9rem;">
+              <div class="action">
+                <div class="badge buy">매수관심</div>
+                <div>점수 <strong>+25 이상</strong> — 기술지표상 상대적으로 우호</div>
+              </div>
+              <div class="action">
+                <div class="badge hold">관망</div>
+                <div>중간 구간 — 뚜렷한 신호 없음</div>
+              </div>
+              <div class="action">
+                <div class="badge warn">주의</div>
+                <div>점수 <strong>−20 이하</strong> — 약세·과열 등 리스크 신호</div>
+              </div>
+            </div>
+            <span class="flow-tag">결론 라벨 부착</span>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-rail">
+            <div class="flow-num">08</div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="flow-body">
+            <h3>리포트 저장</h3>
+            <p>
+              모든 종목을 점수 순으로 정렬해
+              <strong>reports/daily/latest.md</strong> (및 날짜별 파일)에 저장합니다.
+              JSON 파일도 같이 만들어 두어 나중에 표로 쓰기 쉽게 합니다.
+            </p>
+            <span class="flow-tag">출력: 오늘의 성적표</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="score" class="reveal">
+      <h2>점수는 어떻게 올라가나요?</h2>
+      <p class="section-intro">
+        “좋다/나쁘다”를 AI가 느끼는 게 아니라, 아래 같은 <strong>가산·감점 규칙</strong>의 합입니다.
+      </p>
+      <div class="card">
+        <ul class="checklist">
+          <li>주가가 20일·60일 평균보다 위면 가점 (추세가 우호적이라는 뜻)</li>
+          <li>5일·20일 동안 많이 올랐으면 가점, 크게 빠졌으면 감점</li>
+          <li>RSI가 중간~건전 구간이면 가점, 너무 뜨거우면(과매수) 감점</li>
+          <li>거래량이 평소보다 크게 늘며 상승하면 가점, 하락하면 감점</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <p>
+          <strong>중요:</strong> 같은 규칙이라도 시장 전체가 약세면
+          워치리스트 대부분이 「관망」「주의」로 나올 수 있습니다.
+          그건 버그가 아니라, 오늘 데이터가 그렇게 채점된 결과입니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="you" class="reveal">
+      <h2>그리고… 사람이 하는 일</h2>
+      <p class="section-intro">
+        프로그램은 <strong>추천 메모장</strong>까지만 만듭니다. 돈은 움직이지 않습니다.
+      </p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-rail"><div class="flow-num">A</div><div class="flow-line"></div></div>
+          <div class="flow-body">
+            <h3>리포트 읽기</h3>
+            <p>latest.md에서 순위표와 종목별 이유를 확인합니다.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-rail"><div class="flow-num">B</div><div class="flow-line"></div></div>
+          <div class="flow-body">
+            <h3>의심하고 교차검증</h3>
+            <p>공시, 실적, 본인 투자 원칙과 맞는지 직접 확인합니다. 점수는 참고일 뿐입니다.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-rail"><div class="flow-num">C</div></div>
+          <div class="flow-body">
+            <h3>직접 주문 (원할 때만)</h3>
+            <p>증권사 앱·HTS에서 본인이 매수/매도합니다. 이 코드는 주문을 넣지 않습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="myth" class="reveal">
+      <h2>자주 생기는 오해</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="margin-top:0;">❌ “AI가 미래 주가를 안다”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            아니요. 과거 가격으로 만든 <strong>규칙 점수</strong>입니다.
+            내일 반드시 오른다는 뜻이 아닙니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">❌ “자동으로 사고판다”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            아니요. 리포트 파일만 만듭니다.
+            모의·실전 주문 연동은 켜져 있지 않습니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">❌ “ChatGPT API가 필요하다”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            기본 경로(<code>run_daily.py</code>)는
+            LLM API 키가 없어도 동작합니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">✅ “매일 같은 절차로 갱신된다”</h3>
+          <p style="margin:0;color:var(--ink-soft);">
+            맞습니다. 실행할 때마다 최신 시세를 받아
+            같은 채점표로 다시 계산합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        이 문서는 프로젝트의 일일 추천 파이프라인
+        (<code>run_daily.py</code> → <code>tradingagents/recommend/</code>)을
+        초보자용으로 설명한 보고서입니다. 투자 자문이 아닙니다.
+      </p>
+      <p style="margin-top:0.75rem;">
+        파일 위치: <code>reports/how_it_works.html</code> ·
+        브라우저에서 열어 스크롤해 보세요.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    const progress = document.getElementById("progress");
+    const dots = [...document.querySelectorAll(".dots a")];
+    const sections = ["hero", "big-picture", "steps", "score", "you", "myth"].map(id => document.getElementById(id));
+
+    function onScroll() {
+      const scrollTop = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (docH > 0 ? (scrollTop / docH) * 100 : 0) + "%";
+
+      let current = 0;
+      sections.forEach((sec, i) => {
+        if (sec && sec.getBoundingClientRect().top < window.innerHeight * 0.45) current = i;
+      });
+      dots.forEach((d, i) => d.classList.toggle("active", i === current));
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("show");
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>

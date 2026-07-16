@@ -1,0 +1,14 @@
+---
+description: 한국 주식 일일 추천 리스트 (API 키 없이 daily-recommend)
+globs:
+alwaysApply: false
+---
+
+사용자가 일일 추천, 추천 리스트, daily recommend, 오늘 종목 추천을 요청하면:
+
+1. 프로젝트 루트에서 `.\.venv\Scripts\python.exe -m cli.main daily-recommend` 실행 (venv 없으면 `tradingagents daily-recommend`)
+2. `reports/daily/latest.md` 를 읽어 요약해 보여준다
+3. LLM API·증권사 API가 필요 없다는 점을 짧게 알린다
+4. 투자 자문이 아니며 최종 판단은 사용자에게 있다고 상기한다
+
+주문/모의투자/KIS 연동은 제안하지 않는다. 기본 워크플로는 추천 리포트만이다.

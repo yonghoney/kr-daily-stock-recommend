@@ -1,0 +1,7 @@
+# Minimal deps for run_daily.py (no LLM / broker APIs)
+numpy>=1.26
+pandas>=2.2
+yfinance>=0.2.40
+PyYAML>=6.0
+requests>=2.32
+pytz>=2024.1

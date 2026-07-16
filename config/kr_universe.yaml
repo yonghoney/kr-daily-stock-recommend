@@ -1,0 +1,42 @@
+# Korean MVP universe for TradingAgents-KR
+# codes without suffix; exchange inferred via kosdaq list or defaults to KOSPI
+
+watchlist:
+  - code: "005930"
+    name: 삼성전자
+    ticker: "005930.KS"
+  - code: "000660"
+    name: SK하이닉스
+    ticker: "000660.KS"
+  - code: "035420"
+    name: NAVER
+    ticker: "035420.KS"
+  - code: "005380"
+    name: 현대차
+    ticker: "005380.KS"
+  - code: "051910"
+    name: LG화학
+    ticker: "051910.KS"
+  - code: "006400"
+    name: 삼성SDI
+    ticker: "006400.KS"
+  - code: "035720"
+    name: 카카오
+    ticker: "035720.KS"  # KOSPI listed
+  - code: "247540"
+    name: 에코프로비엠
+    ticker: "247540.KQ"
+
+# Explicit KOSDAQ codes (merged with built-in defaults in kr_symbols.py)
+kosdaq:
+  - "247540"
+  - "086520"
+  - "196170"
+  - "293490"
+
+# Default risk limits used by Execution Gateway (can be overridden in .env)
+risk:
+  max_order_notional_krw: 1000000
+  max_daily_notional_krw: 5000000
+  max_positions: 5
+  order_cooldown_seconds: 60
