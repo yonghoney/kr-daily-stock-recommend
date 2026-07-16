@@ -23,8 +23,11 @@ def main() -> int:
     from tradingagents.recommend.engine import run_daily_recommendations
     from tradingagents.recommend.universe import refresh_and_save_watchlist
 
-    print("워치리스트 갱신 중… (거래대금 상위 20 + 시가총액 상위 20)")
-    watchlist = refresh_and_save_watchlist(top_n=20)
+    print(
+        "워치리스트 갱신 중… "
+        "(코스피/코스닥 각각: 최근 1주 거래대금 상위50 진입 ∪ 시총 상위50)"
+    )
+    watchlist = refresh_and_save_watchlist(top_n=50, lookback_days=7)
     print(f"워치리스트 {len(watchlist)}종목으로 갱신 완료")
 
     print("일일 추천 생성 중… (LLM / 증권사 API 불필요)")
