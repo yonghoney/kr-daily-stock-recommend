@@ -16,10 +16,12 @@ class TechSnapshot:
     ret_20d: float
     sma20: float
     sma60: float
+    sma120: float
     rsi14: float
     vol_ratio: float  # today vol / 20d avg
     above_sma20: bool
     above_sma60: bool
+    above_sma120: bool
     golden_cross_proxy: bool  # sma20 > sma60
     bars: int
 
@@ -57,6 +59,8 @@ def compute_tech(hist: pd.DataFrame) -> TechSnapshot | None:
 
     sma20 = float(close.tail(20).mean())
     sma60 = float(close.tail(min(60, len(close))).mean())
+    sma120_n = min(120, len(close))
+    sma120 = float(close.tail(sma120_n).mean())
     last = float(close.iloc[-1])
     ret_1d = float(close.iloc[-1] / close.iloc[-2] - 1) if len(close) >= 2 else 0.0
     ret_5d = float(close.iloc[-1] / close.iloc[-6] - 1) if len(close) >= 6 else 0.0
@@ -71,10 +75,12 @@ def compute_tech(hist: pd.DataFrame) -> TechSnapshot | None:
         ret_20d=ret_20d,
         sma20=sma20,
         sma60=sma60,
+        sma120=sma120,
         rsi14=_rsi(close, 14),
         vol_ratio=vol_ratio,
         above_sma20=last >= sma20,
         above_sma60=last >= sma60,
+        above_sma120=last >= sma120,
         golden_cross_proxy=sma20 >= sma60,
         bars=len(df),
     )
@@ -102,6 +108,16 @@ def score_tech(snap: TechSnapshot) -> tuple[float, list[str], list[ScoreFactor]]
         add(10, "20일선 ≥ 60일선 (중기 정배열 성향)")
     else:
         add(-8, "20일선 < 60일선 (중기 역배열 성향)")
+
+    if snap.bars >= 80:
+        if snap.above_sma120:
+            add(8, "종가가 120일선 위 (장기 추세 우호)")
+        else:
+            add(-8, "종가가 120일선 아래 (장기 약세)")
+        if snap.sma60 >= snap.sma120:
+            add(4, "60일선 ≥ 120일선 (중장기 정배열 성향)")
+        else:
+            add(-4, "60일선 < 120일선 (중장기 역배열 성향)")
 
     # Momentum
     if snap.ret_5d > 0.03:
@@ -135,3 +151,79 @@ def score_tech(snap: TechSnapshot) -> tuple[float, list[str], list[ScoreFactor]]
     factors_sorted = sorted(factors, key=lambda f: abs(f.impact), reverse=True)
     reasons = [f.label for f in factors]
     return max(-100.0, min(100.0, score)), reasons, factors_sorted
+
+
+def _fmt_shares(n: int) -> str:
+    sign = "+" if n > 0 else ""
+    return f"{sign}{n:,}"
+
+
+def score_investor_flow(
+    flow: object,
+) -> tuple[float, list[str], list[ScoreFactor]]:
+    """Score foreign/institution net buying. Weights kept smaller than tech.
+
+    Expects an object with foreign_net_1d/organ_net_1d/foreign_net_5d/organ_net_5d
+    (e.g. InvestorFlowSnapshot).
+    """
+    score = 0.0
+    factors: list[ScoreFactor] = []
+
+    def add(impact: float, label: str) -> None:
+        nonlocal score
+        score += impact
+        factors.append(ScoreFactor(impact=impact, label=label))
+
+    f1 = int(getattr(flow, "foreign_net_1d", 0) or 0)
+    o1 = int(getattr(flow, "organ_net_1d", 0) or 0)
+    f5 = int(getattr(flow, "foreign_net_5d", 0) or 0)
+    o5 = int(getattr(flow, "organ_net_5d", 0) or 0)
+    days = int(getattr(flow, "days", 5) or 5)
+
+    # Latest session
+    if f1 > 0 and o1 > 0:
+        add(
+            8,
+            f"전일 외국인·기관 동반 순매수 "
+            f"(외 {_fmt_shares(f1)} / 기 {_fmt_shares(o1)})",
+        )
+    elif f1 < 0 and o1 < 0:
+        add(
+            -8,
+            f"전일 외국인·기관 동반 순매도 "
+            f"(외 {_fmt_shares(f1)} / 기 {_fmt_shares(o1)})",
+        )
+    elif f1 > 0:
+        add(4, f"전일 외국인 순매수 {_fmt_shares(f1)}")
+    elif o1 > 0:
+        add(3, f"전일 기관 순매수 {_fmt_shares(o1)}")
+    elif f1 < 0:
+        add(-4, f"전일 외국인 순매도 {_fmt_shares(f1)}")
+    elif o1 < 0:
+        add(-3, f"전일 기관 순매도 {_fmt_shares(o1)}")
+
+    # Multi-day cumulative (usually ~5 sessions)
+    if f5 > 0 and o5 > 0:
+        add(
+            6,
+            f"최근 {days}일 외국인·기관 동반 순매수 "
+            f"(외 {_fmt_shares(f5)} / 기 {_fmt_shares(o5)})",
+        )
+    elif f5 < 0 and o5 < 0:
+        add(
+            -6,
+            f"최근 {days}일 외국인·기관 동반 순매도 "
+            f"(외 {_fmt_shares(f5)} / 기 {_fmt_shares(o5)})",
+        )
+    elif f5 > 0:
+        add(3, f"최근 {days}일 외국인 누적 순매수 {_fmt_shares(f5)}")
+    elif o5 > 0:
+        add(2, f"최근 {days}일 기관 누적 순매수 {_fmt_shares(o5)}")
+    elif f5 < 0:
+        add(-3, f"최근 {days}일 외국인 누적 순매도 {_fmt_shares(f5)}")
+    elif o5 < 0:
+        add(-2, f"최근 {days}일 기관 누적 순매도 {_fmt_shares(o5)}")
+
+    factors_sorted = sorted(factors, key=lambda f: abs(f.impact), reverse=True)
+    reasons = [f.label for f in factors]
+    return score, reasons, factors_sorted

@@ -26,6 +26,51 @@ def _fmt_impact(impact: float) -> str:
     return f"{sign}{impact:.0f}"
 
 
+def _news_block(headlines: list) -> str:
+    """Always-visible compact news summary for a stock section."""
+    items: list[tuple[str | None, str]] = []
+    for h in headlines or []:
+        if isinstance(h, dict):
+            title = str(h.get("title") or "").strip()
+            date = str(h.get("date") or "").strip() or None
+        else:
+            title = str(h).strip()
+            date = None
+        if title:
+            items.append((date, title))
+
+    # Newest first; undated last
+    items.sort(key=lambda row: row[0] or "0000-00-00", reverse=True)
+
+    if not items:
+        return """
+              <div class="block news">
+                <h3>뉴스 요약</h3>
+                <p class="news-brief muted">최근 관련 헤드라인을 찾지 못했습니다.</p>
+              </div>
+            """
+
+    brief_parts = [t for _, t in items[:2]]
+    brief = " · ".join(brief_parts)
+    if len(brief) > 140:
+        brief = brief[:137] + "..."
+
+    rows = []
+    for date, title in items[:3]:
+        date_txt = _esc(date) if date else "—"
+        rows.append(
+            f'<li><span class="news-date">{date_txt}</span>'
+            f'<span class="news-title">{_esc(title)}</span></li>'
+        )
+    return f"""
+              <div class="block news">
+                <h3>뉴스 요약</h3>
+                <p class="news-brief">{_esc(brief)}</p>
+                <ul>{"".join(rows)}</ul>
+              </div>
+            """
+
+
 def render_html(
     recs: list[Recommendation],
     *,
@@ -88,18 +133,34 @@ def render_html(
             if r.reasons
             else "<li class='muted'>사유 없음</li>"
         )
-        headlines_html = ""
-        if r.headlines:
-            items = "".join(f"<li>{_esc(h)}</li>" for h in r.headlines)
-            headlines_html = f"""
-              <div class="block">
-                <h3>뉴스 헤드라인</h3>
-                <ul>{items}</ul>
-              </div>
-            """
+        headlines_html = _news_block(r.headlines)
         error_html = (
             f'<p class="error">오류: {_esc(r.error)}</p>' if r.error else ""
         )
+        flow = r.flow or {}
+        flow_html = ""
+        if flow:
+            def _sh(key: str) -> str:
+                val = int(flow.get(key) or 0)
+                sign = "+" if val > 0 else ""
+                return f"{sign}{val:,}"
+
+            hold = flow.get("foreign_hold_ratio")
+            hold_txt = f"{hold:.2f}%" if isinstance(hold, (int, float)) else "-"
+            days = _esc(flow.get("days", 5))
+            flow_html = f"""
+              <div class="block">
+                <h3>외국인·기관 수급 ({_esc(flow.get('as_of', '-'))})</h3>
+                <div class="metrics flow">
+                  <div><span>외인 1일</span><strong>{_esc(_sh('foreign_net_1d'))}</strong></div>
+                  <div><span>기관 1일</span><strong>{_esc(_sh('organ_net_1d'))}</strong></div>
+                  <div><span>외인 {days}일</span><strong>{_esc(_sh('foreign_net_5d'))}</strong></div>
+                  <div><span>기관 {days}일</span><strong>{_esc(_sh('organ_net_5d'))}</strong></div>
+                  <div><span>외인 지분</span><strong>{_esc(hold_txt)}</strong></div>
+                </div>
+              </div>
+            """
+
         factor_rows = ""
         for d in r.drivers or []:
             impact = float(d.get("impact", 0))
@@ -134,6 +195,9 @@ def render_html(
                 <div><span>5일</span><strong>{r.ret_5d_pct:+.2f}%</strong></div>
                 <div><span>RSI14</span><strong>{_esc(r.rsi14)}</strong></div>
               </div>
+              {f'<div class="block chart">{r.chart_svg}</div>' if r.chart_svg else ''}
+              {headlines_html}
+              {flow_html}
               <div class="block">
                 <h3>점수 기여 요인</h3>
                 <table class="factors">
@@ -145,7 +209,6 @@ def render_html(
                 <h3>판단 이유</h3>
                 <ul>{reasons_html}</ul>
               </div>
-              {headlines_html}
             </section>
             """
         )
@@ -442,6 +505,49 @@ def render_html(
       from {{ opacity: 0; transform: translateY(12px); }}
       to {{ opacity: 1; transform: translateY(0); }}
     }}
+    .block.news .news-brief {{
+      margin: 0 0 0.45rem;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }}
+    .block.news ul {{
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }}
+    .block.news li {{
+      display: grid;
+      grid-template-columns: 6.2rem 1fr;
+      gap: 0.55rem;
+      align-items: start;
+      margin: 0.28rem 0;
+    }}
+    .block.news .news-date {{
+      font-variant-numeric: tabular-nums;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }}
+    .block.news .news-title {{
+      color: var(--ink-soft, var(--ink));
+    }}
+    .block.chart {{
+      margin-top: 0.85rem;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.55);
+    }}
+    .block.chart svg {{
+      display: block;
+      width: 100%;
+      height: auto;
+    }}
+    .metrics.flow {{
+      grid-template-columns: repeat(3, 1fr);
+    }}
     @media (max-width: 720px) {{
       .sum-row {{
         grid-template-columns: 1.6rem 1fr;
@@ -454,6 +560,7 @@ def render_html(
         min-width: 0;
       }}
       .metrics {{ grid-template-columns: repeat(2, 1fr); }}
+      .metrics.flow {{ grid-template-columns: repeat(2, 1fr); }}
       .stock-head {{ flex-direction: column; }}
     }}
   </style>
@@ -484,7 +591,7 @@ def render_html(
 
     {"".join(detail_sections)}
 
-    <p class="note">점수 기준: 이동평균 정배열/역배열, 5·20일 모멘텀, RSI14, 거래량 급증을 가중합. 매수관심 ≥ +25 · 주의 ≤ −20 · 그 외 관망.</p>
+    <p class="note">점수 기준: 이동평균(20·60·120)·모멘텀·RSI14·거래량·외국인/기관 순매수 가중합. 매수관심 ≥ +25 · 주의 ≤ −20 · 그 외 관망.</p>
   </div>
 </body>
 </html>

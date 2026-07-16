@@ -13,8 +13,14 @@ import yaml
 import yfinance as yf
 
 from tradingagents.dataflows.kr_symbols import normalize_kr_symbol
-from tradingagents.dataflows.korean_news import get_news_korean
-from tradingagents.recommend.signals import compute_tech, score_tech
+from tradingagents.dataflows.korean_investor_flow import fetch_investor_flow
+from tradingagents.dataflows.korean_news import fetch_korean_headline_items
+from tradingagents.recommend.chart_svg import build_chart_payload, render_candle_svg
+from tradingagents.recommend.signals import (
+    compute_tech,
+    score_investor_flow,
+    score_tech,
+)
 
 logger = logging.getLogger(__name__)
 KST = pytz.timezone("Asia/Seoul")
@@ -34,11 +40,16 @@ class Recommendation:
     market: str = "코스피"  # 코스피 | 코스닥
     reasons: list[str] = field(default_factory=list)
     drivers: list[dict[str, Any]] = field(default_factory=list)
-    headlines: list[str] = field(default_factory=list)
+    headlines: list[dict[str, str]] = field(default_factory=list)
+    flow: dict[str, Any] | None = None
+    chart_svg: str | None = None
     error: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        data = asdict(self)
+        # Keep JSON lean — charts live only in HTML
+        data.pop("chart_svg", None)
+        return data
 
 
 def market_label(ticker: str) -> str:
@@ -47,6 +58,27 @@ def market_label(ticker: str) -> str:
     if t.endswith(".KQ"):
         return "코스닥"
     return "코스피"
+
+
+def _headline_title(item: object) -> str:
+    if isinstance(item, dict):
+        return str(item.get("title") or "").strip()
+    return str(item).strip()
+
+
+def _headline_date(item: object) -> str | None:
+    if isinstance(item, dict):
+        date = str(item.get("date") or "").strip()
+        return date or None
+    return None
+
+
+def _format_headline_line(item: object) -> str:
+    title = _headline_title(item)
+    date = _headline_date(item)
+    if date and title:
+        return f"[{date}] {title}"
+    return title
 
 
 def _project_root() -> Path:
@@ -83,7 +115,8 @@ def _action_from_score(score: float) -> str:
 
 def _fetch_history(symbol: str):
     """Fetch OHLCV; if KRX suffix has thin history, try the other board."""
-    hist = yf.Ticker(symbol).history(period="6mo")
+    # 1y needed for stable 120-day moving average
+    hist = yf.Ticker(symbol).history(period="1y")
     hist_len = 0 if hist is None or getattr(hist, "empty", True) else len(hist)
     if hist_len >= 25:
         return hist, symbol
@@ -93,7 +126,7 @@ def _fetch_history(symbol: str):
         alt = symbol[:-3] + ".KQ"
     else:
         return hist, symbol
-    alt_hist = yf.Ticker(alt).history(period="6mo")
+    alt_hist = yf.Ticker(alt).history(period="1y")
     alt_len = 0 if alt_hist is None or getattr(alt_hist, "empty", True) else len(alt_hist)
     if alt_len > hist_len:
         logger.info("Using alternate board %s instead of %s", alt, symbol)
@@ -130,21 +163,49 @@ def analyze_ticker(
                 error="시세 데이터 부족 (25거래일 미만)",
             )
         score, reasons, factors = score_tech(snap)
+
+        flow_info: dict[str, Any] | None = None
+        try:
+            flow = fetch_investor_flow(code, lookback=5)
+            if flow is not None:
+                f_score, f_reasons, f_factors = score_investor_flow(flow)
+                score = max(-100.0, min(100.0, score + f_score))
+                reasons.extend(f_reasons)
+                factors = list(factors) + list(f_factors)
+                factors = sorted(factors, key=lambda f: abs(f.impact), reverse=True)
+                flow_info = {
+                    "as_of": flow.as_of,
+                    "foreign_net_1d": flow.foreign_net_1d,
+                    "organ_net_1d": flow.organ_net_1d,
+                    "individual_net_1d": flow.individual_net_1d,
+                    "foreign_net_5d": flow.foreign_net_5d,
+                    "organ_net_5d": flow.organ_net_5d,
+                    "individual_net_5d": flow.individual_net_5d,
+                    "foreign_hold_ratio": flow.foreign_hold_ratio,
+                    "days": flow.days,
+                }
+        except Exception as exc:
+            logger.warning("investor flow scoring failed for %s: %s", code, exc)
+
         drivers = [
             {"impact": round(f.impact, 1), "label": f.label} for f in factors
         ]
-        headlines: list[str] = []
+        headlines: list[dict[str, str]] = []
         if include_news:
             try:
-                raw = get_news_korean(symbol, limit=news_limit)
-                for line in raw.splitlines():
-                    if line[:1].isdigit() and ". " in line:
-                        headlines.append(line.split(". ", 1)[1].strip())
+                headlines = fetch_korean_headline_items(symbol, limit=news_limit)
             except Exception as exc:
                 logger.warning("news failed for %s: %s", symbol, exc)
 
         if headlines:
             reasons.append(f"최근 헤드라인 {len(headlines)}건 참고 (감성 점수화 없음)")
+
+        chart_svg = None
+        try:
+            payload = build_chart_payload(hist, bars=63)
+            chart_svg = render_candle_svg(payload) or None
+        except Exception as exc:
+            logger.warning("chart render failed for %s: %s", symbol, exc)
 
         return Recommendation(
             code=code,
@@ -160,6 +221,8 @@ def analyze_ticker(
             reasons=reasons,
             drivers=drivers,
             headlines=headlines[:news_limit],
+            flow=flow_info,
+            chart_svg=chart_svg,
         )
     except Exception as exc:
         logger.exception("analyze failed %s", symbol)
@@ -228,12 +291,21 @@ def render_markdown(
             )
             if r.error:
                 lines.append(f"- 오류: {r.error}")
+            if r.flow:
+                f = r.flow
+                lines.append(
+                    f"- 수급({f.get('as_of')}): "
+                    f"외인1일 {f.get('foreign_net_1d'):+,} · "
+                    f"기관1일 {f.get('organ_net_1d'):+,} · "
+                    f"외인{f.get('days',5)}일 {f.get('foreign_net_5d'):+,} · "
+                    f"기관{f.get('days',5)}일 {f.get('organ_net_5d'):+,}"
+                )
             for reason in r.reasons:
                 lines.append(f"- {reason}")
             if r.headlines:
                 lines.append("- 뉴스:")
                 for h in r.headlines:
-                    lines.append(f"  - {h}")
+                    lines.append(f"  - {_format_headline_line(h)}")
             lines.append("")
 
     section("매수관심", buy)
@@ -244,7 +316,7 @@ def render_markdown(
         [
             "## 점수 기준 (요약)",
             "",
-            "- 이동평균 정배열/역배열, 5·20일 모멘텀, RSI14, 거래량 급증 여부를 가중합",
+            "- 이동평균(20·60·120) 정배열/역배열, 5·20일 모멘텀, RSI14, 거래량, 외국인·기관 순매수 가중합",
             "- **매수관심** ≥ +25 · **주의** ≤ -20 · 그 외 **관망**",
             "",
         ]
@@ -291,14 +363,14 @@ def render_plain_text(
             if r.headlines:
                 lines.append("  - 뉴스:")
                 for h in r.headlines:
-                    lines.append(f"      · {h}")
+                    lines.append(f"      · {_format_headline_line(h)}")
             lines.append("")
 
     lines.extend(
         [
             "",
             "[점수 기준]",
-            "- 이동평균, 5·20일 모멘텀, RSI14, 거래량으로 가중합",
+            "- 이동평균(20·60·120), 5·20일 모멘텀, RSI14, 거래량, 외국인·기관 순매수로 가중합",
             "- 매수관심 ≥ +25 / 주의 ≤ -20 / 그 외 관망",
             "",
         ]
